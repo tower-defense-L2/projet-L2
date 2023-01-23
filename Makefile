@@ -6,7 +6,7 @@ NOM = prog
 CC = gcc
 
 # Options de compilation
-CFLAGS = -Wall -Wextra -Werror -ansi -pedantic
+CFLAGS = -Wall -Wextra -Werror -std=c99 -pedantic
 
 # Options de l'editeur de liens
 LDFLAGS = -lm
