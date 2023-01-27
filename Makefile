@@ -1,24 +1,32 @@
 # Variables
 # Nom du programme
-NOM = prog
+NOM = tower-defence
 
 # Nom du compilateur
 CC = gcc
 
 # Options de compilation
-CFLAGS = -Wall -Wextra -Werror -ansi -pedantic
+CFLAGS = -Wall -Wextra -Werror -std=c99 -pedantic
 
 # Options de l'editeur de liens
 LDFLAGS = -lm
 
-# Liste des fichiers sources
-SRC = $(wildcard *.c)
+# dossier des fichiers sources
+SDIR = src
 
+# Liste des fichiers sources
+SRC = $(SDIR)/$(wildcard *.c)
+
+# dossier des fichiers objets
+ODIR = obj
 # Liste des fichiers objets
-OBJ = $(SRC:.c=.o)
+OBJ = $(ODIR)/$(SRC:.c=.o)
+
+# dossier des fichiers headers
+HDIR = lib
 
 # Liste des fichiers headers
-HDR = $(wildcard *.h)
+HDR = $(HDIR)/$(wildcard *.h)
 
 # Regles
 # Regle par defaut
