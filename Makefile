@@ -28,6 +28,9 @@ HDIR = lib
 # Liste des fichiers headers
 HDR = $(HDIR)/$(wildcard *.h)
 
+#lien librairie sdl2
+LIEN= ${PWD}/lib/SDL2/lib
+
 # Regles
 # Regle par defaut
 all: $(NOM)
@@ -51,3 +54,10 @@ mrproper: clean
 # Regle de creation d'une archive
 archive:
 	tar -cvzf $(NOM).tar.gz
+
+#ajout de la libraire au PATH
+sdl2:
+	-export LD_LIBRARY_PATH="${LIEN}"
+
+
+
