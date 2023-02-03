@@ -14,6 +14,7 @@ LDFLAGS = -lm
 # dossier des fichiers sources
 SDIR = src
 
+
 # Liste des fichiers sources
 SRC = $(SDIR)/$(wildcard *.c)
 
@@ -29,7 +30,11 @@ HDIR = lib
 HDR = $(HDIR)/$(wildcard *.h)
 
 #lien librairie sdl2
-LIEN= ${PWD}/lib/SDL2/lib
+SDL_DIR=lib/SDL2
+SDL_LIB_DIR=${SDL_DIR}/lib
+SDL_INC_DIR=include/SDL2
+LIBS=-L${SDL_LIB_DIR} -lSDL2
+INCS=-I${SDL_INC_DIR}
 
 # Regles
 # Regle par defaut
@@ -43,6 +48,10 @@ $(NOM): $(OBJ)
 %.o: %.c $(HDR)
 	$(CC) -o $@ -c $< $(CFLAGS)
 
+#ficier test sld
+test: 
+	$(CC) ./test/test_fenetre_sdl.c $(CFLAGS) $(LIBS) $(INCS) -o test_fenetre_sdl 
+
 # Regle de nettoyage
 clean:
 	rm -rf *.o
@@ -54,10 +63,3 @@ mrproper: clean
 # Regle de creation d'une archive
 archive:
 	tar -cvzf $(NOM).tar.gz
-
-#ajout de la libraire au PATH
-sdl2:
-	-export LD_LIBRARY_PATH="${LIEN}"
-
-
-
