@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../include/SDL2/SDL.h"
+#include <SDL2/SDL.h>
 
 int main(){
     /* Initialisation simple */
@@ -9,6 +9,7 @@ int main(){
         return -1;
     }
 
+    
     {
         /* Création de la fenêtre */
         SDL_Window* pWindow = NULL;
