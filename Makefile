@@ -1,5 +1,5 @@
 TARGET=main
-TARGET_TEST=test_fenetre_sdl 
+TARGET_TEST=test_fenetre_sdl test_macro_compil
 
 ifeq ($(OS), Windows_NT)
 
@@ -77,7 +77,7 @@ $(OBJECTS): $(OBJ_DIR)/%.o : $(SRC_DIR)/%.c
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@echo "Compiled $< successfully!"
 
-$(OBJECTS_TEST): $(OBJ_DIR)/%.o : $(SRC_DIR)/%.c $(TEST_DIR)/%.c
+$(OBJECTS_TEST): $(OBJ_DIR)/%.o : $(TEST_DIR)/%.c $(OBJECTS)
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@echo "Compiled $< successfully!"
 
