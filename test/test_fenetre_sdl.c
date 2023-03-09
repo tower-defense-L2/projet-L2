@@ -52,7 +52,7 @@ int main(){
     /**
      * \brief load de la bitmap
      */
-    fond = SDL_LoadBMP("./ressources/font.bmp");
+    fond = SDL_LoadBMP("./ressources/test/font.bmp");
     /**
      * \brief gestion d'erreur du load
      */
@@ -80,7 +80,7 @@ int main(){
     SDL_FreeSurface(fond);
     fond = NULL;
 
-    fond = SDL_LoadBMP("./ressources/font2.bmp");
+    fond = SDL_LoadBMP("./ressources/test/font2.bmp");
     if(fond == NULL){
         printf("Erreur de chargement de l'image : %s", SDL_GetError());
         SDL_Quit();
@@ -136,6 +136,8 @@ int main(){
         SDL_RenderPresent(renderer);
          
     }
+    SDL_DestroyTexture(texture_fond);
+    SDL_DestroyTexture(texture_fond2);
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(fenetre);
     SDL_Quit();
