@@ -89,13 +89,7 @@ int main(){
     fond = NULL;
 
 
-    /**
-     * \brief Affichage de la texture
-     * 
-     */
-    SDL_QueryTexture(texture_fond, NULL, NULL, &dst.w, &dst.h);
-    SDL_RenderCopy(renderer, texture_fond, NULL, &dst);
-    SDL_RenderPresent(renderer);
+    
 
 
 
@@ -105,6 +99,20 @@ int main(){
      */
     
     while(program_launched){
+        /**
+         * \brief obtention de la taille de la fenêtre
+         * 
+         */
+        SDL_GetWindowSize(fenetre, &dst.w, &dst.h);
+
+        /**
+         * \brief Affichage de la texture
+         * 
+         */
+        SDL_RenderCopy(renderer, texture_fond, NULL, &dst);
+        SDL_RenderPresent(renderer);
+
+        
         SDL_WaitEvent(&event);
         switch(event.type){
             case SDL_QUIT:
