@@ -63,7 +63,7 @@ void supression_sdl(fenetre_t * fenetre){
 
 
 
-int load_bitmap(char *path, texture_t *texture, fenetre_t * fenettre){
+int load_bitmap(const char *path, texture_t *texture, fenetre_t * fenettre){
     SDL_Surface * fond = NULL;
     /**
      * \brief load de la bitmap

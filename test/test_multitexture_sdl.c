@@ -28,7 +28,12 @@ int main(){
     }
 
     while(program_launched){
+        // debut du cronometre
         Uint64 start = SDL_GetPerformanceCounter();
+        SDL_RenderClear(fenetre->renderer);
+        /**
+         * \brief Gestion des evenements
+         */
         SDL_WaitEvent(&event);
         switch(event.type){
             case SDL_QUIT:
@@ -49,6 +54,10 @@ int main(){
                 break;
         }
         SDL_RenderPresent(fenetre->renderer);
+
+        /**
+         * \brief Gestion du temps d'attente pour avoir 60 fps
+         */
         Uint64 end = SDL_GetPerformanceCounter();
         float elapsed = (end - start) / (float)SDL_GetPerformanceFrequency();
         SDL_Delay(1000/60 - elapsed);

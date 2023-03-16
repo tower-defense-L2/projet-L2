@@ -32,37 +32,39 @@ typedef struct texture_s{
 }texture_t;
 
 /**
- * \brief fonction servant à initialiser la sdl, la fenetre et le renderer
+ * \brief fonction d'initialation de la sdl avec creation de la fenetre et du renderer
  * 
- * \param fenetre // pointeur sur la fenetre 
- * \param renderer // pointeur sur le renderer
- * \return int 
+ * \param fenetre structure contenant un poiteur sur le rederer et la fenetre
+ * \return int debugage
  */
+extern
 int intilalisation_sdl(fenetre_t *fenetre);
 
 /**
- * \brief fonction servant à stopper la sdl, la fenetre et le renderer
+ * \brief fonction d'arret de la sdl avec destruction de la fenetre et du renderer
  * 
- * \param fenetre // pointeur sur la fenetre
- * \param renderer // pointeur sur le renderer 
+ * \param fenetre structure contenant un poiteur sur le rederer et la fenetre
  */
+extern
 void supression_sdl(fenetre_t *fenetre);
 
 /**
  * \brief fonction servant à charger une bitmap et la convertir en texture
  * 
  * \param path // chemin de la bitmap
- * \param texture // pointeur sur la texture
- * \param renderer // pointeur sur le renderer
+ * \param texture // structure devant contenir la structure
+ * \param fenetre // structure contenant le renderer
  * \return int 
  */
-int load_bitmap(char *path, texture_t *texture, fenetre_t *fenetre);
+extern
+int load_bitmap(const char *path, texture_t *texture, fenetre_t *fenetre);
 
 /**
  * \brief fonction servant à supprimer une texture
  * 
- * \param texture // pointeur sur la texture
+ * \param texture // pointeur sur la structure contenant la texture
  */
+extern
 void supression_texture(texture_t *texture);
 
 /**
@@ -70,6 +72,7 @@ void supression_texture(texture_t *texture);
  * 
  * \param texture // pointeur sur l'en tête de la liste
  */
+extern
 void supression_texture_list(texture_t *texture);
 
 
