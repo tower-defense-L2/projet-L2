@@ -1,23 +1,10 @@
 #include "../../include/init_supr_sdl.h"
 
-
-
-int intilalisation_sdl(fenetre_t * fenetre){
-    /**
-     * \brief Initialisation de la SDL avecc gestion d'erreur
-     * 
-     */
-    if(SDL_Init(SDL_INIT_VIDEO) < 0){
-        printf("Erreur d'initialisation de la SDL : %s", SDL_GetError());
-        SDL_Quit();
-        return 1 ;
-    }
-
-
+int creation_pack(pack_t * fenetre, char * titre){
     /**
      * \brief Création de la fenêtre
      */
-    fenetre->fenetre = SDL_CreateWindow("test_SDL", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1600, 900, SDL_WINDOW_RESIZABLE);
+    fenetre->fenetre = SDL_CreateWindow(titre, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1600, 900, SDL_WINDOW_RESIZABLE);
     /**
      * \brief Gestion d'erreur de la fenêtre
      */
@@ -34,18 +21,51 @@ int intilalisation_sdl(fenetre_t * fenetre){
     /**
      * \brief gestion d'erreur du renderer
      */
-    
-
     if(fenetre->renderer == NULL){
         printf("Erreur de création du renderer : %s", SDL_GetError());
         SDL_Quit();
         return 1 ;
     }
+
+    /**
+     * \brief creation de la police
+     */
+    fenetre->police = TTF_OpenFont("./ressources/arial.ttf", 20);
+    /**
+     * \brief gestion d'erreur de la police
+     */
+    if(fenetre->police == NULL){
+        printf("Erreur de création de la police : %s", TTF_GetError());
+        SDL_Quit();
+        return 1 ;
+    }
     return 0;
+
+
+}
+
+int intilalisation_sdl(){
+    /**
+     * \brief Initialisation de la SDL avecc gestion d'erreur
+     * 
+     */
+    if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER) < 0){
+        printf("Erreur d'initialisation de la SDL : %s", SDL_GetError());
+        SDL_Quit();
+        return 1 ;
+    }
+    /**
+     * \brief Initialisation de SDL_ttf avec gestion d'erreur
+     */
+    if(TTF_Init() < 0){
+        printf("Erreur d'initialisation de SDL_ttf : %s", TTF_GetError());
+        SDL_Quit();
+        return 1 ;
+    }
 }
 
 
-void supression_sdl(fenetre_t * fenetre){
+void supression_pack(pack_t * fenetre){
     /**
      * \brief Supression de la fenêtre
      */
@@ -55,6 +75,17 @@ void supression_sdl(fenetre_t * fenetre){
      */
     SDL_DestroyRenderer(fenetre->renderer);
     /**
+     * \brief Supression de la police
+     */
+    TTF_CloseFont(fenetre->police);
+}
+
+void supression_sdl(){
+    /**
+     * \brief Quitte SDL_ttf
+     */
+    TTF_Quit();
+    /**
      * \brief Quitte la SDL
      */
     SDL_Quit();
@@ -63,7 +94,7 @@ void supression_sdl(fenetre_t * fenetre){
 
 
 
-int load_bitmap(const char *path, texture_t *texture, fenetre_t * fenettre){
+int load_bitmap(const char *path, texture_t *texture, pack_t * fenettre){
     SDL_Surface * fond = NULL;
     /**
      * \brief load de la bitmap

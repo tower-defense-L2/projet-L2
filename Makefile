@@ -1,4 +1,4 @@
-TARGET=main
+TARGET=menu
 TARGET_TEST=test_fenetre_sdl test_multitexture_sdl
 
 ifeq ($(OS), Windows_NT)

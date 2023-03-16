@@ -12,14 +12,18 @@
 
 #include <stdio.h>
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_ttf.h>
+#include <SDL2/SDL_timer.h>
+
 
 /**
  * \brief structure contenant la fenetre et le renderer
  */
-typedef struct fenetre_s{
+typedef struct pack_s{
     SDL_Window *fenetre; // pointeur sur la fenetre
     SDL_Renderer *renderer; // pointeur sur le renderer
-}fenetre_t;
+    TTF_Font *police; // pointeur sur la police
+}pack_t;
 
 
 /**
@@ -32,21 +36,39 @@ typedef struct texture_s{
 }texture_t;
 
 /**
- * \brief fonction d'initialation de la sdl avec creation de la fenetre et du renderer
+ * \brief creation d'une fenetre et d'un renderer et chargement de la police
+ * 
+ * \param fenetre 
+ * \param titre 
+ * \return int 
+ */
+extern
+int creation_pack(pack_t * fenetre, char * titre);
+
+
+/**
+ * \brief fonction d'initialation de la sdl et ttf
  * 
  * \param fenetre structure contenant un poiteur sur le rederer et la fenetre
  * \return int debugage
  */
 extern
-int intilalisation_sdl(fenetre_t *fenetre);
+int intilalisation_sdl();
 
 /**
- * \brief fonction d'arret de la sdl avec destruction de la fenetre et du renderer
+ * \brief fonction de destruction d'une fenetre et d'un renderer et de la police
  * 
+ * \param fenetre 
+ */
+extern
+void supression_pack(pack_t * fenetre);
+
+/**
+ * \brief fonction d'arret de la sdl et ttf
  * \param fenetre structure contenant un poiteur sur le rederer et la fenetre
  */
 extern
-void supression_sdl(fenetre_t *fenetre);
+void supression_sdl();
 
 /**
  * \brief fonction servant à charger une bitmap et la convertir en texture
@@ -57,7 +79,7 @@ void supression_sdl(fenetre_t *fenetre);
  * \return int 
  */
 extern
-int load_bitmap(const char *path, texture_t *texture, fenetre_t *fenetre);
+int load_bitmap(const char *path, texture_t *texture, pack_t *fenetre);
 
 /**
  * \brief fonction servant à supprimer une texture
