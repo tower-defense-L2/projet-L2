@@ -113,12 +113,12 @@ void supression_texture(texture_t * texture){
     texture = NULL;
 }
 
-void supression_texture_list(texture_t * texture){
+void supression_texture_liste(texture_t * texture){
     /**
      * \brief Supression de la texture
      */
     if(texture->suivant != NULL){
-        supression_texture_list(texture->suivant);
+        supression_texture_liste(texture->suivant);
     }
     supression_texture(texture);
 }

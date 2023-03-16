@@ -73,7 +73,7 @@ void supression_texture(texture_t *texture);
  * \param texture // pointeur sur l'en tête de la liste
  */
 extern
-void supression_texture_list(texture_t *texture);
+void supression_texture_liste(texture_t *texture);
 
 
 #endif

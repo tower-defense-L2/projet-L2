@@ -62,6 +62,6 @@ int main(){
         float elapsed = (end - start) / (float)SDL_GetPerformanceFrequency();
         SDL_Delay(1000/60 - elapsed);
     }
-    supression_texture_list(texture_fond);
+    supression_texture_liste(texture_fond);
     supression_sdl(fenetre);
 }
