@@ -1,17 +1,19 @@
 #include "../../include/init_supr_sdl.h"
 
-int creation_pack(pack_t * fenetre, char * titre){
+pack_t * creation_pack(char * titre, int width, int height, int flags, int taille_police){
+    pack_t * fenetre = malloc(sizeof(pack_t));
+
     /**
      * \brief Création de la fenêtre
      */
-    fenetre->fenetre = SDL_CreateWindow(titre, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1600, 900, SDL_WINDOW_RESIZABLE);
+    fenetre->fenetre = SDL_CreateWindow(titre, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, flags);
     /**
      * \brief Gestion d'erreur de la fenêtre
      */
     if(fenetre->fenetre == NULL){ 
         printf("Erreur de création de la fenêtre : %s", SDL_GetError());
         SDL_Quit();
-        return 1 ;
+        return NULL;
     }
 
     /** 
@@ -24,24 +26,23 @@ int creation_pack(pack_t * fenetre, char * titre){
     if(fenetre->renderer == NULL){
         printf("Erreur de création du renderer : %s", SDL_GetError());
         SDL_Quit();
-        return 1 ;
+        return NULL;
     }
 
     /**
      * \brief creation de la police
      */
-    fenetre->police = TTF_OpenFont("./ressources/arial.ttf", 20);
+    fenetre->police = TTF_OpenFont("./ressources/arial.ttf", taille_police);
     /**
      * \brief gestion d'erreur de la police
      */
     if(fenetre->police == NULL){
         printf("Erreur de création de la police : %s", TTF_GetError());
         SDL_Quit();
-        return 1 ;
+        return NULL;
     }
-    return 0;
 
-
+    return fenetre;
 }
 
 int intilalisation_sdl(){

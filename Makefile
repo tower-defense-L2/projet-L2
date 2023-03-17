@@ -63,9 +63,12 @@ TEST:=$(TARGET_TEST:%=$(OBJ_DIR)/%.o)
 OBJS:=$(filter-out $(MAINS), $(OBJECTS))
 
 all: install_sdl test build
-	
+
+run : build
+	@echo "on lance l'app"
+	@./$(BIN_DIR)/$(TARGET)$(EXE_EXT)
+
 build: remove $(TRGS) copy_lib
-	./$(BIN_DIR)/$(TARGET)$(EXE_EXT)
 
 test: $(TRGS_TEST) copy_lib
 

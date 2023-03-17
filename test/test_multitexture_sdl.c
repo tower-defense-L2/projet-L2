@@ -3,12 +3,8 @@ int main(){
     pack_t * fenetre = malloc(sizeof(pack_t));
     SDL_Event event;
     SDL_bool program_launched = SDL_TRUE;
-    texture_t * texture_fond = malloc(sizeof(texture_t));
-    texture_t * texture_fond2 = malloc(sizeof(texture_t));
-    texture_fond->precedent = NULL;
-    texture_fond->suivant = texture_fond2;
-    texture_fond2->suivant = NULL;
-    texture_fond2->precedent = texture_fond;
+    SDL_Texture * texture_fond = malloc(sizeof(texture_t));
+    SDL_Texture * texture_fond2 = malloc(sizeof(texture_t));
 
     SDL_Rect win = {0, 0, 0, 0};
     SDL_Rect dst = {0, 0, 0, 0};
@@ -19,14 +15,15 @@ int main(){
     if(intilalisation_sdl()){
         return 1;
     }
-    if(creation_pack(fenetre,"test multitexture")){
+    fenetre = creation_pack("test multitexture", 800, 600, SDL_WINDOW_SHOWN, 30);
+    if(fenetre == NULL){
         return 1;
     }
-    if(load_bitmap("./ressources/test/font.bmp", texture_fond, fenetre)){
+    if(load_bitmap("./ressources/test/font.bmp", &texture_fond, fenetre)){
         return 1;
     }
 
-    if(load_bitmap("./ressources/test/font2.bmp", texture_fond2, fenetre)){
+    if(load_bitmap("./ressources/test/font2.bmp", &texture_fond2, fenetre)){
         return 1;
     }
 
@@ -47,13 +44,13 @@ int main(){
                 SDL_GetWindowSize(fenetre->fenetre, &win.w, &win.h);
                 dst.w = win.w/2;
                 dst.h = win.h/2;
-                SDL_RenderCopy(fenetre->renderer, texture_fond->texture, NULL, &dst);
+                SDL_RenderCopy(fenetre->renderer, texture_fond, NULL, &dst);
                 dst.x = dst.w;
-                SDL_RenderCopy(fenetre->renderer, texture_fond2->texture, NULL, &dst);
+                SDL_RenderCopy(fenetre->renderer, texture_fond2, NULL, &dst);
                 dst.y = dst.h;
-                SDL_RenderCopy(fenetre->renderer, texture_fond->texture, NULL, &dst);
+                SDL_RenderCopy(fenetre->renderer, texture_fond, NULL, &dst);
                 dst.x = 0;
-                SDL_RenderCopy(fenetre->renderer, texture_fond2->texture, NULL, &dst);
+                SDL_RenderCopy(fenetre->renderer, texture_fond2, NULL, &dst);
                 break;
         }
         SDL_RenderPresent(fenetre->renderer);
@@ -65,6 +62,7 @@ int main(){
         float elapsed = (end - start) / (float)SDL_GetPerformanceFrequency();
         SDL_Delay(1000/60 - elapsed);
     }
-    supression_texture_liste(texture_fond);
+    SDL_DestroyTexture(texture_fond);
+    SDL_DestroyTexture(texture_fond2);
     supression_sdl(fenetre);
 }

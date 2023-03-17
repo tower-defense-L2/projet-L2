@@ -15,7 +15,7 @@ typedef struct position_S position_T;
 typedef struct tour_S tour_T;
 typedef struct enemi_S enemi_T;
 typedef struct joueur_S joueur_T;
-typedef struct tour_s tour_T;
+
 
 typedef struct bordure_S bordure_T;
 typedef struct chemin_S chemin_T;

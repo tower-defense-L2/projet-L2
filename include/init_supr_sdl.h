@@ -20,19 +20,22 @@
 /**
  * \brief creation d'une fenetre et d'un renderer et chargement de la police
  * 
- * \param fenetre 
- * \param titre 
- * \return int 
+ * \param titre // titre de la fenetre a creer
+ * \param width // largeur de la fenetre
+ * \param height // hauteur de la fenetre
+ * \param flags // flags de la fenetre
+ * \param taille_police // taille de la police
+ * \return pack_t* // pointeur sur la structure contenant le renderer, fenetre et police. null si erreur
  */
 extern
-int creation_pack(pack_t * fenetre, char * titre);
+pack_t * creation_pack(char * titre, int width, int height, int flags, int taille_police);
 
 
 /**
  * \brief fonction d'initialation de la sdl et ttf
  * 
- * \param fenetre structure contenant un poiteur sur le rederer et la fenetre
- * \return int debugage
+ * \param fenetre // structure contenant un poiteur sur le rederer et la fenetre
+ * \return int // 0 si tout c'est bien passé 1 sinon
  */
 extern
 int intilalisation_sdl();
@@ -40,14 +43,14 @@ int intilalisation_sdl();
 /**
  * \brief fonction de destruction d'une fenetre et d'un renderer et de la police
  * 
- * \param fenetre 
+ * \param fenetre //
  */
 extern
 void supression_pack(pack_t ** fenetre);
 
 /**
  * \brief fonction d'arret de la sdl et ttf
- * \param fenetre structure contenant un poiteur sur le rederer et la fenetre
+ * \param fenetre // structure contenant un poiteur sur le rederer et la fenetre
  */
 extern
 void supression_sdl();
