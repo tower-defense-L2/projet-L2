@@ -62,22 +62,25 @@ int intilalisation_sdl(){
         SDL_Quit();
         return 1 ;
     }
+    return 0;
 }
 
 
-void supression_pack(pack_t * fenetre){
+void supression_pack(pack_t ** fenetre){
     /**
      * \brief Supression de la fenêtre
      */
-    SDL_DestroyWindow(fenetre->fenetre);
+    SDL_DestroyWindow((*fenetre)->fenetre);
     /**
      * \brief Supression du renderer
      */
-    SDL_DestroyRenderer(fenetre->renderer);
+    SDL_DestroyRenderer((*fenetre)->renderer);
     /**
      * \brief Supression de la police
      */
-    TTF_CloseFont(fenetre->police);
+    TTF_CloseFont((*fenetre)->police);
+    free(*fenetre);
+    *fenetre = NULL;
 }
 
 void supression_sdl(){
@@ -94,7 +97,7 @@ void supression_sdl(){
 
 
 
-int load_bitmap(const char *path, texture_t *texture, pack_t * fenettre){
+int load_bitmap(const char *path, SDL_Texture ** texture, pack_t * fenettre){
     SDL_Surface * fond = NULL;
     /**
      * \brief load de la bitmap
@@ -112,11 +115,11 @@ int load_bitmap(const char *path, texture_t *texture, pack_t * fenettre){
     /**
      * \brief création de la texture
      */
-    texture->texture = SDL_CreateTextureFromSurface(fenettre->renderer, fond);
+    *texture = SDL_CreateTextureFromSurface(fenettre->renderer, fond);
     /**
      * \brief gestion d'erreur de la texture
      */
-    if(texture->texture == NULL){
+    if(*texture == NULL){
         printf("Erreur de création de la texture : %s", SDL_GetError());
         SDL_Quit();
         return 1 ;
@@ -152,4 +155,51 @@ void supression_texture_liste(texture_t * texture){
         supression_texture_liste(texture->suivant);
     }
     supression_texture(texture);
+}
+
+bouton_t * creation_bouton(pack_t * fenetre, char * texte,
+                SDL_Color couleur, SDL_Color wrap, int x, int y){
+    
+    bouton_t * bouton = malloc(sizeof(bouton_t));
+    SDL_Surface * bouton_surface = NULL;
+    /**
+     * \brief Création de la texture normale
+     */
+    bouton_surface = TTF_RenderText_Blended(fenetre->police, texte, couleur);
+    bouton->normale = SDL_CreateTextureFromSurface(fenetre->renderer, bouton_surface);
+    SDL_FreeSurface(bouton_surface);
+
+    /**
+     * \brief Création de la texture survol
+     */
+    bouton_surface = TTF_RenderText_Shaded_Wrapped (fenetre->police, texte,couleur, wrap, 1000);
+    bouton->survol = SDL_CreateTextureFromSurface(fenetre->renderer, bouton_surface);
+    SDL_FreeSurface(bouton_surface);
+
+    /**
+     * \brief attribution des coordonnées au bouton
+     */
+    bouton->dst.x = x;
+    bouton->dst.y = y;
+    SDL_QueryTexture(bouton->survol, NULL, NULL, &bouton->dst.w, &bouton->dst.h);
+    return bouton;
+}
+
+
+void supression_bouton(bouton_t ** bouton){
+    /**
+     * \brief Supression de la texture normale
+     */
+    SDL_DestroyTexture((*bouton)->normale);
+    /**
+     * \brief Supression de la texture survol
+     */
+    SDL_DestroyTexture((*bouton)->survol);
+    free(*bouton);
+    *bouton = NULL;
+}
+
+void position_bouton(bouton_t * bouton, const int x, const int y){
+    bouton->dst.x = x;
+    bouton->dst.y = y;
 }
