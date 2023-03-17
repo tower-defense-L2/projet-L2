@@ -1,6 +1,6 @@
 #include "../include/init_supr_sdl.h"
 int main(){
-    fenetre_t * fenetre = malloc(sizeof(fenetre_t));
+    pack_t * fenetre = malloc(sizeof(pack_t));
     SDL_Event event;
     SDL_bool program_launched = SDL_TRUE;
     texture_t * texture_fond = malloc(sizeof(texture_t));
@@ -16,7 +16,10 @@ int main(){
     /**
      * \brief Initialisation de la SDL avec gestion d'erreur
      */
-    if(intilalisation_sdl(fenetre)){
+    if(intilalisation_sdl()){
+        return 1;
+    }
+    if(creation_pack(fenetre,"test multitexture")){
         return 1;
     }
     if(load_bitmap("./ressources/test/font.bmp", texture_fond, fenetre)){
@@ -62,6 +65,6 @@ int main(){
         float elapsed = (end - start) / (float)SDL_GetPerformanceFrequency();
         SDL_Delay(1000/60 - elapsed);
     }
-    supression_texture_list(texture_fond);
+    supression_texture_liste(texture_fond);
     supression_sdl(fenetre);
 }

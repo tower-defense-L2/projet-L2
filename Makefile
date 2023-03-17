@@ -1,5 +1,5 @@
-TARGET=main
-TARGET_TEST=test_fenetre_sdl test_macro_compil
+TARGET=menu
+TARGET_TEST=test_fenetre_sdl test_multitexture_sdl
 
 ifeq ($(OS), Windows_NT)
 
@@ -64,7 +64,8 @@ OBJS:=$(filter-out $(MAINS), $(OBJECTS))
 
 all: install_sdl test build
 	
-build: $(TRGS) copy_lib
+build: remove $(TRGS) copy_lib
+	./$(BIN_DIR)/$(TARGET)$(EXE_EXT)
 
 test: $(TRGS_TEST) copy_lib
 
@@ -101,7 +102,7 @@ clean:
 .PHONY: remove
 remove: clean
 	@$(RM) $(addsuffix $(EXE_EXT),$(subst /,$(PATH_SEP),$(TRGS)))
-	@$(RM) $(addsuffix $(EXE_EXT),$(subts /,$(PATH_SEP),$(TRGS_TEST)))
+	@$(RM) $(addsuffix $(EXE_EXT),$(subst /,$(PATH_SEP),$(TRGS_TEST)))
 	@echo "Executable removed!"
 
 install_sdl:
