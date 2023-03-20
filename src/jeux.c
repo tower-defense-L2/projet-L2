@@ -1,10 +1,8 @@
 #include "../include/jeux.h"
 
 void jeux(){
-    int i=0;
-    
     SDL_Rect win= {0,0,0,0};
-    pack_t * fenetre = creation_pack("Jeu", 800, 600, SDL_WINDOW_FULLSCREEN_DESKTOP |SDL_WINDOW_BORDERLESS, 20);
+    pack_t * fenetre = creation_pack("Jeu", 800, 600, SDL_WINDOW_FULLSCREEN_DESKTOP |SDL_WINDOW_BORDERLESS, 30);
     
     SDL_SetWindowResizable(fenetre->fenetre, SDL_FALSE);
     SDL_SetWindowBordered(fenetre->fenetre, SDL_FALSE);
@@ -19,9 +17,10 @@ void jeux(){
     SDL_RenderPresent(fenetre->renderer);
     SDL_RenderClear(fenetre->renderer);
 
-    SDL_DestroyTexture(texture);
-    texture = NULL;
+        
     
     SDL_Delay(5000);
+    SDL_DestroyTexture(texture);
+    texture = NULL;
     supression_pack(&fenetre);
 }

@@ -38,7 +38,7 @@ pack_t * creation_pack(char * titre, int width, int height, int flags, int taill
  * \return int // 0 si tout c'est bien passé 1 sinon
  */
 extern
-int intilalisation_sdl();
+int initilalisation_sdl();
 
 /**
  * \brief fonction de destruction d'une fenetre et d'un renderer et de la police

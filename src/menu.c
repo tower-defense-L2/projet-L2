@@ -13,7 +13,7 @@
 
 
 int main(){
-    pack_t * fenetre = malloc(sizeof(pack_t));
+    pack_t * fenetre = NULL;
     SDL_Event event;
     SDL_bool program_launched = SDL_TRUE;
     SDL_Texture * texture_menu = NULL;
@@ -21,8 +21,8 @@ int main(){
     bouton_t * bouton2 = NULL;
     Uint64 start, end;
     float elapsed = 0;
-    SDL_Color couleurRouge = {255, 0, 0};
-    SDL_Color couleurNoire = {0, 0, 0};
+    SDL_Color couleurRouge = {255, 0, 0, 255};
+    SDL_Color couleurNoire = {0, 0, 0, 255};
     Uint32 Click = 0; // état du clique
     int x = 0, y = 0; // position de la souris
 
@@ -31,7 +31,7 @@ int main(){
     /**
      * \brief Initialisation de la SDL avec gestion d'erreur
      */
-    if(intilalisation_sdl()){
+    if(initilalisation_sdl()){
         return 1;
     }
     fenetre = creation_pack("menu tower defence", 854, 480, SDL_WINDOW_SHOWN, 30);

@@ -45,7 +45,7 @@ pack_t * creation_pack(char * titre, int width, int height, int flags, int taill
     return fenetre;
 }
 
-int intilalisation_sdl(){
+int initilalisation_sdl(){
     /**
      * \brief Initialisation de la SDL avecc gestion d'erreur
      * 
@@ -69,17 +69,17 @@ int intilalisation_sdl(){
 
 void supression_pack(pack_t ** fenetre){
     /**
-     * \brief Supression de la fenêtre
+     * \brief Supression de la police
      */
-    SDL_DestroyWindow((*fenetre)->fenetre);
+    TTF_CloseFont((*fenetre)->police);
     /**
      * \brief Supression du renderer
      */
     SDL_DestroyRenderer((*fenetre)->renderer);
     /**
-     * \brief Supression de la police
+     * \brief Supression de la fenêtre
      */
-    TTF_CloseFont((*fenetre)->police);
+    SDL_DestroyWindow((*fenetre)->fenetre);
     free(*fenetre);
     *fenetre = NULL;
 }
