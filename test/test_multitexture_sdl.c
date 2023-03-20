@@ -12,7 +12,7 @@ int main(){
     /**
      * \brief Initialisation de la SDL avec gestion d'erreur
      */
-    if(intilalisation_sdl()){
+    if(initilalisation_sdl()){
         return 1;
     }
     fenetre = creation_pack("test multitexture", 800, 600, SDL_WINDOW_SHOWN, 30);

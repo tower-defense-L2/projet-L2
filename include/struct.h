@@ -25,20 +25,23 @@ typedef enum case_E case_E;
 
 typedef union case_U case_U;
 
-
+/*
 enum case_E{
     VIDE,
     BORDURE,
     CHEMIN,
 };
+*/
 
 union case_U{
     bordure_T *bordure;
     chemin_T *chemin;
 };
 
+/**
 struct case_S{
     case_E type;
     case_U data;
 };
+*/
 #endif
