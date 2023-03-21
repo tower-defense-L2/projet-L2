@@ -1,0 +1,12 @@
+<map id="src/menu.c" name="src/menu.c">
+<area shape="rect" id="node1" title="menu principal du jeu" alt="" coords="247,5,333,32"/>
+<area shape="rect" id="node2" href="$init__supr__sdl_8h.html" title="différente fonction servant pour la création et la destruction de la sdl" alt="" coords="100,155,227,196"/>
+<area shape="rect" id="node7" href="$struct__sdl_8h.html" title="definition des differente structure utilisé dans le programme pour la SDL" alt="" coords="314,244,410,271"/>
+<area shape="rect" id="node8" href="$interaction__souris_8h.html" title="differentes fonctions pour gerer la souris avec SDL" alt="" coords="303,155,440,196"/>
+<area shape="rect" id="node9" href="$jeux_8h.html" title="fonction principale du jeu" alt="" coords="401,80,512,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="24,244,84,271"/>
+<area shape="rect" id="node4" title=" " alt="" coords="357,319,452,345"/>
+<area shape="rect" id="node5" title=" " alt="" coords="95,319,210,345"/>
+<area shape="rect" id="node6" title=" " alt="" coords="109,244,239,271"/>
+<area shape="rect" id="node10" href="$struct_8h.html" title="definition des differente structure utilisé dans le programme" alt="" coords="566,162,638,189"/>
+</map>

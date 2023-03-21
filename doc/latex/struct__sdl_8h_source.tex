@@ -1,0 +1,35 @@
+\hypertarget{struct__sdl_8h_source}{}\doxysection{struct\+\_\+sdl.\+h}
+\label{struct__sdl_8h_source}\index{include/struct\_sdl.h@{include/struct\_sdl.h}}
+\mbox{\hyperlink{struct__sdl_8h}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef STRUCT\_SDL\_H}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define STRUCT\_SDL\_H}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <SDL2/SDL.h>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <SDL2/SDL\_ttf.h>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{19 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structpack__s}{pack\_s}}\{}
+\DoxyCodeLine{20     SDL\_Window *fenetre; \textcolor{comment}{// pointeur sur la fenetre}}
+\DoxyCodeLine{21     SDL\_Renderer *renderer; \textcolor{comment}{// pointeur sur le renderer}}
+\DoxyCodeLine{22     TTF\_Font *police; \textcolor{comment}{// pointeur sur la police}}
+\DoxyCodeLine{23 \}\mbox{\hyperlink{struct__sdl_8h_abb2099a4a84479098a41a24475364323}{pack\_t}};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 }
+\DoxyCodeLine{29 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structtexture__s}{texture\_s}}\{}
+\DoxyCodeLine{30     SDL\_Texture *texture; \textcolor{comment}{// pointeur sur la texture}}
+\DoxyCodeLine{31     \textcolor{keyword}{struct }\mbox{\hyperlink{structtexture__s}{texture\_s}} *suivant; \textcolor{comment}{// pointeur sur la texture suivante}}
+\DoxyCodeLine{32     \textcolor{keyword}{struct }\mbox{\hyperlink{structtexture__s}{texture\_s}} *precedent; \textcolor{comment}{// pointeur sur la texture précédente}}
+\DoxyCodeLine{33 \}\mbox{\hyperlink{struct__sdl_8h_a4ccef78cc823a64b176eb792c4744abf}{texture\_t}};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 }
+\DoxyCodeLine{39 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structbouton__s}{bouton\_s}}\{}
+\DoxyCodeLine{40     SDL\_Rect dst;}
+\DoxyCodeLine{41     SDL\_Texture *normale;}
+\DoxyCodeLine{42     SDL\_Texture *survol;}
+\DoxyCodeLine{43 \}\mbox{\hyperlink{struct__sdl_8h_a708299c7249bf34bce6fa5a631f64785}{bouton\_t}};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,6 @@
+<map id="include/interaction_souris.h" name="include/interaction_souris.h">
+<area shape="rect" id="node1" title="differentes fonctions pour gerer la souris avec SDL" alt="" coords="32,5,159,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,169,100,196"/>
+<area shape="rect" id="node3" href="$struct__sdl_8h.html" title="definition des differente structure utilisé dans le programme pour la SDL" alt="" coords="90,95,186,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="125,169,239,196"/>
+</map>

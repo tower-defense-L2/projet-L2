@@ -1,0 +1,38 @@
+\hypertarget{struct_8h_source}{}\doxysection{struct.\+h}
+\label{struct_8h_source}\index{include/struct.h@{include/struct.h}}
+\mbox{\hyperlink{struct_8h}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef STRUCT\_H}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define STRUCT\_H}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }position\_S position\_T;}
+\DoxyCodeLine{15 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }tour\_S tour\_T;}
+\DoxyCodeLine{16 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }enemi\_S enemi\_T;}
+\DoxyCodeLine{17 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }joueur\_S joueur\_T;}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }bordure\_S bordure\_T;}
+\DoxyCodeLine{21 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }chemin\_S chemin\_T;}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }case\_S case\_T;}
+\DoxyCodeLine{24 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} case\_E case\_E;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{typedef} \textcolor{keyword}{union }\mbox{\hyperlink{unioncase___u}{case\_U}} \mbox{\hyperlink{unioncase___u}{case\_U}};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{comment}{/*}}
+\DoxyCodeLine{29 \textcolor{comment}{enum case\_E\{}}
+\DoxyCodeLine{30 \textcolor{comment}{    VIDE,}}
+\DoxyCodeLine{31 \textcolor{comment}{    BORDURE,}}
+\DoxyCodeLine{32 \textcolor{comment}{    CHEMIN,}}
+\DoxyCodeLine{33 \textcolor{comment}{\};}}
+\DoxyCodeLine{34 \textcolor{comment}{*/}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{union }\mbox{\hyperlink{unioncase___u}{case\_U}}\{}
+\DoxyCodeLine{37     bordure\_T *bordure;}
+\DoxyCodeLine{38     chemin\_T *chemin;}
+\DoxyCodeLine{39 \};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

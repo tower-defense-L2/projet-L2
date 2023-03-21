@@ -1,0 +1,50 @@
+\hypertarget{init__supr__sdl_8h_source}{}\doxysection{init\+\_\+supr\+\_\+sdl.\+h}
+\label{init__supr__sdl_8h_source}\index{include/init\_supr\_sdl.h@{include/init\_supr\_sdl.h}}
+\mbox{\hyperlink{init__supr__sdl_8h}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef INIT\_SUPR\_SDL\_H}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define INIT\_SUPR\_SDL\_H}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <SDL2/SDL.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <SDL2/SDL\_ttf.h>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <SDL2/SDL\_timer.h>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{struct__sdl_8h}{./struct\_sdl.h}}"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{30 \textcolor{keyword}{extern}}
+\DoxyCodeLine{31 \mbox{\hyperlink{structpack__s}{pack\_t}} * \mbox{\hyperlink{init__supr__sdl_8h_aa8b43e71a4b4165dfda376961c034d51}{creation\_pack}}(\textcolor{keywordtype}{char} * titre, \textcolor{keywordtype}{int} width, \textcolor{keywordtype}{int} height, \textcolor{keywordtype}{int} flags, \textcolor{keywordtype}{int} taille\_police);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 }
+\DoxyCodeLine{40 \textcolor{keyword}{extern}}
+\DoxyCodeLine{41 \textcolor{keywordtype}{int} \mbox{\hyperlink{init__supr__sdl_8h_a8261c3df42fe4d4d8aac42e68c4908e7}{initilalisation\_sdl}}();}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{48 \textcolor{keyword}{extern}}
+\DoxyCodeLine{49 \textcolor{keywordtype}{void} \mbox{\hyperlink{init__supr__sdl_8h_af481f956f543e81037250781e8bf7f56}{supression\_pack}}(\mbox{\hyperlink{structpack__s}{pack\_t}} ** fenetre);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{55 \textcolor{keyword}{extern}}
+\DoxyCodeLine{56 \textcolor{keywordtype}{void} \mbox{\hyperlink{init__supr__sdl_8h_a97ec819672ff9f21645a4320e03a8587}{supression\_sdl}}();}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{66 \textcolor{keyword}{extern}}
+\DoxyCodeLine{67 \textcolor{keywordtype}{int} \mbox{\hyperlink{init__supr__sdl_8h_a299caa78ce5d45adf3c65b57dd67db24}{load\_bitmap}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *path, SDL\_Texture **texture, \mbox{\hyperlink{structpack__s}{pack\_t}} *fenetre);}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{74 \textcolor{keyword}{extern}}
+\DoxyCodeLine{75 \textcolor{keywordtype}{void} \mbox{\hyperlink{init__supr__sdl_8h_a5e1dc847685ee1f1de2fbc8e114ad108}{supression\_texture}}(\mbox{\hyperlink{structtexture__s}{texture\_t}} *texture);}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{82 \textcolor{keyword}{extern}}
+\DoxyCodeLine{83 \textcolor{keywordtype}{void} \mbox{\hyperlink{init__supr__sdl_8h_a796bbf8c3fc3cf1353b6241e018a23ef}{supression\_texture\_liste}}(\mbox{\hyperlink{structtexture__s}{texture\_t}} *texture);}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{96 \textcolor{keyword}{extern}}
+\DoxyCodeLine{97 \mbox{\hyperlink{structbouton__s}{bouton\_t}} * \mbox{\hyperlink{init__supr__sdl_8h_a02701408c43e3e0ddb61957fa1d7fee2}{creation\_bouton}}(\mbox{\hyperlink{structpack__s}{pack\_t}} * fenetre, \textcolor{keywordtype}{char} * texte,}
+\DoxyCodeLine{98                 SDL\_Color couleur, SDL\_Color wrap, \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y);}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{105 \textcolor{keyword}{extern}}
+\DoxyCodeLine{106 \textcolor{keywordtype}{void} \mbox{\hyperlink{init__supr__sdl_8h_a2df32955b0202e068dde703855f27951}{supression\_bouton}}(\mbox{\hyperlink{structbouton__s}{bouton\_t}} ** bouton);}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{115 \textcolor{keyword}{extern}}
+\DoxyCodeLine{116 \textcolor{keywordtype}{void} \mbox{\hyperlink{init__supr__sdl_8h_ad1696014c0edce611d36c5f2010938b0}{position\_bouton}}(\mbox{\hyperlink{structbouton__s}{bouton\_t}} * bouton, \textcolor{keyword}{const} \textcolor{keywordtype}{int} x, \textcolor{keyword}{const} \textcolor{keywordtype}{int} y);}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

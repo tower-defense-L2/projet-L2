@@ -1,0 +1,11 @@
+<map id="include/jeux.h" name="include/jeux.h">
+<area shape="rect" id="node1" title="fonction principale du jeu" alt="" coords="156,5,256,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="74,229,168,256"/>
+<area shape="rect" id="node3" href="$struct__sdl_8h.html" title="definition des differente structure utilisé dans le programme pour la SDL" alt="" coords="116,155,212,181"/>
+<area shape="rect" id="node5" href="$struct_8h.html" title="definition des differente structure utilisé dans le programme" alt="" coords="380,80,452,107"/>
+<area shape="rect" id="node6" href="$interaction__souris_8h.html" title="differentes fonctions pour gerer la souris avec SDL" alt="" coords="28,80,169,107"/>
+<area shape="rect" id="node7" href="$init__supr__sdl_8h.html" title="différente fonction servant pour la création et la destruction de la sdl" alt="" coords="244,80,356,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="217,229,332,256"/>
+<area shape="rect" id="node8" title=" " alt="" coords="338,155,398,181"/>
+<area shape="rect" id="node9" title=" " alt="" coords="422,155,553,181"/>
+</map>
