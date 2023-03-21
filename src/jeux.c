@@ -2,8 +2,10 @@
 
 void jeux(){
     SDL_Rect win= {0,0,0,0};
-    pack_t * fenetre = creation_pack("Jeu", 800, 600, SDL_WINDOW_FULLSCREEN_DESKTOP |SDL_WINDOW_BORDERLESS, 30);
-    
+    pack_t * fenetre = creation_pack("Jeu", 1600, 900, SDL_WINDOW_FULLSCREEN_DESKTOP |SDL_WINDOW_BORDERLESS, 30);
+    /**
+     * \brief verrouillage de la fenetre en plein écran 
+     */
     SDL_SetWindowResizable(fenetre->fenetre, SDL_FALSE);
     SDL_SetWindowBordered(fenetre->fenetre, SDL_FALSE);
     SDL_SetWindowPosition(fenetre->fenetre, 0, 0);

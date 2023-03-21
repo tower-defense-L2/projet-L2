@@ -14,6 +14,11 @@
 #include "./interaction_souris.h"
 #include "./init_supr_sdl.h"
 
+/**
+ * \brief fonction principale du jeu
+ * 
+ */
+extern
 void jeux();
 
 #endif
