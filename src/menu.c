@@ -9,10 +9,11 @@
 #include "../include/init_supr_sdl.h"
 #include "../include/interaction_souris.h"
 #include "../include/struct_sdl.h"
+#include "../include/jeux.h"
 
 
 int main(){
-    pack_t * fenetre = malloc(sizeof(pack_t));
+    pack_t * fenetre = NULL;
     SDL_Event event;
     SDL_bool program_launched = SDL_TRUE;
     SDL_Texture * texture_menu = NULL;
@@ -20,8 +21,8 @@ int main(){
     bouton_t * bouton2 = NULL;
     Uint64 start, end;
     float elapsed = 0;
-    SDL_Color couleurRouge = {255, 0, 0};
-    SDL_Color couleurNoire = {0, 0, 0};
+    SDL_Color couleurRouge = {255, 0, 0, 255};
+    SDL_Color couleurNoire = {0, 0, 0, 255};
     Uint32 Click = 0; // état du clique
     int x = 0, y = 0; // position de la souris
 
@@ -30,19 +31,21 @@ int main(){
     /**
      * \brief Initialisation de la SDL avec gestion d'erreur
      */
-    if(intilalisation_sdl()){
-        return;
+    if(initilalisation_sdl()){
+        return 1;
     }
-    if(creation_pack(fenetre, "Menu Tower Defense")){
-        return;
+    fenetre = creation_pack("menu tower defence", 854, 480, SDL_WINDOW_SHOWN, 30);
+    if(fenetre == NULL){
+        return 1;
     }
     SDL_GetWindowSize(fenetre->fenetre, &win.w, &win.h);
     if(load_bitmap("./ressources/menu.bmp", &texture_menu, fenetre)){
-        return;
+        return 1;
     }
 
     bouton = creation_bouton(fenetre, "Jouer", couleurRouge, couleurNoire, (win.w/4), (win.h/2));
-    bouton2 = creation_bouton(fenetre, "Quiter", couleurRouge, couleurNoire, (win.w/4), (4*win.h/7));
+    bouton2 = creation_bouton(fenetre, "Quiter", couleurRouge, couleurNoire,
+                    (bouton->dst.w + bouton->dst.x), (bouton->dst.h + bouton->dst.y));
 
     SDL_PollEvent(&event);
     while(program_launched){
@@ -60,6 +63,7 @@ int main(){
         position_bouton(bouton, (win.w/4), (win.h/2));
         if(gestion_bouton(bouton, fenetre, x, y)&& Click==SDL_BUTTON_LEFT){
             printf("on lance le jeu\n");
+            jeux();
         }
         position_bouton(bouton2, (win.w/4), (4*win.h/7));
         if(gestion_bouton(bouton2, fenetre, x, y)&& Click==SDL_BUTTON_LEFT){
@@ -77,7 +81,7 @@ int main(){
                 break;
             case SDL_MOUSEBUTTONDOWN:
                 do {
-                    SDL_WaitEventTimeout(&event, 100);
+                    SDL_PollEvent(&event);
                 }while (event.type != SDL_MOUSEBUTTONUP);
                 
                 break;

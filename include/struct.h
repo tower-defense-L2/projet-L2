@@ -15,7 +15,7 @@ typedef struct position_S position_T;
 typedef struct tour_S tour_T;
 typedef struct enemi_S enemi_T;
 typedef struct joueur_S joueur_T;
-typedef struct tour_s tour_T;
+
 
 typedef struct bordure_S bordure_T;
 typedef struct chemin_S chemin_T;
@@ -25,20 +25,23 @@ typedef enum case_E case_E;
 
 typedef union case_U case_U;
 
-
+/*
 enum case_E{
     VIDE,
     BORDURE,
     CHEMIN,
 };
+*/
 
 union case_U{
     bordure_T *bordure;
     chemin_T *chemin;
 };
 
+/**
 struct case_S{
     case_E type;
     case_U data;
 };
+*/
 #endif
