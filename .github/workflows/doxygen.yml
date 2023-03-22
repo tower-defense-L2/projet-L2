@@ -5,17 +5,19 @@ on:
     branches:
       - master
       - dev
-  workflow_dispatch:
 permissions:
   contents: write
 jobs:
-  deploy:
+  doxygen:
     runs-on: ubuntu-latest
     steps:
+      # In the case of no checkout action call in the whole build script, following action should be called before executing the doxygenize action
       - uses: actions/checkout@v3
-      - uses: DenverCoder1/doxygen-github-pages-action@v1.2.0
+      - uses: langroodi/doxygenize@v1.7.0
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages
-          folder: doc/html
-          config_file: doc/Doxyfile
+          doxygenconf: './doc/Doxyfile'
+          htmloutput: './doc/html'
+          ghpagesbranch: 'gh-pages'
+          ghpagesdir: './'
+          darkmode: 'false'
+          customheader: ''
