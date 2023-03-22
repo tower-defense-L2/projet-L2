@@ -37,12 +37,59 @@ void jeux(){
     }
 
 
-
     SDL_RenderCopy(fenetre->renderer,texture,NULL,NULL);
     SDL_RenderPresent(fenetre->renderer);
     SDL_RenderClear(fenetre->renderer);
 
-        
+    while(program_launched){
+        SDL_GetWindowSize(fenetre->fenetre, &win.w, &win.h);
+        start = SDL_GetPerformanceCounter();
+        SDL_RenderClear(fenetre->renderer);
+        Click = SDL_GetMouseState(&x, &y);
+        SDL_RenderCopy(fenetre->renderer, texture_menu, NULL, NULL);
+
+        for(int i = 0; i < 16; i++){
+            for(int j = 0; j < 9; j++){
+                tuile.x = (i+1) * tuile.w;
+                tuile.y = (j+1) * tuile.h;
+                switch(map[i][j]){
+                    case CHEMIN:
+                        SDL_RenderCopy(fenetre->renderer, chemin, NULL, &tuile);
+                        break;
+                    case BORDURE:
+                        SDL_RenderCopy(fenetre->renderer, bordure, NULL, &tuile);
+                        break;
+                    case BILLE:
+                        SDL_RenderCopy(fenetre->renderer, chemin, NULL, &tuile);
+                        SDL_RenderCopy(fenetre->renderer, bille, NULL, &tuile);
+                        break;
+                    case TOUR:
+                        SDL_RenderCopy(fenetre->renderer, bordure, NULL, &tuile);
+                        SDL_RenderCopy(fenetre->renderer, tour, NULL, &tuile);
+                        break;
+                }
+            }
+        }
+        SDL_RenderPresent(fenetre->renderer);
+        end = SDL_GetPerformanceCounter();
+        elapsed = (end - start) * 1000 / (float)SDL_GetPerformanceFrequency();
+        if(elapsed < 1000/60){
+            SDL_Delay((1000/60) - elapsed);
+        }
+        SDL_PollEvent(&event);
+        switch(event.type){
+            case SDL_QUIT:
+                program_launched = SDL_FALSE;
+                break;
+            case SDL_KEYDOWN:
+                switch(event.key.keysym.sym){
+                    case SDLK_ESCAPE:
+                        program_launched = SDL_FALSE;
+                        break;
+                }
+                break;
+        }
+    }
     
     SDL_Delay(5000);
 

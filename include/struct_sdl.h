@@ -18,16 +18,16 @@
  * \brief primitive de la structure pack_t
  */
 typedef struct pack_s{
-    SDL_Window *fenetre; 
-    SDL_Renderer *renderer; 
+    SDL_Window *fenetre;
+    SDL_Renderer *renderer;
     TTF_Font *police;
 }pack_t;
 /** 
  * \struct pack_t
  * \brief structure contenant les pointeurs sur la fenetre, le renderer et la police
- * \param *fenetre pointeur sur la fenetre
- * \param *renderer pointeur sur le renderer
- * \param *police pointeur sur la police
+ * \param fenetre pointeur sur la fenetre
+ * \param renderer pointeur sur le renderer
+ * \param police pointeur sur la police
 */
 
 
@@ -42,9 +42,9 @@ typedef struct texture_s{
 /**
  * \struct texture_t
  * \brief structure contenant les pointeurs sur la texture et les pointeurs sur les textures suivantes et précédentes
- * \param *texture pointeur sur la texture
- * \param *suivant pointeur sur la texture_t suivante
- * \param *precedent pointeur sur la texture_t précédente
+ * \param texture pointeur sur la texture
+ * \param suivant pointeur sur la texture_t suivante
+ * \param precedent pointeur sur la texture_t précédente
  */
 
 
@@ -61,8 +61,8 @@ typedef struct bouton_s{
  * \brief structure contenant le rectangle contenant le bouton et les pointeurs sur les textures du bouton
  * 
  * \param dst rectangle taille et position du bouton
- * \param *normale pointeur sur la texture normale
- * \param *survol pointeur sur la texture survol
+ * \param normale pointeur sur la texture normale
+ * \param survol pointeur sur la texture survol
  * 
  */
 

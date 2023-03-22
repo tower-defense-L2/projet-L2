@@ -105,8 +105,6 @@ void supression_sdl(){
 }
 
 
-
-
 int load_bitmap(const char *path, SDL_Texture ** texture, pack_t * fenettre){
     SDL_Surface * fond = NULL;
     /**
@@ -176,6 +174,7 @@ void supression_texture_liste(texture_t * texture){
     supression_texture(texture);
 }
 
+
 bouton_t * creation_bouton(pack_t * fenetre, char * texte,
                 SDL_Color couleur, SDL_Color wrap, int x, int y){
     
@@ -203,7 +202,6 @@ bouton_t * creation_bouton(pack_t * fenetre, char * texte,
     SDL_QueryTexture(bouton->survol, NULL, NULL, &bouton->dst.w, &bouton->dst.h);
     return bouton;
 }
-
 
 void supression_bouton(bouton_t ** bouton){
     /**
