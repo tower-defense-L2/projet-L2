@@ -61,7 +61,7 @@ void supression_sdl();
  * \param path // chemin de la bitmap
  * \param texture // structure devant contenir la structure
  * \param fenetre // structure contenant le renderer
- * \return int 
+ * \return int // 0 si tout c'est bien passé 1 sinon
  */
 extern
 int load_bitmap(const char *path, SDL_Texture **texture, pack_t *fenetre);

@@ -1,3 +1,12 @@
+/**
+ * \file init_supr_sdl.c
+ * \author meo (meo.prn@outlook.fr)
+ * \brief source des fonctions servant pour la création et la destruction de la sdl
+ * \version 0.1.0
+ * \date 2023-03-22
+ * 
+ * 
+ */
 #include "../../include/init_supr_sdl.h"
 
 pack_t * creation_pack(char * titre, int width, int height, int flags, int taille_police){
@@ -138,23 +147,32 @@ void supression_texture(texture_t * texture){
      * \brief Supression de la texture
      */
     SDL_DestroyTexture(texture->texture);
+    /**
+     * \brief reatribution des pointeurs de la liste
+     */
     if(texture->precedent != NULL){
         texture->precedent->suivant = texture->suivant;
     }
     if(texture->suivant != NULL){
         texture->suivant->precedent = texture->precedent;
     }
+    /**
+     * \brief destruction de la texture et libération de la mémoire
+     */
     free(texture);
     texture = NULL;
 }
 
 void supression_texture_liste(texture_t * texture){
     /**
-     * \brief Supression de la texture
+     * \brief Supression de la liste de texture en récursivité
      */
     if(texture->suivant != NULL){
         supression_texture_liste(texture->suivant);
     }
+    /**
+     * \brief supression de la texture actuelle
+     */
     supression_texture(texture);
 }
 
@@ -196,11 +214,18 @@ void supression_bouton(bouton_t ** bouton){
      * \brief Supression de la texture survol
      */
     SDL_DestroyTexture((*bouton)->survol);
+    /**
+     * \brief destruction du bouton et libération de la mémoire
+     * 
+     */
     free(*bouton);
     *bouton = NULL;
 }
 
 void position_bouton(bouton_t * bouton, const int x, const int y){
+    /**
+     * \brief attribution des coordonnées au bouton
+     */
     bouton->dst.x = x;
     bouton->dst.y = y;
 }
