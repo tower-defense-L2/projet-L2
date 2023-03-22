@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Tower Defense:  Fichier source de include/interaction_souris.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Tower Defense
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Ce projet dans le cadre de notre formation de L2 informatique à l&#39;Université Du Mans a pour but de créer un jeu de type &quot;Tower Defense&quot; en utilisant la librairie graphique SDL2.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">interaction_souris.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="interaction__souris_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef INTERACTION_SOURIS_H</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define INTERACTION_SOURIS_H</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;SDL2/SDL.h&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="struct__sdl_8h.html">./struct_sdl.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">extern</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">int</span> <a class="code" href="interaction__souris_8h.html#aaaf18754e17d9d0d3a16ad2fd5b5ff42">souris_dessu</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> x, <span class="keyword">const</span> <span class="keywordtype">int</span> y, <span class="keyword">const</span> SDL_Rect *rect);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">extern</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keywordtype">int</span> <a class="code" href="interaction__souris_8h.html#a5889a02f431fa5c0581b1e9bb55819c8">gestion_bouton</a>(<span class="keyword">const</span> <a class="code" href="structbouton__s.html">bouton_t</a> * bouton, <a class="code" href="structpack__s.html">pack_t</a> * fenetre , <span class="keyword">const</span> <span class="keywordtype">int</span> x, <span class="keyword">const</span> <span class="keywordtype">int</span> y);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="ainteraction__souris_8h_html_a5889a02f431fa5c0581b1e9bb55819c8"><div class="ttname"><a href="interaction__souris_8h.html#a5889a02f431fa5c0581b1e9bb55819c8">gestion_bouton</a></div><div class="ttdeci">int gestion_bouton(const bouton_t *bouton, pack_t *fenetre, const int x, const int y)</div><div class="ttdoc">gere les boutons pour savoir si la souris est dessus ou non</div><div class="ttdef"><b>Definition:</b> interaction_souris.c:12</div></div>
+<div class="ttc" id="ainteraction__souris_8h_html_aaaf18754e17d9d0d3a16ad2fd5b5ff42"><div class="ttname"><a href="interaction__souris_8h.html#aaaf18754e17d9d0d3a16ad2fd5b5ff42">souris_dessu</a></div><div class="ttdeci">int souris_dessu(const int x, const int y, const SDL_Rect *rect)</div><div class="ttdoc">verifie si la souris est sur un rectangle</div><div class="ttdef"><b>Definition:</b> interaction_souris.c:4</div></div>
+<div class="ttc" id="astruct__sdl_8h_html"><div class="ttname"><a href="struct__sdl_8h.html">struct_sdl.h</a></div><div class="ttdoc">definition des differente structure utilisé par les fonctions de sdl</div></div>
+<div class="ttc" id="astructbouton__s_html"><div class="ttname"><a href="structbouton__s.html">bouton_s</a></div><div class="ttdoc">structure contenant le rectangle contenant le bouton et les pointeurs sur les textures du bouton</div><div class="ttdef"><b>Definition:</b> struct_sdl.h:39</div></div>
+<div class="ttc" id="astructpack__s_html"><div class="ttname"><a href="structpack__s.html">pack_s</a></div><div class="ttdoc">structure contenant les pointeurs sur la fenetre, le renderer et la police</div><div class="ttdef"><b>Definition:</b> struct_sdl.h:19</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>
