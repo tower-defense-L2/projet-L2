@@ -1,4 +1,5 @@
 <map id="include/jeux.h" name="include/jeux.h">
-<area shape="rect" id="node1" title="fonction principale du jeu" alt="" coords="5,5,119,32"/>
-<area shape="rect" id="node2" href="$menu_8c.html" title="menu principal du jeu" alt="" coords="15,80,109,107"/>
+<area shape="rect" id="node1" title="fonction principale du jeu" alt="" coords="47,5,160,32"/>
+<area shape="rect" id="node2" href="$jeux_8c.html" title="boucle de jeu" alt="" coords="5,80,89,107"/>
+<area shape="rect" id="node3" href="$menu_8c.html" title="menu principal du jeu" alt="" coords="114,80,207,107"/>
 </map>

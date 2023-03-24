@@ -79,34 +79,29 @@ $(function() {
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;SDL2/SDL.h&gt;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;SDL2/SDL_ttf.h&gt;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structpack__s.html">   19</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structpack__s.html">pack_s</a>{</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    SDL_Window *fenetre; <span class="comment">// pointeur sur la fenetre</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    SDL_Renderer *renderer; <span class="comment">// pointeur sur le renderer</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    TTF_Font *police; <span class="comment">// pointeur sur la police</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="struct__sdl_8h.html#abb2099a4a84479098a41a24475364323">   23</a></span>&#160;}<a class="code" href="struct__sdl_8h.html#abb2099a4a84479098a41a24475364323">pack_t</a>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structtexture__s.html">   29</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structtexture__s.html">texture_s</a>{</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    SDL_Texture *texture; <span class="comment">// pointeur sur la texture</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">struct </span><a class="code" href="structtexture__s.html">texture_s</a> *suivant; <span class="comment">// pointeur sur la texture suivante</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">struct </span><a class="code" href="structtexture__s.html">texture_s</a> *precedent; <span class="comment">// pointeur sur la texture précédente</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="struct__sdl_8h.html#a4ccef78cc823a64b176eb792c4744abf">   33</a></span>&#160;}<a class="code" href="struct__sdl_8h.html#a4ccef78cc823a64b176eb792c4744abf">texture_t</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="structbouton__s.html">   39</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structbouton__s.html">bouton_s</a>{</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    SDL_Rect dst; <span class="comment">// rectangle taille et position du bouton</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    SDL_Texture *normale; <span class="comment">// pointeur sur la texture normale</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    SDL_Texture *survol; <span class="comment">// pointeur sur la texture survol</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="struct__sdl_8h.html#a708299c7249bf34bce6fa5a631f64785">   43</a></span>&#160;}<a class="code" href="struct__sdl_8h.html#a708299c7249bf34bce6fa5a631f64785">bouton_t</a>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="astruct__sdl_8h_html_a4ccef78cc823a64b176eb792c4744abf"><div class="ttname"><a href="struct__sdl_8h.html#a4ccef78cc823a64b176eb792c4744abf">texture_t</a></div><div class="ttdeci">struct texture_s texture_t</div><div class="ttdoc">structure contenant les pointeurs sur la texture et les pointeurs sur les textures suivantes et précé...</div></div>
-<div class="ttc" id="astruct__sdl_8h_html_a708299c7249bf34bce6fa5a631f64785"><div class="ttname"><a href="struct__sdl_8h.html#a708299c7249bf34bce6fa5a631f64785">bouton_t</a></div><div class="ttdeci">struct bouton_s bouton_t</div><div class="ttdoc">structure contenant le rectangle contenant le bouton et les pointeurs sur les textures du bouton</div></div>
-<div class="ttc" id="astruct__sdl_8h_html_abb2099a4a84479098a41a24475364323"><div class="ttname"><a href="struct__sdl_8h.html#abb2099a4a84479098a41a24475364323">pack_t</a></div><div class="ttdeci">struct pack_s pack_t</div><div class="ttdoc">structure contenant les pointeurs sur la fenetre, le renderer et la police</div></div>
-<div class="ttc" id="astructbouton__s_html"><div class="ttname"><a href="structbouton__s.html">bouton_s</a></div><div class="ttdoc">structure contenant le rectangle contenant le bouton et les pointeurs sur les textures du bouton</div><div class="ttdef"><b>Definition:</b> struct_sdl.h:39</div></div>
-<div class="ttc" id="astructpack__s_html"><div class="ttname"><a href="structpack__s.html">pack_s</a></div><div class="ttdoc">structure contenant les pointeurs sur la fenetre, le renderer et la police</div><div class="ttdef"><b>Definition:</b> struct_sdl.h:19</div></div>
-<div class="ttc" id="astructtexture__s_html"><div class="ttname"><a href="structtexture__s.html">texture_s</a></div><div class="ttdoc">structure contenant les pointeurs sur la texture et les pointeurs sur les textures suivantes et précé...</div><div class="ttdef"><b>Definition:</b> struct_sdl.h:29</div></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="structpack__s.html">   20</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structpack__s.html">pack_s</a>{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    SDL_Window *fenetre;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    SDL_Renderer *renderer;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    TTF_Font *police;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="struct__sdl_8h.html#abb2099a4a84479098a41a24475364323">   24</a></span>&#160;}<a class="code" href="struct__sdl_8h.html#abb2099a4a84479098a41a24475364323">pack_t</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="structtexture__s.html">   37</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structtexture__s.html">texture_s</a>{</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    SDL_Texture *texture;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">struct </span><a class="code" href="structtexture__s.html">texture_s</a> *suivant;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">struct </span><a class="code" href="structtexture__s.html">texture_s</a> *precedent;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="struct__sdl_8h.html#a4ccef78cc823a64b176eb792c4744abf">   41</a></span>&#160;}<a class="code" href="struct__sdl_8h.html#a4ccef78cc823a64b176eb792c4744abf">texture_t</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="structbouton__s.html">   54</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structbouton__s.html">bouton_s</a>{</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    SDL_Rect dst; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    SDL_Texture *normale; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    SDL_Texture *survol; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="struct__sdl_8h.html#a708299c7249bf34bce6fa5a631f64785">   58</a></span>&#160;}<a class="code" href="struct__sdl_8h.html#a708299c7249bf34bce6fa5a631f64785">bouton_t</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="astruct__sdl_8h_html_a4ccef78cc823a64b176eb792c4744abf"><div class="ttname"><a href="struct__sdl_8h.html#a4ccef78cc823a64b176eb792c4744abf">texture_t</a></div><div class="ttdeci">struct texture_s texture_t</div><div class="ttdoc">primitive de la structure texture_t</div></div>
+<div class="ttc" id="astruct__sdl_8h_html_a708299c7249bf34bce6fa5a631f64785"><div class="ttname"><a href="struct__sdl_8h.html#a708299c7249bf34bce6fa5a631f64785">bouton_t</a></div><div class="ttdeci">struct bouton_s bouton_t</div><div class="ttdoc">primitive de la structure bouton_t</div></div>
+<div class="ttc" id="astruct__sdl_8h_html_abb2099a4a84479098a41a24475364323"><div class="ttname"><a href="struct__sdl_8h.html#abb2099a4a84479098a41a24475364323">pack_t</a></div><div class="ttdeci">struct pack_s pack_t</div><div class="ttdoc">primitive de la structure pack_t</div></div>
+<div class="ttc" id="astructbouton__s_html"><div class="ttname"><a href="structbouton__s.html">bouton_s</a></div><div class="ttdoc">primitive de la structure bouton_t</div><div class="ttdef"><b>Definition:</b> struct_sdl.h:54</div></div>
+<div class="ttc" id="astructpack__s_html"><div class="ttname"><a href="structpack__s.html">pack_s</a></div><div class="ttdoc">primitive de la structure pack_t</div><div class="ttdef"><b>Definition:</b> struct_sdl.h:20</div></div>
+<div class="ttc" id="astructtexture__s_html"><div class="ttname"><a href="structtexture__s.html">texture_s</a></div><div class="ttdoc">primitive de la structure texture_t</div><div class="ttdef"><b>Definition:</b> struct_sdl.h:37</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

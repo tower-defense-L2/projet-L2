@@ -95,9 +95,11 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <div class="dyncontent">
 <div class="center"><img src="interaction__souris_8h__dep__incl.png" border="0" usemap="#ainclude_2interaction__souris_8hdep" alt=""/></div>
 <map name="ainclude_2interaction__souris_8hdep" id="ainclude_2interaction__souris_8hdep">
-<area shape="rect" title="differentes fonctions pour gerer la souris avec SDL" alt="" coords="37,5,180,47"/>
-<area shape="rect" href="jeux_8h.html" title="fonction principale du jeu" alt="" coords="5,95,119,121"/>
-<area shape="rect" href="menu_8c.html" title="menu principal du jeu" alt="" coords="62,169,155,196"/>
+<area shape="rect" title="differentes fonctions pour gerer la souris avec SDL" alt="" coords="89,5,232,47"/>
+<area shape="rect" href="jeux_8h.html" title="fonction principale du jeu" alt="" coords="9,102,123,129"/>
+<area shape="rect" href="menu_8c.html" title="menu principal du jeu" alt="" coords="114,184,207,211"/>
+<area shape="rect" href="interaction__souris_8c.html" title="source des fonctions de gestion de la souris" alt="" coords="198,95,337,136"/>
+<area shape="rect" href="jeux_8c.html" title="boucle de jeu" alt="" coords="5,184,89,211"/>
 </map>
 </div>
 </div>
@@ -108,7 +110,7 @@ Fonctions</h2></td></tr>
 <tr class="memitem:aaaf18754e17d9d0d3a16ad2fd5b5ff42"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interaction__souris_8h.html#aaaf18754e17d9d0d3a16ad2fd5b5ff42">souris_dessu</a> (const int x, const int y, const SDL_Rect *rect)</td></tr>
 <tr class="memdesc:aaaf18754e17d9d0d3a16ad2fd5b5ff42"><td class="mdescLeft">&#160;</td><td class="mdescRight">verifie si la souris est sur un rectangle  <a href="interaction__souris_8h.html#aaaf18754e17d9d0d3a16ad2fd5b5ff42">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aaaf18754e17d9d0d3a16ad2fd5b5ff42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5889a02f431fa5c0581b1e9bb55819c8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interaction__souris_8h.html#a5889a02f431fa5c0581b1e9bb55819c8">gestion_bouton</a> (const <a class="el" href="struct__sdl_8h.html#a708299c7249bf34bce6fa5a631f64785">bouton_t</a> *bouton, <a class="el" href="struct__sdl_8h.html#abb2099a4a84479098a41a24475364323">pack_t</a> *fenetre, const int x, const int y)</td></tr>
+<tr class="memitem:a5889a02f431fa5c0581b1e9bb55819c8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interaction__souris_8h.html#a5889a02f431fa5c0581b1e9bb55819c8">gestion_bouton</a> (const <a class="el" href="structbouton__t.html">bouton_t</a> *bouton, <a class="el" href="structpack__t.html">pack_t</a> *fenetre, const int x, const int y)</td></tr>
 <tr class="memdesc:a5889a02f431fa5c0581b1e9bb55819c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">gere les boutons pour savoir si la souris est dessus ou non  <a href="interaction__souris_8h.html#a5889a02f431fa5c0581b1e9bb55819c8">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a5889a02f431fa5c0581b1e9bb55819c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -127,13 +129,13 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname">int gestion_bouton </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="struct__sdl_8h.html#a708299c7249bf34bce6fa5a631f64785">bouton_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="structbouton__t.html">bouton_t</a> *&#160;</td>
           <td class="paramname"><em>bouton</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="struct__sdl_8h.html#abb2099a4a84479098a41a24475364323">pack_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structpack__t.html">pack_t</a> *&#160;</td>
           <td class="paramname"><em>fenetre</em>, </td>
         </tr>
         <tr>
@@ -159,10 +161,10 @@ Fonctions</h2></td></tr>
 <p>gere les boutons pour savoir si la souris est dessus ou non </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">bouton</td><td>// pointeur sur la structure bouton </td></tr>
-    <tr><td class="paramname">fenetre</td><td>// pointeur sur la structure pack </td></tr>
-    <tr><td class="paramname">x</td><td>// position x de la souris </td></tr>
-    <tr><td class="paramname">y</td><td>// position y de la souris </td></tr>
+    <tr><td class="paramname">bouton</td><td>pointeur sur la structure bouton </td></tr>
+    <tr><td class="paramname">fenetre</td><td>pointeur sur la structure pack </td></tr>
+    <tr><td class="paramname">x</td><td>position x de la souris </td></tr>
+    <tr><td class="paramname">y</td><td>position y de la souris </td></tr>
   </table>
   </dd>
 </dl>
@@ -204,13 +206,13 @@ Fonctions</h2></td></tr>
 <p>verifie si la souris est sur un rectangle </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td>// position x de la souris </td></tr>
-    <tr><td class="paramname">y</td><td>// position y de la souris </td></tr>
-    <tr><td class="paramname">rect</td><td>// rectangle a verifier </td></tr>
+    <tr><td class="paramname">x</td><td>position x de la souris </td></tr>
+    <tr><td class="paramname">y</td><td>position y de la souris </td></tr>
+    <tr><td class="paramname">rect</td><td>rectangle a verifier </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>int // 1 si la souris est sur le rectangle, 0 sinon </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int 1 si la souris est sur le rectangle, 0 sinon </dd></dl>
 
 </div>
 </div>
