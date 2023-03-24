@@ -10,11 +10,10 @@
 #include "../include/jeux.h"
 
 void jeux(){
-    /**
-     * \brief création de la fenetre
-     */
+    // création de la fenetre
     SDL_Rect win= {0,0,0,0};
     pack_t * fenetre = creation_pack("Jeu", 1600, 900, SDL_WINDOW_FULLSCREEN_DESKTOP |SDL_WINDOW_BORDERLESS, 30);
+    
     /**
      * \brief verrouillage de la fenetre en plein écran 
      */
@@ -24,14 +23,11 @@ void jeux(){
     SDL_GetDisplayBounds(0,&win);
     SDL_SetWindowSize(fenetre->fenetre, win.w, win.h);
 
-    /**
-     * \brief initialisation des variables
-     */
+    // initialisation des variables
     SDL_Texture * texture = NULL;
     
-    /**
-     * \brief chargement de l'image de fond et gestion d'erreur
-     */
+
+    // chargement de l'image de fond et gestion d'erreur
     if(load_bitmap("./ressources/font.bmp",&texture,fenetre)){
         return;
     }
@@ -93,14 +89,10 @@ void jeux(){
     
     SDL_Delay(5000);
 
-    /**
-     * \brief destruction de la texture
-     * 
-     */
+    // destruction de la texture
     SDL_DestroyTexture(texture);
     texture = NULL;
-    /**
-     * \brief fermeture de la fenetre de jeu
-     */
+
+    // fermeture de la fenetre de jeu
     supression_pack(&fenetre);
 }

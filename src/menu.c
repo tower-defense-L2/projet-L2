@@ -57,9 +57,7 @@ int main(){
     }
 
     SDL_PollEvent(&event);
-    /**
-     * \brief boucle principale du programme
-     */
+    //boucle principale du programme
     while(program_launched){
         /**
          * \brief debut du cronometre pour le temps d'execution de la boucle
@@ -129,9 +127,7 @@ int main(){
                 break;
         }
     }
-    /**
-     * \brief fin de boucle principale du programme
-     */
+    // fin de boucle principale du programme
 
     /**
      * \brief liberation de la memoire
