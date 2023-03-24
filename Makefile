@@ -62,7 +62,7 @@ TEST:=$(TARGET_TEST:%=$(OBJ_DIR)/%.o)
 
 OBJS:=$(filter-out $(MAINS), $(OBJECTS))
 
-all: install_sdl test build
+all: install_sdl test build doc
 
 run : build
 	@echo "on lance l'app"
