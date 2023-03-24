@@ -6,13 +6,10 @@
  * \date 2023-03-16
  * 
  */
-#include "../include/init_supr_sdl.h"
-#include "../include/interaction_souris.h"
-#include "../include/struct_sdl.h"
-#include "../include/jeux.h"
+#include "../include/menu.h"
 
 
-int main(){
+int menu(){
     pack_t * fenetre = NULL;
     SDL_Event event;
     SDL_bool program_launched = SDL_TRUE;
@@ -28,12 +25,9 @@ int main(){
 
     SDL_Rect win = {0, 0, 0, 0};
     SDL_Rect dst = {0, 0, 0, 0};
-    /**
-     * \brief Initialisation de la SDL avec gestion d'erreur
-     */
-    if(initilalisation_sdl()){
-        return 1;
-    }
+    
+
+    // création de la fenetre
     fenetre = creation_pack("menu tower defence", 854, 480, SDL_WINDOW_SHOWN, 30);
     if(fenetre == NULL){
         return 1;
@@ -135,6 +129,5 @@ int main(){
     SDL_DestroyTexture(texture_menu);
     texture_menu = NULL;
     supression_pack(&fenetre);
-    supression_sdl();
     return 0;
 }

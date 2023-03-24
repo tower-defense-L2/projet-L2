@@ -1,4 +1,4 @@
-TARGET=menu
+TARGET=tower_defense
 TARGET_TEST=test_fenetre_sdl test_multitexture_sdl map_test
 
 ifeq ($(OS), Windows_NT)
