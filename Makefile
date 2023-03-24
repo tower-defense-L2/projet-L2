@@ -41,7 +41,7 @@ OS_DEF=_LINUX_
 endif
 
 CC=gcc
-CFLAGS=-g -Wall -I$(INC_DIR)
+CFLAGS=-g -Wall -I$(INC_DIR) -std=c11 -D$(OS_DEF) -pedantic
 
 SRC_DIR=src
 OBJ_DIR=obj
