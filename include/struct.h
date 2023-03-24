@@ -88,7 +88,8 @@ typedef enum type_case_E {
 typedef union case_U {
     emplacement_T emplacement; /*!< emplacement de la case */
     chemin_T chemin; /*!< chemin de la case */
-} case_TU;
+} case_T;
+
 
 typedef struct case_S {
     type_case_T type; /*!< type de la case */
@@ -96,10 +97,12 @@ typedef struct case_S {
 } case_T;
 
 /**
+
  * \struct map_S
  * \brief structure contenant les informations d'une carte
  */
 typedef struct map_S {
     case_T* cases[HAUTEUR][LARGEUR]; /*!< tableau de pointeur sur case_T */
 } map_T;
+
 #endif
