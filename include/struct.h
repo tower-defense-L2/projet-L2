@@ -88,7 +88,7 @@ typedef enum type_case_E {
 typedef union case_U {
     emplacement_T emplacement; /*!< emplacement de la case */
     chemin_T chemin; /*!< chemin de la case */
-} case_T;
+} case_TU;
 
 
 typedef struct case_S {

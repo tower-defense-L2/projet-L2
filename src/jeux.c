@@ -23,44 +23,67 @@ void jeux(){
     SDL_SetWindowSize(fenetre->fenetre, win.w, win.h);
 
     // initialisation des variables
+    SDL_Event event;
+    SDL_bool program_launched = SDL_TRUE;
     SDL_Texture * texture = NULL;
+    SDL_Texture * chemin = NULL;
+    SDL_Texture * bordure = NULL;
+    SDL_Texture * bille = NULL;
+    SDL_Texture * tour = NULL;
+    Uint64 start, end;
+    float elapsed = 0;
+    Uint32 Click = 0; // état du clique
+    int x = 0, y = 0; // position de la souris
+    SDL_Rect tuile= {0,0,0,0};
     
+    // variable temporaire
+    map_T map;
+
+    for(int i = 0; i < HAUTEUR ; i++){
+        for(int j = 0; j < LARGEUR; j++){
+            map.cases[i][j]->type = VIDE;
+        }
+        map.cases[i][0]->type = CHEMIN;
+        map.cases[i][LARGEUR-1]->type = CHEMIN;
+        map.cases[i][1]->type = EMPLACEMENT;
+    }
 
     // chargement de l'image de fond et gestion d'erreur
     if(load_bitmap("./ressources/font.bmp",&texture,fenetre)){
         return;
     }
+    load_bitmap("./ressources/chemin.bmp",&chemin,fenetre);
+    load_bitmap("./ressources/bordure.bmp",&bordure,fenetre);
+    load_bitmap("./ressources/bille.bmp",&bille,fenetre);
+    load_bitmap("./ressources/tour.bmp",&tour,fenetre);
 
     SDL_RenderCopy(fenetre->renderer,texture,NULL,NULL);
     SDL_RenderPresent(fenetre->renderer);
     SDL_RenderClear(fenetre->renderer);
     
-    /**
+    tuile = (SDL_Rect){0, 0, win.w/(LARGEUR+2), win.h/(HAUTEUR+2)};
+    
     while(program_launched){
         SDL_GetWindowSize(fenetre->fenetre, &win.w, &win.h);
         start = SDL_GetPerformanceCounter();
         SDL_RenderClear(fenetre->renderer);
         Click = SDL_GetMouseState(&x, &y);
-        SDL_RenderCopy(fenetre->renderer, texture_menu, NULL, NULL);
+        SDL_RenderCopy(fenetre->renderer, texture, NULL, NULL);
 
-        for(int i = 0; i < 16; i++){
-            for(int j = 0; j < 9; j++){
-                tuile.x = (i+1) * tuile.w;
-                tuile.y = (j+1) * tuile.h;
-                switch(map[i][j]){
+        for(int j = 0; j < LARGEUR; j++){
+            for(int i = 0; i < HAUTEUR; i++){
+                tuile.y = (i+1) * tuile.h;
+                tuile.x = (j+1) * tuile.w;
+                switch(map.cases[i][j]->type){
                     case CHEMIN:
                         SDL_RenderCopy(fenetre->renderer, chemin, NULL, &tuile);
                         break;
-                    case BORDURE:
+                    case EMPLACEMENT:
                         SDL_RenderCopy(fenetre->renderer, bordure, NULL, &tuile);
                         break;
-                    case BILLE:
+                    case VIDE:
                         SDL_RenderCopy(fenetre->renderer, chemin, NULL, &tuile);
                         SDL_RenderCopy(fenetre->renderer, bille, NULL, &tuile);
-                        break;
-                    case TOUR:
-                        SDL_RenderCopy(fenetre->renderer, bordure, NULL, &tuile);
-                        SDL_RenderCopy(fenetre->renderer, tour, NULL, &tuile);
                         break;
                 }
             }
@@ -85,7 +108,6 @@ void jeux(){
                 break;
         }
     }
-    */
     
     SDL_Delay(5000);
 

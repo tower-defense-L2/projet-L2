@@ -10,7 +10,7 @@
 #ifndef PROJET_L2_CONST_H
 #define PROJET_L2_CONST_H
 
-#define LARGEUR 10
-#define HAUTEUR 10
+#define LARGEUR 16
+#define HAUTEUR 9
 
 #endif //PROJET_L2_CONST_H
