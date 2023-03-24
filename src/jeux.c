@@ -13,7 +13,6 @@ void jeux(){
     // création de la fenetre
     SDL_Rect win= {0,0,0,0};
     pack_t * fenetre = creation_pack("Jeu", 1600, 900, SDL_WINDOW_FULLSCREEN_DESKTOP |SDL_WINDOW_BORDERLESS, 30);
-    
     /**
      * \brief verrouillage de la fenetre en plein écran 
      */
@@ -32,11 +31,11 @@ void jeux(){
         return;
     }
 
-
     SDL_RenderCopy(fenetre->renderer,texture,NULL,NULL);
     SDL_RenderPresent(fenetre->renderer);
     SDL_RenderClear(fenetre->renderer);
-
+    
+    /**
     while(program_launched){
         SDL_GetWindowSize(fenetre->fenetre, &win.w, &win.h);
         start = SDL_GetPerformanceCounter();
@@ -86,6 +85,7 @@ void jeux(){
                 break;
         }
     }
+    */
     
     SDL_Delay(5000);
 
