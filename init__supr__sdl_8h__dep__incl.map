@@ -1,7 +1,8 @@
 <map id="include/init_supr_sdl.h" name="include/init_supr_sdl.h">
-<area shape="rect" id="node1" title="différente fonction servant pour la création et la destruction de la sdl" alt="" coords="77,5,244,32"/>
-<area shape="rect" id="node2" href="$jeux_8h.html" title="fonction principale du jeu" alt="" coords="9,80,123,107"/>
-<area shape="rect" id="node4" href="$menu_8c.html" title="menu principal du jeu" alt="" coords="114,155,207,181"/>
-<area shape="rect" id="node5" href="$init__supr__sdl_8c.html" title="source des fonctions servant pour la création et la destruction de la sdl" alt="" coords="199,80,360,107"/>
-<area shape="rect" id="node3" href="$jeux_8c.html" title="boucle de jeu" alt="" coords="5,155,89,181"/>
+<area shape="rect" id="node1" title="différente fonction servant pour la création et la destruction de la sdl" alt="" coords="78,5,245,32"/>
+<area shape="rect" id="node2" href="$jeux_8h.html" title="fonction principale du jeu" alt="" coords="105,80,218,107"/>
+<area shape="rect" id="node3" href="$menu_8h.html" title="menu du jeux" alt="" coords="5,155,128,181"/>
+<area shape="rect" id="node6" href="$init__supr__sdl_8c.html" title="source des fonctions servant pour la création et la destruction de la sdl" alt="" coords="242,80,403,107"/>
+<area shape="rect" id="node5" href="$jeux_8c.html" title="boucle de jeu" alt="" coords="153,155,237,181"/>
+<area shape="rect" id="node4" href="$menu_8c.html" title="menu principal du jeu" alt="" coords="20,229,113,256"/>
 </map>

@@ -1,7 +1,8 @@
 <map id="include/interaction_souris.h" name="include/interaction_souris.h">
-<area shape="rect" id="node1" title="differentes fonctions pour gerer la souris avec SDL" alt="" coords="89,5,232,47"/>
-<area shape="rect" id="node2" href="$jeux_8h.html" title="fonction principale du jeu" alt="" coords="9,102,123,129"/>
-<area shape="rect" id="node4" href="$menu_8c.html" title="menu principal du jeu" alt="" coords="114,184,207,211"/>
-<area shape="rect" id="node5" href="$interaction__souris_8c.html" title="source des fonctions de gestion de la souris" alt="" coords="198,95,337,136"/>
-<area shape="rect" id="node3" href="$jeux_8c.html" title="boucle de jeu" alt="" coords="5,184,89,211"/>
+<area shape="rect" id="node1" title="differentes fonctions pour gerer la souris avec SDL" alt="" coords="90,5,233,47"/>
+<area shape="rect" id="node2" href="$jeux_8h.html" title="fonction principale du jeu" alt="" coords="105,102,218,129"/>
+<area shape="rect" id="node3" href="$menu_8h.html" title="menu du jeux" alt="" coords="5,184,128,211"/>
+<area shape="rect" id="node6" href="$interaction__souris_8c.html" title="source des fonctions de gestion de la souris" alt="" coords="243,95,381,136"/>
+<area shape="rect" id="node5" href="$jeux_8c.html" title="boucle de jeu" alt="" coords="153,184,237,211"/>
+<area shape="rect" id="node4" href="$menu_8c.html" title="menu principal du jeu" alt="" coords="20,259,113,285"/>
 </map>

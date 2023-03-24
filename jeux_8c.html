@@ -125,6 +125,8 @@ Fonctions</h2></td></tr>
 
 <p>fonction principale du jeu </p>
 <p>verrouillage de la fenetre en plein écran</p>
+<p>while(program_launched){ SDL_GetWindowSize(fenetre-&gt;fenetre, &amp;win.w, &amp;win.h); start = SDL_GetPerformanceCounter(); SDL_RenderClear(fenetre-&gt;renderer); Click = SDL_GetMouseState(&amp;x, &amp;y); SDL_RenderCopy(fenetre-&gt;renderer, texture_menu, NULL, NULL);</p>
+<p>for(int i = 0; i &lt; 16; i++){ for(int j = 0; j &lt; 9; j++){ tuile.x = (i+1) * tuile.w; tuile.y = (j+1) * tuile.h; switch(map[i][j]){ case CHEMIN: SDL_RenderCopy(fenetre-&gt;renderer, chemin, NULL, &amp;tuile); break; case BORDURE: SDL_RenderCopy(fenetre-&gt;renderer, bordure, NULL, &amp;tuile); break; case BILLE: SDL_RenderCopy(fenetre-&gt;renderer, chemin, NULL, &amp;tuile); SDL_RenderCopy(fenetre-&gt;renderer, bille, NULL, &amp;tuile); break; case TOUR: SDL_RenderCopy(fenetre-&gt;renderer, bordure, NULL, &amp;tuile); SDL_RenderCopy(fenetre-&gt;renderer, tour, NULL, &amp;tuile); break; } } } SDL_RenderPresent(fenetre-&gt;renderer); end = SDL_GetPerformanceCounter(); elapsed = (end - start) * 1000 / (float)SDL_GetPerformanceFrequency(); if(elapsed &lt; 1000/60){ SDL_Delay((1000/60) - elapsed); } SDL_PollEvent(&amp;event); switch(event.type){ case SDL_QUIT: program_launched = SDL_FALSE; break; case SDL_KEYDOWN: switch(event.key.keysym.sym){ case SDLK_ESCAPE: program_launched = SDL_FALSE; break; } break; } }</p>
 
 </div>
 </div>
