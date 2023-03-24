@@ -41,4 +41,4 @@ Les types de commit sont les suivants :
 - init: Initialisation du projet
 
 ### Normes C
-Nous suivons la norme C99 pour le code C. <br>
+Nous suivons la norme C11 pour le code C. <br>
