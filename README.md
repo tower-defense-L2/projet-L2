@@ -16,6 +16,13 @@ Le jeu va donc avoir plusieurs perspectives :
 ## Planification
 Le diagramme de Gantt est disponible [ici](https://docs.google.com/spreadsheets/d/1WgdX5Zml3Ks-bE99PTovAkDHtlANthjp1Kes8xw4FFY).
 
+## avancement
+![](https://img.shields.io/badge/State-In_production-brightgreen?style=for-the-badge)
+
+![](https://img.shields.io/github/issues/tower-defense-L2/projet-L2?style=for-the-badge)
+
+![](https://img.shields.io/github/issues-pr/tower-defense-L2/projet-L2?style=for-the-badge)
+
 ## Convention de nommage
 ### Commit
 Les commits doivent suivre [ConvetionnalCommit](https://www.conventionalcommits.org/en/v1.0.0/) et doivent être écrits en minuscule et en utilisant la convention suivante:
@@ -42,3 +49,19 @@ Les types de commit sont les suivants :
 
 ### Normes C
 Nous suivons la norme C11 pour le code C. <br>
+
+## Compilation
+
+### comande make
+
+|  Commande   |    Description     |
+|-------------|--------------------|
+| build       | compile le projet  |
+| test        | compile les tests  |
+| doc         | génere la doc      |
+| run         | lance le projet    |
+| clean       | nettoie le projet  |
+| reomve      | supprime le projet |
+| clean-doc   | suprime la doc     |
+| install_sdl | installe sdl2      |
+| all         | build+test+doc+sdl |
