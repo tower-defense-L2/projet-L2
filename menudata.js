@@ -27,13 +27,17 @@ var menudata={children:[
 {text:"Pages associées",url:"pages.html"},
 {text:"Structures de données",url:"annotated.html",children:[
 {text:"Structures de données",url:"annotated.html"},
-{text:"Index des structures de données",url:"classes.html"}]},
+{text:"Index des structures de données",url:"classes.html"},
+{text:"Champs de donnée",url:"functions.html",children:[
+{text:"Tout",url:"functions.html"},
+{text:"Variables",url:"functions_vars.html"}]}]},
 {text:"Fichiers",url:"files.html",children:[
 {text:"Liste des fichiers",url:"files.html"},
 {text:"Variables globale",url:"globals.html",children:[
 {text:"Tout",url:"globals.html",children:[
 {text:"b",url:"globals.html#index_b"},
 {text:"c",url:"globals.html#index_c"},
+{text:"e",url:"globals.html#index_e"},
 {text:"g",url:"globals.html#index_g"},
 {text:"i",url:"globals.html#index_i"},
 {text:"j",url:"globals.html#index_j"},
@@ -41,6 +45,17 @@ var menudata={children:[
 {text:"m",url:"globals.html#index_m"},
 {text:"p",url:"globals.html#index_p"},
 {text:"s",url:"globals.html#index_s"},
-{text:"t",url:"globals.html#index_t"}]},
-{text:"Fonctions",url:"globals_func.html"},
-{text:"Définitions de type",url:"globals_type.html"}]}]}]}
+{text:"t",url:"globals.html#index_t"},
+{text:"v",url:"globals.html#index_v"}]},
+{text:"Fonctions",url:"globals_func.html",children:[
+{text:"c",url:"globals_func.html#index_c"},
+{text:"g",url:"globals_func.html#index_g"},
+{text:"i",url:"globals_func.html#index_i"},
+{text:"j",url:"globals_func.html#index_j"},
+{text:"l",url:"globals_func.html#index_l"},
+{text:"m",url:"globals_func.html#index_m"},
+{text:"p",url:"globals_func.html#index_p"},
+{text:"s",url:"globals_func.html#index_s"}]},
+{text:"Définitions de type",url:"globals_type.html"},
+{text:"Énumérations",url:"globals_enum.html"},
+{text:"Valeurs énumérées",url:"globals_eval.html"}]}]}]}

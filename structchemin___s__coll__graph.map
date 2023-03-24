@@ -1,0 +1,5 @@
+<map id="chemin_S" name="chemin_S">
+<area shape="rect" id="node1" title="structure contenant les informations d&#39;un chemin" alt="" coords="7,184,93,211"/>
+<area shape="rect" id="node2" href="$structposition___s.html" title="structure contenant les coordonnées d&#39;un élément" alt="" coords="5,5,95,32"/>
+<area shape="rect" id="node3" href="$structennemi___s.html" title="structure contenant les informations d&#39;un ennemi" alt="" coords="111,95,197,121"/>
+</map>

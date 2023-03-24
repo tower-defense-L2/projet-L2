@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['menu_15',['menu',['../menu_8h.html#ae83fcdbeb2b6757fc741ae953b633ee1',1,'menu():&#160;menu.c'],['../menu_8c.html#ae83fcdbeb2b6757fc741ae953b633ee1',1,'menu():&#160;menu.c']]],
-  ['menu_2ec_16',['menu.c',['../menu_8c.html',1,'']]],
-  ['menu_2eh_17',['menu.h',['../menu_8h.html',1,'']]]
+  ['gestion_5fbouton_21',['gestion_bouton',['../interaction__souris_8h.html#a5889a02f431fa5c0581b1e9bb55819c8',1,'gestion_bouton(const bouton_t *bouton, pack_t *fenetre, const int x, const int y):&#160;interaction_souris.c'],['../interaction__souris_8c.html#a5889a02f431fa5c0581b1e9bb55819c8',1,'gestion_bouton(const bouton_t *bouton, pack_t *fenetre, const int x, const int y):&#160;interaction_souris.c']]]
 ];

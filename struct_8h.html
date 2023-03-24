@@ -70,7 +70,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Structures de données</a> &#124;
-<a href="#typedef-members">Définitions de type</a>  </div>
+<a href="#typedef-members">Définitions de type</a> &#124;
+<a href="#enum-members">Énumérations</a>  </div>
   <div class="headertitle">
 <div class="title">Référence du fichier struct.h</div>  </div>
 </div><!--header-->
@@ -78,16 +79,32 @@ $(function() {
 
 <p>definition des differente structure utilisé dans le programme  
 <a href="#details">Plus de détails...</a></p>
-<div class="textblock"><div class="dynheader">
+<div class="textblock"><code>#include &quot;<a class="el" href="const_8h_source.html">const.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de struct.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_8h__incl.png" border="0" usemap="#ainclude_2struct_8h" alt=""/></div>
+<map name="ainclude_2struct_8h" id="ainclude_2struct_8h">
+<area shape="rect" title="definition des differente structure utilisé dans le programme" alt="" coords="5,5,128,32"/>
+<area shape="rect" href="const_8h.html" title=" " alt="" coords="32,80,101,107"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
 Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
 <div class="dyncontent">
 <div class="center"><img src="struct_8h__dep__incl.png" border="0" usemap="#ainclude_2struct_8hdep" alt=""/></div>
 <map name="ainclude_2struct_8hdep" id="ainclude_2struct_8hdep">
-<area shape="rect" title="definition des differente structure utilisé dans le programme" alt="" coords="69,5,192,32"/>
-<area shape="rect" href="jeux_8h.html" title="fonction principale du jeu" alt="" coords="74,80,187,107"/>
-<area shape="rect" href="menu_8h.html" title="menu du jeux" alt="" coords="5,155,128,181"/>
-<area shape="rect" href="jeux_8c.html" title="boucle de jeu" alt="" coords="153,155,237,181"/>
-<area shape="rect" href="menu_8c.html" title="menu principal du jeu" alt="" coords="20,229,113,256"/>
+<area shape="rect" title="definition des differente structure utilisé dans le programme" alt="" coords="425,5,548,32"/>
+<area shape="rect" href="jeux_8h.html" title="fonction principale du jeu" alt="" coords="123,87,237,114"/>
+<area shape="rect" href="mouvement__ennemi_8h.html" title="vérifie la possiblité de déplacement d&#39;une bille" alt="" coords="261,87,481,114"/>
+<area shape="rect" href="placement__tours_8h.html" title="Afin de mettre une tour sur la carte ou d&#39;en supprimer une." alt="" coords="505,87,700,114"/>
+<area shape="rect" href="possibilite__tour_8h_source.html" title=" " alt="" coords="725,80,865,121"/>
+<area shape="rect" href="menu_8h.html" title="menu du jeux" alt="" coords="5,169,128,196"/>
+<area shape="rect" href="jeux_8c.html" title="boucle de jeu" alt="" coords="153,169,237,196"/>
+<area shape="rect" href="menu_8c.html" title="menu principal du jeu" alt="" coords="20,244,113,271"/>
+<area shape="rect" href="mouvement__ennemi_8c.html" title="vérifie si une bille peut se rendre dans la salle suivante, cans ce cas le fait et suprime l&#39;ennemi q..." alt="" coords="275,169,466,196"/>
+<area shape="rect" href="placement__tours_8c.html" title="source fonction placement et suppression des tours" alt="" coords="523,169,688,196"/>
+<area shape="rect" href="possibilite__tours_8c.html" title="source fonction gestion placement et suppression tours" alt="" coords="713,169,876,196"/>
 </map>
 </div>
 </div>
@@ -95,45 +112,102 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Structures de données</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structposition___s.html">position_S</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">structure contenant les coordonnées d'un élément  <a href="structposition___s.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtour___s.html">tour_S</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">structure contenant les informations d'une tour  <a href="structtour___s.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structennemi___s.html">ennemi_S</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">structure contenant les informations d'un ennemi  <a href="structennemi___s.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structjoueur___s.html">joueur_S</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">structure contenant les informations d'un joueur  <a href="structjoueur___s.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structemplacement___s.html">emplacement_S</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">structure contenant les informations d'un emplacement  <a href="structemplacement___s.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structchemin___s.html">chemin_S</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">structure contenant les informations d'un chemin  <a href="structchemin___s.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unioncase___u.html">case_U</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">union contenant les informations d'une case  <a href="unioncase___u.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcase___s.html">case_S</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmap___s.html">map_S</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">structure contenant les informations d'une carte  <a href="structmap___s.html#details">Plus de détails...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Définitions de type</h2></td></tr>
 <tr class="memitem:a5a62b693752f966c2279ac8bf35fcf8f"><td class="memItemLeft" align="right" valign="top"><a id="a5a62b693752f966c2279ac8bf35fcf8f"></a>
-typedef struct position_S&#160;</td><td class="memItemRight" valign="bottom"><b>position_T</b></td></tr>
+typedef struct <a class="el" href="structposition___s.html">position_S</a>&#160;</td><td class="memItemRight" valign="bottom"><b>position_T</b></td></tr>
 <tr class="separator:a5a62b693752f966c2279ac8bf35fcf8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a670ea5b741de7ca6ca7ebcbd58b1d4e4"><td class="memItemLeft" align="right" valign="top"><a id="a670ea5b741de7ca6ca7ebcbd58b1d4e4"></a>
-typedef struct tour_S&#160;</td><td class="memItemRight" valign="bottom"><b>tour_T</b></td></tr>
+typedef struct <a class="el" href="structtour___s.html">tour_S</a>&#160;</td><td class="memItemRight" valign="bottom"><b>tour_T</b></td></tr>
 <tr class="separator:a670ea5b741de7ca6ca7ebcbd58b1d4e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6709d5fa69d3c35f5f11bfe48a0ea6c"><td class="memItemLeft" align="right" valign="top"><a id="ae6709d5fa69d3c35f5f11bfe48a0ea6c"></a>
-typedef struct enemi_S&#160;</td><td class="memItemRight" valign="bottom"><b>enemi_T</b></td></tr>
-<tr class="separator:ae6709d5fa69d3c35f5f11bfe48a0ea6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae80ceb59c58e50dae73a7ce8dd1d9824"><td class="memItemLeft" align="right" valign="top"><a id="ae80ceb59c58e50dae73a7ce8dd1d9824"></a>
+typedef struct <a class="el" href="structennemi___s.html">ennemi_S</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ennemi_T</b></td></tr>
+<tr class="separator:ae80ceb59c58e50dae73a7ce8dd1d9824"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a50a7ec9946160c551f351615781917"><td class="memItemLeft" align="right" valign="top"><a id="a8a50a7ec9946160c551f351615781917"></a>
-typedef struct joueur_S&#160;</td><td class="memItemRight" valign="bottom"><b>joueur_T</b></td></tr>
+typedef struct <a class="el" href="structjoueur___s.html">joueur_S</a>&#160;</td><td class="memItemRight" valign="bottom"><b>joueur_T</b></td></tr>
 <tr class="separator:a8a50a7ec9946160c551f351615781917"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e2e6b54f769836cf11a5ddd668a4971"><td class="memItemLeft" align="right" valign="top"><a id="a1e2e6b54f769836cf11a5ddd668a4971"></a>
-typedef struct bordure_S&#160;</td><td class="memItemRight" valign="bottom"><b>bordure_T</b></td></tr>
-<tr class="separator:a1e2e6b54f769836cf11a5ddd668a4971"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7abe7634ba0352542439aa03da3dd097"><td class="memItemLeft" align="right" valign="top"><a id="a7abe7634ba0352542439aa03da3dd097"></a>
+typedef struct <a class="el" href="structemplacement___s.html">emplacement_S</a>&#160;</td><td class="memItemRight" valign="bottom"><b>emplacement_T</b></td></tr>
+<tr class="separator:a7abe7634ba0352542439aa03da3dd097"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6648d6eccd6a21fa825508c98f0a2f86"><td class="memItemLeft" align="right" valign="top"><a id="a6648d6eccd6a21fa825508c98f0a2f86"></a>
-typedef struct chemin_S&#160;</td><td class="memItemRight" valign="bottom"><b>chemin_T</b></td></tr>
+typedef struct <a class="el" href="structchemin___s.html">chemin_S</a>&#160;</td><td class="memItemRight" valign="bottom"><b>chemin_T</b></td></tr>
 <tr class="separator:a6648d6eccd6a21fa825508c98f0a2f86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20fa997dcc7b5b8cea0b0a5d0eb22ac9"><td class="memItemLeft" align="right" valign="top"><a id="a20fa997dcc7b5b8cea0b0a5d0eb22ac9"></a>
+typedef enum <a class="el" href="struct_8h.html#ac29669aa20f0f4be92d93756f3203ce9">type_case_E</a>&#160;</td><td class="memItemRight" valign="bottom"><b>type_case_T</b></td></tr>
+<tr class="separator:a20fa997dcc7b5b8cea0b0a5d0eb22ac9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cb35fd59d712e6098c4f248475ae98f"><td class="memItemLeft" align="right" valign="top"><a id="a1cb35fd59d712e6098c4f248475ae98f"></a>
-typedef struct case_S&#160;</td><td class="memItemRight" valign="bottom"><b>case_T</b></td></tr>
+typedef union <a class="el" href="unioncase___u.html">case_U</a>&#160;</td><td class="memItemRight" valign="bottom"><b>case_T</b></td></tr>
 <tr class="separator:a1cb35fd59d712e6098c4f248475ae98f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ff820077d4316cef22812f042590f8d"><td class="memItemLeft" align="right" valign="top"><a id="a6ff820077d4316cef22812f042590f8d"></a>
-typedef enum case_E&#160;</td><td class="memItemRight" valign="bottom"><b>case_E</b></td></tr>
-<tr class="separator:a6ff820077d4316cef22812f042590f8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f7659d187e9ac7356d80aafc4f3f662"><td class="memItemLeft" align="right" valign="top"><a id="a1f7659d187e9ac7356d80aafc4f3f662"></a>
-typedef union <a class="el" href="unioncase___u.html">case_U</a>&#160;</td><td class="memItemRight" valign="bottom"><b>case_U</b></td></tr>
-<tr class="separator:a1f7659d187e9ac7356d80aafc4f3f662"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2d3693197411c4f53edae025e09e924"><td class="memItemLeft" align="right" valign="top"><a id="ab2d3693197411c4f53edae025e09e924"></a>
+typedef struct <a class="el" href="structmap___s.html">map_S</a>&#160;</td><td class="memItemRight" valign="bottom"><b>map_T</b></td></tr>
+<tr class="separator:ab2d3693197411c4f53edae025e09e924"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Énumérations</h2></td></tr>
+<tr class="memitem:ac29669aa20f0f4be92d93756f3203ce9"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_8h.html#ac29669aa20f0f4be92d93756f3203ce9">type_case_E</a> { <a class="el" href="struct_8h.html#ac29669aa20f0f4be92d93756f3203ce9a2fae8bfa1d5574fa3d6fa334712268e5">EMPLACEMENT</a>
+, <a class="el" href="struct_8h.html#ac29669aa20f0f4be92d93756f3203ce9a1f28516effaf97bbdd06327a6c68cbf8">CHEMIN</a>
+, <a class="el" href="struct_8h.html#ac29669aa20f0f4be92d93756f3203ce9ad4686f4f969d0e851d9170c09a89a837">VIDE</a>
+ }</td></tr>
+<tr class="separator:ac29669aa20f0f4be92d93756f3203ce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>definition des differente structure utilisé dans le programme </p>
-<dl class="section author"><dt>Auteur</dt><dd>meo (<a href="#" onclick="location.href='mai'+'lto:'+'meo'+'.p'+'rn@'+'ou'+'tlo'+'ok'+'.fr'; return false;">meo.p<span style="display: none;">.nosp@m.</span>rn@o<span style="display: none;">.nosp@m.</span>utloo<span style="display: none;">.nosp@m.</span>k.fr</a>) </dd></dl>
+<dl class="section author"><dt>Auteur</dt><dd>meo (<a href="#" onclick="location.href='mai'+'lto:'+'meo'+'.p'+'rn@'+'ou'+'tlo'+'ok'+'.fr'; return false;">meo.p<span style="display: none;">.nosp@m.</span>rn@o<span style="display: none;">.nosp@m.</span>utloo<span style="display: none;">.nosp@m.</span>k.fr</a>) </dd>
+<dd>
+Antoine Sainty (<a href="#" onclick="location.href='mai'+'lto:'+'Ant'+'oi'+'ne.'+'Sa'+'int'+'y.'+'Etu'+'@u'+'niv'+'-l'+'ema'+'ns'+'.fr'; return false;">Antoi<span style="display: none;">.nosp@m.</span>ne.S<span style="display: none;">.nosp@m.</span>ainty<span style="display: none;">.nosp@m.</span>.Etu<span style="display: none;">.nosp@m.</span>@univ<span style="display: none;">.nosp@m.</span>-lem<span style="display: none;">.nosp@m.</span>ans.f<span style="display: none;">.nosp@m.</span>r</a>) </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.1.0 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2023-01-23 </dd></dl>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Documentation du type de l'énumération</h2>
+<a id="ac29669aa20f0f4be92d93756f3203ce9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac29669aa20f0f4be92d93756f3203ce9">&#9670;&nbsp;</a></span>type_case_E</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="struct_8h.html#ac29669aa20f0f4be92d93756f3203ce9">type_case_E</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="ac29669aa20f0f4be92d93756f3203ce9a2fae8bfa1d5574fa3d6fa334712268e5"></a>EMPLACEMENT&#160;</td><td class="fielddoc"><p>emplacement de tours possible </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac29669aa20f0f4be92d93756f3203ce9a1f28516effaf97bbdd06327a6c68cbf8"></a>CHEMIN&#160;</td><td class="fielddoc"><p>chemin que les ennemis peuvent emprunté </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac29669aa20f0f4be92d93756f3203ce9ad4686f4f969d0e851d9170c09a89a837"></a>VIDE&#160;</td><td class="fielddoc"><p>du décor </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1

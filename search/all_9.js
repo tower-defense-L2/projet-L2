@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['texture_5fs_30',['texture_s',['../structtexture__s.html',1,'']]],
-  ['texture_5ft_31',['texture_t',['../structtexture__t.html',1,'texture_t'],['../struct__sdl_8h.html#a4ccef78cc823a64b176eb792c4744abf',1,'texture_t():&#160;struct_sdl.h']]]
+  ['load_5fbitmap_32',['load_bitmap',['../init__supr__sdl_8h.html#a299caa78ce5d45adf3c65b57dd67db24',1,'load_bitmap(const char *path, SDL_Texture **texture, pack_t *fenetre):&#160;init_supr_sdl.c'],['../init__supr__sdl_8c.html#a5689fe67ac1601c0371870cc1e75d1e5',1,'load_bitmap(const char *path, SDL_Texture **texture, pack_t *fenettre):&#160;init_supr_sdl.c']]]
 ];

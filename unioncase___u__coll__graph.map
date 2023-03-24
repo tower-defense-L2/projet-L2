@@ -1,0 +1,8 @@
+<map id="case_U" name="case_U">
+<area shape="rect" id="node1" title="union contenant les informations d&#39;une case" alt="" coords="116,273,185,300"/>
+<area shape="rect" id="node2" href="$structchemin___s.html" title="structure contenant les informations d&#39;un chemin" alt="" coords="5,184,91,211"/>
+<area shape="rect" id="node3" href="$structposition___s.html" title="structure contenant les coordonnées d&#39;un élément" alt="" coords="141,5,230,32"/>
+<area shape="rect" id="node4" href="$structennemi___s.html" title="structure contenant les informations d&#39;un ennemi" alt="" coords="90,95,177,121"/>
+<area shape="rect" id="node5" href="$structemplacement___s.html" title="structure contenant les informations d&#39;un emplacement" alt="" coords="193,184,319,211"/>
+<area shape="rect" id="node6" href="$structtour___s.html" title="structure contenant les informations d&#39;une tour" alt="" coords="307,95,370,121"/>
+</map>

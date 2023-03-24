@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['pack_5fs_18',['pack_s',['../structpack__s.html',1,'']]],
-  ['pack_5ft_19',['pack_t',['../structpack__t.html',1,'pack_t'],['../struct__sdl_8h.html#abb2099a4a84479098a41a24475364323',1,'pack_t():&#160;struct_sdl.h']]],
-  ['position_5fbouton_20',['position_bouton',['../init__supr__sdl_8h.html#ad1696014c0edce611d36c5f2010938b0',1,'position_bouton(bouton_t *bouton, const int x, const int y):&#160;init_supr_sdl.c'],['../init__supr__sdl_8c.html#ad1696014c0edce611d36c5f2010938b0',1,'position_bouton(bouton_t *bouton, const int x, const int y):&#160;init_supr_sdl.c']]],
-  ['projet_2dl2_21',['projet-L2',['../md__r_e_a_d_m_e.html',1,'']]]
+  ['id_22',['id',['../structtour___s.html#a7441ef0865bcb3db9b8064dd7375c1ea',1,'tour_S::id()'],['../structennemi___s.html#a7441ef0865bcb3db9b8064dd7375c1ea',1,'ennemi_S::id()']]],
+  ['init_5fsupr_5fsdl_2ec_23',['init_supr_sdl.c',['../init__supr__sdl_8c.html',1,'']]],
+  ['init_5fsupr_5fsdl_2eh_24',['init_supr_sdl.h',['../init__supr__sdl_8h.html',1,'']]],
+  ['initilalisation_5fsdl_25',['initilalisation_sdl',['../init__supr__sdl_8h.html#a8261c3df42fe4d4d8aac42e68c4908e7',1,'initilalisation_sdl():&#160;init_supr_sdl.c'],['../init__supr__sdl_8c.html#a8261c3df42fe4d4d8aac42e68c4908e7',1,'initilalisation_sdl():&#160;init_supr_sdl.c']]],
+  ['interaction_5fsouris_2ec_26',['interaction_souris.c',['../interaction__souris_8c.html',1,'']]],
+  ['interaction_5fsouris_2eh_27',['interaction_souris.h',['../interaction__souris_8h.html',1,'']]]
 ];

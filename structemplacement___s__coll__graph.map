@@ -1,0 +1,5 @@
+<map id="emplacement_S" name="emplacement_S">
+<area shape="rect" id="node1" title="structure contenant les informations d&#39;un emplacement" alt="" coords="5,184,132,211"/>
+<area shape="rect" id="node2" href="$structposition___s.html" title="structure contenant les coordonnées d&#39;un élément" alt="" coords="24,5,113,32"/>
+<area shape="rect" id="node3" href="$structtour___s.html" title="structure contenant les informations d&#39;une tour" alt="" coords="129,95,192,121"/>
+</map>
