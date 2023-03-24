@@ -41,7 +41,7 @@ OS_DEF=_LINUX_
 endif
 
 CC=gcc
-CFLAGS=-g -Wall -I$(INC_DIR)
+CFLAGS=-g -Wall -I$(INC_DIR) -std=c11 -D$(OS_DEF) -pedantic
 
 SRC_DIR=src
 OBJ_DIR=obj
@@ -71,6 +71,11 @@ run : build
 build: remove $(TRGS) copy_lib
 
 test: $(TRGS_TEST) copy_lib
+
+doc: clean_doc
+	@echo "on genere la documenation"
+	@doxygen ./doc/Doxyfile
+	@echo "documentation generer"
 
 $(TRGS): $(OBJECTS)
 	@$(CC) $(subst $(BIN_DIR),$(OBJ_DIR),$@).o $(OBJS) $(LFLAGS) -o $@$(EXE_EXT)
@@ -103,10 +108,16 @@ clean:
 	@echo "Cleanup complete!"
 
 .PHONY: remove
-remove: clean
+remove: clean clean_doc
 	@$(RM) $(addsuffix $(EXE_EXT),$(subst /,$(PATH_SEP),$(TRGS)))
 	@$(RM) $(addsuffix $(EXE_EXT),$(subst /,$(PATH_SEP),$(TRGS_TEST)))
 	@echo "Executable removed!"
+
+.PHONY: clean_doc
+clean_doc:
+	@echo "on supprime l'ancienne documentation"
+	@rm -rf ./doc/html
+	@rm -rf ./doc/latex
 
 install_sdl:
 ifneq ($(OS), Windows_NT)
