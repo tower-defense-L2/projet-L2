@@ -25,7 +25,7 @@ Le diagramme de Gantt est disponible [ici](https://docs.google.com/spreadsheets/
 
 ## Convention de nommage
 ### Commit
-Les commits doivent suivre [ConvetionnalCommit](https://www.conventionalcommits.org/en/v1.0.0/) et doivent être écrits en minuscule et en utilisant la convention suivante:
+Les commits doivent suivre [ConventionnalCommits](https://www.conventionalcommits.org/en/v1.0.0/) et doivent être écrits en minuscule et en utilisant la convention suivante:
 ```
 <type>([<scope>]): <description>
 ```
@@ -52,7 +52,10 @@ Nous suivons la norme C11 pour le code C. <br>
 
 ## Compilation
 
-### comande make
+### nécessité
+- GCC 4.7 ou supérieur
+
+### Commandes make
 
 |  Commande   |    Description     |
 |-------------|--------------------|
