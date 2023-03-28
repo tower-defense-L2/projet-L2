@@ -22,6 +22,7 @@
  * 
  * \return int 0 si impossible / 1 si possible
  */
+extern
 int position_possible(emplacement_T *emplacement, joueur_T *joueur, tour_T *tour, type_case_T *type);
 
 
@@ -34,4 +35,5 @@ int position_possible(emplacement_T *emplacement, joueur_T *joueur, tour_T *tour
  * \param vide // correspond au décor
  * \return int int 0 si impossible / 1 si possible
  */
+extern
 int suppression_possible(emplacement_T *emplacement, chemin_T *chemin, type_case_T* vide);
