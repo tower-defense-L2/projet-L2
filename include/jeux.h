@@ -20,6 +20,6 @@
  * 
  */
 extern
-void jeux();
+void jeux(pack_t * fenetre);
 
 #endif
