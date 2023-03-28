@@ -7,7 +7,7 @@
  * 
  * 
  */
-#include "../include/possibilite_tour.h"
+#include "../include/possibilite_tours.h"
 
 
 int position_possible(emplacement_T *emplacement, joueur_T *joueur, tour_T *tour, type_case_T *type)
