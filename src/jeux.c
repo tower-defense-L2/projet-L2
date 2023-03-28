@@ -9,7 +9,12 @@
  */
 #include "../include/jeux.h"
 
-
+/**
+ * \brief fonction qui passe la fenetre en plein écran
+ * 
+ * \param fenetre pointeur sur le pack_t de la fenetre
+ * \param win pointeur sur la SDL_Rect de la fenetre
+ */
 static
 void plein_ecran(pack_t * fenetre, SDL_Rect * win){
     SDL_SetWindowFullscreen(fenetre->fenetre, SDL_WINDOW_FULLSCREEN_DESKTOP);
@@ -18,6 +23,12 @@ void plein_ecran(pack_t * fenetre, SDL_Rect * win){
     SDL_GetDisplayBounds(0,win);
 }
 
+/**
+ * \brief fonction qui passe la fenetre en fenétrée
+ * 
+ * \param fenetre pointeur sur le pack_t de la fenetre
+ * \param win pointeur sur la SDL_Rect de la fenetre
+ */
 static
 void fenetree(pack_t * fenetre, SDL_Rect * win){
     SDL_SetWindowBordered(fenetre->fenetre, SDL_TRUE);
