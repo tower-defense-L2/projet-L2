@@ -1,7 +1,7 @@
 /**
- * \file tower_defence.c
+ * \file tower_defense.c
  * \author meo (meo.prn@outlook.fr)
- * \brief fichier principal du jeu tower defence
+ * \brief fichier principal du jeu tower defense
  * \version 0.1.0
  * \date 2023-03-24
  * 
