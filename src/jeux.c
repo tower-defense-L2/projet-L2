@@ -33,9 +33,7 @@ extern
 void jeux(pack_t * fenetre){
     // création de la fenetre
     SDL_Rect win= {0,0,0,0};
-    /**
-     * \brief transformation de la fenetre en fenetre de jeu
-     */ 
+    // transformation de la fenetre en fenetre de jeu
     plein_ecran(fenetre, &win);
     
 

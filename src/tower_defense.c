@@ -11,23 +11,17 @@
 #include "../include/menu.h"
 
 int main(){
-    /**
-     * \brief Initialisation de la SDL avec gestion d'erreur
-     */
+    //Initialisation de la SDL avec gestion d'erreur
     if(initilalisation_sdl()){
         return 1;
     }
     
-    /**
-     * \brief appel du menu principal avec gestion d'erreur
-    */
+    //appel du menu principal avec gestion d'erreur
     if (menu()){
         return 1;
     }
 
-    /**
-     * \brief suppresion de la SDL
-     */
+    //suppresion de la SDL
     supression_sdl();
     return 0;
 }
