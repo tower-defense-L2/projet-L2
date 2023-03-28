@@ -8,7 +8,24 @@
  */
 #include "../include/menu.h"
 
+/**
+ * \brief fonction de reformattage de la fenetre en fenetre de menu
+ * 
+ * \param fenetre pointeur sur la structure pack_t
+ * \param win pointeur sur la structure SDL_Rect
+ */
+static
+void modelage_fenetre_menu(pack_t * fenetre, SDL_Rect * win){
+    SDL_SetWindowBordered(fenetre->fenetre, SDL_TRUE);
+    SDL_SetWindowResizable(fenetre->fenetre, SDL_TRUE);
+    SDL_SetWindowFullscreen(fenetre->fenetre, 0);
+    SDL_SetWindowSize(fenetre->fenetre, 854, 480);
+    SDL_SetWindowPosition(fenetre->fenetre, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED);
+    
+    SDL_GetDisplayBounds(0,win);
+}
 
+extern
 int menu(){
     pack_t * fenetre = NULL;
     SDL_Event event;
@@ -28,12 +45,13 @@ int menu(){
     
 
     // création de la fenetre
-    fenetre = creation_pack("menu tower defence", 854, 480, SDL_WINDOW_SHOWN, 30);
+    fenetre = creation_pack(TITRE, 854, 480, SDL_WINDOW_SHOWN, 30);
     if(fenetre == NULL){
         return 1;
     }
+    modelage_fenetre_menu(fenetre, &win);
     SDL_GetWindowSize(fenetre->fenetre, &win.w, &win.h);
-    if(load_bitmap("./ressources/menu.bmp", &texture_menu, fenetre)){
+    if(load_bitmap("menu", &texture_menu, fenetre)){
         return 1;
     }
 
@@ -86,8 +104,12 @@ int menu(){
          */
         position_bouton(bouton, (win.w/4), (win.h/2));
         if(gestion_bouton(bouton, fenetre, x, y)&& Click==SDL_BUTTON_LEFT){
-            printf("on lance le jeu\n");
-            jeux();
+
+            // lancement du jeu
+            jeux(fenetre);
+
+            // refomatage de la fenetre
+            modelage_fenetre_menu(fenetre, &win);
         }
         position_bouton(bouton2, (win.w/4), (4*win.h/7));
         if(gestion_bouton(bouton2, fenetre, x, y)&& Click==SDL_BUTTON_LEFT){
