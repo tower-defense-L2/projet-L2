@@ -10,4 +10,5 @@
 <area shape="rect" id="node5" href="$tower__defense_8c.html" title="fichier principal du jeu tower defense" alt="" coords="123,244,275,271"/>
 <area shape="rect" id="node8" href="$mouvement__ennemi_8c.html" title="vérifie si une bille peut se rendre dans la salle suivante, cans ce cas le fait et suprime l&#39;ennemi q..." alt="" coords="334,169,525,196"/>
 <area shape="rect" id="node10" href="$placement__tours_8c.html" title="source fonction placement et suppression des tours" alt="" coords="579,169,744,196"/>
+<area shape="rect" id="node12" href="$possibilite__tours_8c.html" title="source fonction gestion placement et suppression tours" alt="" coords="772,169,935,196"/>
 </map>

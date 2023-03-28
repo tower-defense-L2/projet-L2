@@ -1,4 +1,7 @@
 <map id="src/possibilite_tours.c" name="src/possibilite_tours.c">
-<area shape="rect" id="node1" title="source fonction gestion placement et suppression tours" alt="" coords="5,5,168,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="11,80,163,121"/>
+<area shape="rect" id="node1" title="source fonction gestion placement et suppression tours" alt="" coords="33,5,195,32"/>
+<area shape="rect" id="node2" href="$possibilite__tours_8h.html" title="Vérification des actions liées aux tours." alt="" coords="38,80,190,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,169,76,196"/>
+<area shape="rect" id="node4" href="$const_8h.html" title=" " alt="" coords="115,244,185,271"/>
+<area shape="rect" id="node5" href="$struct_8h.html" title="definition des differente structure utilisé dans le programme" alt="" coords="152,169,223,196"/>
 </map>
