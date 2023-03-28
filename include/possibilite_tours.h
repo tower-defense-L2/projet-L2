@@ -1,5 +1,5 @@
 /**
- * \file possibilite_tour.h
+ * \file possibilite_tours.h
  * \author Nathan (Nathan.Duval.Etu@univ-lemans.fr)
  * \brief  Vérification des actions liées aux tours
  * \version 0.1
