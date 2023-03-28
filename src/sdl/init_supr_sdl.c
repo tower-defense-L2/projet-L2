@@ -93,9 +93,8 @@ int load_bitmap(const char *path, SDL_Texture ** texture, pack_t * fenettre){
         return 1 ;
     }
 
-    /**
-     * \brief création de la texture
-     */
+
+    // création de la texture
     *texture = SDL_CreateTextureFromSurface(fenettre->renderer, fond);
     // gestion d'erreur de la texture
     if(*texture == NULL){
