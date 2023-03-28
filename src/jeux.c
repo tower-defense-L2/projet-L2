@@ -9,58 +9,106 @@
  */
 #include "../include/jeux.h"
 
-void jeux(){
+
+static
+void plein_ecran(pack_t * fenetre, SDL_Rect * win){
+    SDL_SetWindowFullscreen(fenetre->fenetre, SDL_WINDOW_FULLSCREEN_DESKTOP);
+    SDL_SetWindowBordered(fenetre->fenetre, SDL_FALSE);
+    SDL_SetWindowResizable(fenetre->fenetre, SDL_FALSE);
+    SDL_GetDisplayBounds(0,win);
+}
+
+static
+void fenetree(pack_t * fenetre, SDL_Rect * win){
+    SDL_SetWindowBordered(fenetre->fenetre, SDL_TRUE);
+    SDL_SetWindowResizable(fenetre->fenetre, SDL_TRUE);
+    SDL_SetWindowFullscreen(fenetre->fenetre, 0);
+    *win = (SDL_Rect){0,0,0,0};
+    SDL_GetWindowSize(fenetre->fenetre,&win->w,&win->h);
+}
+
+
+
+extern
+void jeux(pack_t * fenetre){
     // création de la fenetre
     SDL_Rect win= {0,0,0,0};
-    pack_t * fenetre = creation_pack("Jeu", 1600, 900, SDL_WINDOW_FULLSCREEN_DESKTOP |SDL_WINDOW_BORDERLESS, 30);
     /**
-     * \brief verrouillage de la fenetre en plein écran 
-     */
-    SDL_SetWindowResizable(fenetre->fenetre, SDL_FALSE);
-    SDL_SetWindowBordered(fenetre->fenetre, SDL_FALSE);
-    SDL_SetWindowPosition(fenetre->fenetre, 0, 0);
-    SDL_GetDisplayBounds(0,&win);
-    SDL_SetWindowSize(fenetre->fenetre, win.w, win.h);
-
-    // initialisation des variables
-    SDL_Texture * texture = NULL;
+     * \brief transformation de la fenetre en fenetre de jeu
+     */ 
+    plein_ecran(fenetre, &win);
     
 
+    // initialisation des variables
+    SDL_Event event;
+    SDL_bool program_launched = SDL_TRUE;
+    SDL_Texture * texture = NULL;
+    SDL_Texture * chemin = NULL;
+    SDL_Texture * bordure = NULL;
+    SDL_Texture * bille = NULL;
+    SDL_Texture * tour = NULL;
+    Uint64 start, end;
+    float elapsed = 0;
+    Uint32 Click = 0; // état du clique
+    int x = 0, y = 0; // position de la souris
+    SDL_Rect tuile= {0,0,0,0};
+    SDL_bool est_plein_ecran = SDL_TRUE;
+    
+    // variable temporaire
+    map_T *map = malloc(sizeof(map_T) + sizeof(case_T*) * HAUTEUR);
+    
+
+    for(int i = 0; i < HAUTEUR ; i++){
+        for(int j = 0; j < LARGEUR; j++){
+            map->cases[i][j] = malloc(sizeof(case_T));
+            map->cases[i][j]->type = VIDE;
+        }
+        map->cases[i][0]->type = CHEMIN;
+        map->cases[i][LARGEUR-1]->type = CHEMIN;
+        map->cases[i][1]->type = EMPLACEMENT;
+    }
+
     // chargement de l'image de fond et gestion d'erreur
-    if(load_bitmap("./ressources/font.bmp",&texture,fenetre)){
+    if(load_bitmap("font",&texture,fenetre)){
         return;
     }
+    load_bitmap("chemin",&chemin,fenetre);
+    load_bitmap("bordure",&bordure,fenetre);
+    load_bitmap("bille",&bille,fenetre);
+    load_bitmap("tour",&tour,fenetre);
 
     SDL_RenderCopy(fenetre->renderer,texture,NULL,NULL);
     SDL_RenderPresent(fenetre->renderer);
     SDL_RenderClear(fenetre->renderer);
     
-    /**
+    
+    
     while(program_launched){
+        // la taille de la fenetre est mise a jour
         SDL_GetWindowSize(fenetre->fenetre, &win.w, &win.h);
         start = SDL_GetPerformanceCounter();
+
+        // la taille des tuile est calculer en fonction de la fenettre
+        tuile = (SDL_Rect){0, 0, win.w/(LARGEUR+2), win.h/(HAUTEUR+2)};
+
         SDL_RenderClear(fenetre->renderer);
         Click = SDL_GetMouseState(&x, &y);
-        SDL_RenderCopy(fenetre->renderer, texture_menu, NULL, NULL);
+        SDL_RenderCopy(fenetre->renderer, texture, NULL, NULL);
 
-        for(int i = 0; i < 16; i++){
-            for(int j = 0; j < 9; j++){
-                tuile.x = (i+1) * tuile.w;
-                tuile.y = (j+1) * tuile.h;
-                switch(map[i][j]){
+        for(int j = 0; j < LARGEUR; j++){
+            for(int i = 0; i < HAUTEUR; i++){
+                tuile.y = (i+1) * tuile.h;
+                tuile.x = (j+1) * tuile.w;
+                switch(map->cases[i][j]->type){
                     case CHEMIN:
                         SDL_RenderCopy(fenetre->renderer, chemin, NULL, &tuile);
                         break;
-                    case BORDURE:
+                    case EMPLACEMENT:
                         SDL_RenderCopy(fenetre->renderer, bordure, NULL, &tuile);
                         break;
-                    case BILLE:
+                    case VIDE:
                         SDL_RenderCopy(fenetre->renderer, chemin, NULL, &tuile);
                         SDL_RenderCopy(fenetre->renderer, bille, NULL, &tuile);
-                        break;
-                    case TOUR:
-                        SDL_RenderCopy(fenetre->renderer, bordure, NULL, &tuile);
-                        SDL_RenderCopy(fenetre->renderer, tour, NULL, &tuile);
                         break;
                 }
             }
@@ -81,18 +129,31 @@ void jeux(){
                     case SDLK_ESCAPE:
                         program_launched = SDL_FALSE;
                         break;
+                    case SDLK_F11:
+                        if(est_plein_ecran){
+                            fenetree(fenetre, &win);
+                            est_plein_ecran = SDL_FALSE;
+                        }
+                        else{
+                            plein_ecran(fenetre, &win);
+                            est_plein_ecran = SDL_TRUE;
+                        }
+                        
                 }
                 break;
         }
     }
-    */
-    
-    SDL_Delay(5000);
+
 
     // destruction de la texture
     SDL_DestroyTexture(texture);
+    SDL_DestroyTexture(chemin);
+    SDL_DestroyTexture(bordure);
+    SDL_DestroyTexture(bille);
+    SDL_DestroyTexture(tour);
     texture = NULL;
-
-    // fermeture de la fenetre de jeu
-    supression_pack(&fenetre);
+    chemin = NULL;
+    bordure = NULL;
+    bille = NULL;
+    tour = NULL;
 }

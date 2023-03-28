@@ -10,7 +10,9 @@
 #ifndef PROJET_L2_CONST_H
 #define PROJET_L2_CONST_H
 
-#define LARGEUR 10
-#define HAUTEUR 10
+#define LARGEUR 16
+#define HAUTEUR 9
+#define TITRE "Tower Defense"
+#define RESSOURCES "./ressources/"
 
 #endif //PROJET_L2_CONST_H
