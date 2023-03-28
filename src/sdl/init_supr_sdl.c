@@ -79,9 +79,13 @@ void supression_sdl(){
 
 
 int load_bitmap(const char *path, SDL_Texture ** texture, pack_t * fenettre){
+    char * path2 = malloc(sizeof(char) * 100);
+    strcpy(path2, RESSOURCES);
+    strcat(path2, path);
+    strcat(path2, ".bmp");
     SDL_Surface * fond = NULL;
     // load de la bitmap
-    fond = SDL_LoadBMP(path);
+    fond = SDL_LoadBMP(path2);
     // gestion d'erreur du load
     if(fond == NULL){
         printf("Erreur de chargement de l'image : %s", SDL_GetError());

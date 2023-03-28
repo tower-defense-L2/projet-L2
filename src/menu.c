@@ -16,7 +16,6 @@
  */
 static
 void modelage_fenetre_menu(pack_t * fenetre, SDL_Rect * win){
-    SDL_SetWindowTitle(fenetre->fenetre, "menu tower defense");
     SDL_SetWindowBordered(fenetre->fenetre, SDL_TRUE);
     SDL_SetWindowResizable(fenetre->fenetre, SDL_TRUE);
     SDL_SetWindowFullscreen(fenetre->fenetre, 0);
@@ -46,13 +45,13 @@ int menu(){
     
 
     // création de la fenetre
-    fenetre = creation_pack("menu tower defense", 854, 480, SDL_WINDOW_SHOWN, 30);
+    fenetre = creation_pack(TITRE, 854, 480, SDL_WINDOW_SHOWN, 30);
     if(fenetre == NULL){
         return 1;
     }
     modelage_fenetre_menu(fenetre, &win);
     SDL_GetWindowSize(fenetre->fenetre, &win.w, &win.h);
-    if(load_bitmap("./ressources/menu.bmp", &texture_menu, fenetre)){
+    if(load_bitmap("menu", &texture_menu, fenetre)){
         return 1;
     }
 

@@ -11,7 +11,7 @@
 
 
 static
-void plein_ecrant(pack_t * fenetre, SDL_Rect * win){
+void plein_ecran(pack_t * fenetre, SDL_Rect * win){
     SDL_SetWindowFullscreen(fenetre->fenetre, SDL_WINDOW_FULLSCREEN_DESKTOP);
     SDL_SetWindowBordered(fenetre->fenetre, SDL_FALSE);
     SDL_SetWindowResizable(fenetre->fenetre, SDL_FALSE);
@@ -27,17 +27,6 @@ void fenetree(pack_t * fenetre, SDL_Rect * win){
     SDL_GetWindowSize(fenetre->fenetre,&win->w,&win->h);
 }
 
-/**
- * \brief fonction de reformattage de la fenetre en fenetre de jeu
- * 
- * \param fenetre pointeur sur la fenetre de jeu en type pack_t
- * \param win pointeur sur le rectancle de fenetre en type SDL_Rect
- */
-static
-void modelage_fenetre_jeux(pack_t * fenetre, SDL_Rect * win){
-    SDL_SetWindowTitle(fenetre->fenetre, "Tower Defense");
-    plein_ecrant(fenetre, win);
-}
 
 
 extern
@@ -47,7 +36,7 @@ void jeux(pack_t * fenetre){
     /**
      * \brief transformation de la fenetre en fenetre de jeu
      */ 
-    modelage_fenetre_jeux(fenetre, &win);
+    plein_ecran(fenetre, &win);
     
 
     // initialisation des variables
@@ -63,7 +52,7 @@ void jeux(pack_t * fenetre){
     Uint32 Click = 0; // état du clique
     int x = 0, y = 0; // position de la souris
     SDL_Rect tuile= {0,0,0,0};
-    SDL_bool plein_ecran = SDL_TRUE;
+    SDL_bool est_plein_ecran = SDL_TRUE;
     
     // variable temporaire
     map_T *map = malloc(sizeof(map_T) + sizeof(case_T*) * HAUTEUR);
@@ -80,13 +69,13 @@ void jeux(pack_t * fenetre){
     }
 
     // chargement de l'image de fond et gestion d'erreur
-    if(load_bitmap("./ressources/font.bmp",&texture,fenetre)){
+    if(load_bitmap("font",&texture,fenetre)){
         return;
     }
-    load_bitmap("./ressources/chemin.bmp",&chemin,fenetre);
-    load_bitmap("./ressources/bordure.bmp",&bordure,fenetre);
-    load_bitmap("./ressources/bille.bmp",&bille,fenetre);
-    load_bitmap("./ressources/tour.bmp",&tour,fenetre);
+    load_bitmap("chemin",&chemin,fenetre);
+    load_bitmap("bordure",&bordure,fenetre);
+    load_bitmap("bille",&bille,fenetre);
+    load_bitmap("tour",&tour,fenetre);
 
     SDL_RenderCopy(fenetre->renderer,texture,NULL,NULL);
     SDL_RenderPresent(fenetre->renderer);
@@ -141,13 +130,13 @@ void jeux(pack_t * fenetre){
                         program_launched = SDL_FALSE;
                         break;
                     case SDLK_F11:
-                        if(plein_ecran){
+                        if(est_plein_ecran){
                             fenetree(fenetre, &win);
-                            plein_ecran = SDL_FALSE;
+                            est_plein_ecran = SDL_FALSE;
                         }
                         else{
-                            plein_ecrant(fenetre, &win);
-                            plein_ecran = SDL_TRUE;
+                            plein_ecran(fenetre, &win);
+                            est_plein_ecran = SDL_TRUE;
                         }
                         
                 }
