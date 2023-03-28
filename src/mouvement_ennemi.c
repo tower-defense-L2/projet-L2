@@ -11,7 +11,7 @@
 
 #include "../include/mouvement_ennemi.h"
 
-
+extern
 int mouvement_bille(chemin_T *chemin)
 {
 

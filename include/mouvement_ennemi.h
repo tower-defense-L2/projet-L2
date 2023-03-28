@@ -20,4 +20,5 @@
  * \param chemin // Le type de case ou les ennemis peuvent se déplacer
  * \return int int 0 si impossible / 1 si possible
  */
+extern
 int mouvement_bille(chemin_T *chemin);

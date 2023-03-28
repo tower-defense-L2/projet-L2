@@ -9,6 +9,7 @@
  */
 #include "../../include/init_supr_sdl.h"
 
+extern
 pack_t * creation_pack(char * titre, int width, int height, int flags, int taille_police){
     pack_t * fenetre = malloc(sizeof(pack_t));
 
@@ -42,6 +43,7 @@ pack_t * creation_pack(char * titre, int width, int height, int flags, int taill
     return fenetre;
 }
 
+extern
 int initilalisation_sdl(){
     // Initialisation de la SDL avecc gestion d'erreur
     if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER) < 0){
@@ -59,6 +61,7 @@ int initilalisation_sdl(){
 }
 
 
+extern
 void supression_pack(pack_t ** fenetre){
     // Supression de la police
     TTF_CloseFont((*fenetre)->police);
@@ -70,6 +73,7 @@ void supression_pack(pack_t ** fenetre){
     *fenetre = NULL;
 }
 
+extern
 void supression_sdl(){
     // Quitte SDL_ttf
     TTF_Quit();
@@ -78,6 +82,7 @@ void supression_sdl(){
 }
 
 
+extern
 int load_bitmap(const char *path, SDL_Texture ** texture, pack_t * fenettre){
     char * path2 = malloc(sizeof(char) * 100);
     strcpy(path2, RESSOURCES);
@@ -93,9 +98,8 @@ int load_bitmap(const char *path, SDL_Texture ** texture, pack_t * fenettre){
         return 1 ;
     }
 
-    /**
-     * \brief création de la texture
-     */
+
+    // création de la texture
     *texture = SDL_CreateTextureFromSurface(fenettre->renderer, fond);
     // gestion d'erreur de la texture
     if(*texture == NULL){
@@ -109,6 +113,7 @@ int load_bitmap(const char *path, SDL_Texture ** texture, pack_t * fenettre){
     return 0;
 }
 
+extern
 void supression_texture(texture_t * texture){
     // Supression de la texture
     SDL_DestroyTexture(texture->texture);
@@ -124,6 +129,7 @@ void supression_texture(texture_t * texture){
     texture = NULL;
 }
 
+extern
 void supression_texture_liste(texture_t * texture){
     // Supression de la liste de texture en récursivité
     if(texture->suivant != NULL){
@@ -134,6 +140,7 @@ void supression_texture_liste(texture_t * texture){
 }
 
 
+extern
 bouton_t * creation_bouton(pack_t * fenetre, char * texte,
                 SDL_Color couleur, SDL_Color wrap, int x, int y){
     
@@ -156,6 +163,7 @@ bouton_t * creation_bouton(pack_t * fenetre, char * texte,
     return bouton;
 }
 
+extern
 void supression_bouton(bouton_t ** bouton){
     // Supression de la texture normale
     SDL_DestroyTexture((*bouton)->normale);
@@ -166,6 +174,7 @@ void supression_bouton(bouton_t ** bouton){
     *bouton = NULL;
 }
 
+extern
 void position_bouton(bouton_t * bouton, const int x, const int y){
     // attribution des coordonnées au bouton
     bouton->dst.x = x;

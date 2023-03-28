@@ -14,6 +14,7 @@
 
 
 //met une tour sur la sase sélecionnée
+extern
 void placement_tour(emplacement_T *emplacement, joueur_T *joueur, tour_T *tour)
 {
 
@@ -25,6 +26,7 @@ void placement_tour(emplacement_T *emplacement, joueur_T *joueur, tour_T *tour)
 }
 
 // supprime la tour de la sase sélecionnée
+extern
 void suppression_tour(emplacement_T *emplacement, tour_T *tour)
 {
     if(suppression_possible)
