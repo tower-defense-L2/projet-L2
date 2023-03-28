@@ -12,6 +12,7 @@ Le but étant pour le joueur, de placer des "Tours" sur une carte donnée afin d
 Le jeu va donc avoir plusieurs perspectives :
 - stratégique, dû au placement des tours
 - gestion, suite au système de ressources
+La Documentation est disponible [ici](https://tower-defense-l2.github.io/projet-L2/).
 
 ## Planification
 Le diagramme de Gantt est disponible [ici](https://docs.google.com/spreadsheets/d/1WgdX5Zml3Ks-bE99PTovAkDHtlANthjp1Kes8xw4FFY).

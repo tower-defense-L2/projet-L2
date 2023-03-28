@@ -1,6 +1,6 @@
 #include "../include/jeux.h"
 #include "../include/init_supr_sdl.h"
-typedef enum map_type_e { CHEMIN, BORDURE, BILLE, TOUR} map_type_t;
+typedef enum map_type_e { CHEMIN_TEST, BORDURE, BILLE, TOUR} map_type_t;
 
 int main(){
     pack_t * fenetre = NULL;
@@ -38,7 +38,7 @@ int main(){
     map_type_t map[16][9];
     for(int i = 0; i < 16; i++){
         for(int j = 0; j < 9; j++){
-            map[i][j] = CHEMIN;
+            map[i][j] = CHEMIN_TEST;
         }
     }
     for(int i = 0; i < 16; i++){
@@ -65,7 +65,7 @@ int main(){
                 tuile.x = (i+1) * tuile.w;
                 tuile.y = (j+1) * tuile.h;
                 switch(map[i][j]){
-                    case CHEMIN:
+                    case CHEMIN_TEST:
                         SDL_RenderCopy(fenetre->renderer, chemin, NULL, &tuile);
                         break;
                     case BORDURE:
