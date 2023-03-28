@@ -18,6 +18,7 @@
  * \param joueur // Pour soustraire le coût d'une tour à l'argent du joueur
  * \param tour // Est null si il n'y a pas de tour
  */
+extern
 void placement_tour(emplacement_T *emplacement, joueur_T *joueur, tour_T *tour);
 
 
@@ -28,4 +29,5 @@ void placement_tour(emplacement_T *emplacement, joueur_T *joueur, tour_T *tour);
  * \param emplacement // La case visée pour le placement de la tours sur la carte
  * \param tour Est null si il n'y a pas de tour
  */
+extern
 void suppression_tour(emplacement_T *emplacement, tour_T *tour);

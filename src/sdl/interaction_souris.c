@@ -9,7 +9,7 @@
  */
 #include "../../include/interaction_souris.h"
 
-
+extern
 int souris_dessu(const int x, const  int y, const SDL_Rect *rect){
     // comparaison de la coordonnée de la souris avec les coordonnées du rectangle
     if(x > rect->x && x < rect->x + rect->w && y > rect->y && y < rect->y + rect->h){
@@ -18,6 +18,7 @@ int souris_dessu(const int x, const  int y, const SDL_Rect *rect){
     return 0;
 }
 
+extern
 int gestion_bouton(const bouton_t * bouton, pack_t * fenetre , const int x, const int y){
     // si la souris est sur le bouton, on affiche le bouton survol
     if(souris_dessu(x, y, &bouton->dst)){
