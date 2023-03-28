@@ -1,9 +1,10 @@
 <map id="map_S" name="map_S">
-<area shape="rect" id="node1" title="structure contenant les informations d&#39;une carte" alt="" coords="117,363,184,389"/>
-<area shape="rect" id="node2" href="$unioncase___u.html" title="union contenant les informations d&#39;une case" alt="" coords="116,273,185,300"/>
-<area shape="rect" id="node3" href="$structchemin___s.html" title="structure contenant les informations d&#39;un chemin" alt="" coords="5,184,91,211"/>
-<area shape="rect" id="node4" href="$structposition___s.html" title="structure contenant les coordonnées d&#39;un élément" alt="" coords="141,5,230,32"/>
-<area shape="rect" id="node5" href="$structennemi___s.html" title="structure contenant les informations d&#39;un ennemi" alt="" coords="90,95,177,121"/>
-<area shape="rect" id="node6" href="$structemplacement___s.html" title="structure contenant les informations d&#39;un emplacement" alt="" coords="193,184,319,211"/>
-<area shape="rect" id="node7" href="$structtour___s.html" title="structure contenant les informations d&#39;une tour" alt="" coords="307,95,370,121"/>
+<area shape="rect" id="node1" title="structure contenant les informations d&#39;une carte" alt="" coords="117,452,184,479"/>
+<area shape="rect" id="node2" href="$structcase___s.html" title=" " alt="" coords="117,363,184,389"/>
+<area shape="rect" id="node3" href="$unioncase___u.html" title="union contenant les informations d&#39;une case" alt="" coords="116,273,185,300"/>
+<area shape="rect" id="node4" href="$structchemin___s.html" title="structure contenant les informations d&#39;un chemin" alt="" coords="5,184,91,211"/>
+<area shape="rect" id="node5" href="$structposition___s.html" title="structure contenant les coordonnées d&#39;un élément" alt="" coords="141,5,230,32"/>
+<area shape="rect" id="node6" href="$structennemi___s.html" title="structure contenant les informations d&#39;un ennemi" alt="" coords="90,95,177,121"/>
+<area shape="rect" id="node7" href="$structemplacement___s.html" title="structure contenant les informations d&#39;un emplacement" alt="" coords="193,184,319,211"/>
+<area shape="rect" id="node8" href="$structtour___s.html" title="structure contenant les informations d&#39;une tour" alt="" coords="307,95,370,121"/>
 </map>

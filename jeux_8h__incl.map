@@ -1,12 +1,12 @@
 <map id="include/jeux.h" name="include/jeux.h">
-<area shape="rect" id="node1" title="fonction principale du jeu" alt="" coords="169,5,282,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="64,229,160,256"/>
-<area shape="rect" id="node3" href="$struct__sdl_8h.html" title="definition des differente structure utilisé par les fonctions de sdl" alt="" coords="105,155,210,181"/>
-<area shape="rect" id="node5" href="$struct_8h.html" title="definition des differente structure utilisé dans le programme" alt="" coords="485,80,564,107"/>
-<area shape="rect" id="node7" href="$interaction__souris_8h.html" title="differentes fonctions pour gerer la souris avec SDL" alt="" coords="29,80,188,107"/>
-<area shape="rect" id="node8" href="$init__supr__sdl_8h.html" title="différente fonction servant pour la création et la destruction de la sdl" alt="" coords="264,80,388,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="212,229,330,256"/>
-<area shape="rect" id="node6" href="$const_8h.html" title=" " alt="" coords="590,155,659,181"/>
-<area shape="rect" id="node9" title=" " alt="" coords="336,155,403,181"/>
-<area shape="rect" id="node10" title=" " alt="" coords="428,155,565,181"/>
+<area shape="rect" id="node1" title="fonction principale du jeu" alt="" coords="219,5,333,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="31,229,127,256"/>
+<area shape="rect" id="node3" href="$struct__sdl_8h.html" title="definition des differente structure utilisé par les fonctions de sdl" alt="" coords="71,155,177,181"/>
+<area shape="rect" id="node5" href="$struct_8h.html" title="definition des differente structure utilisé dans le programme" alt="" coords="529,80,607,107"/>
+<area shape="rect" id="node6" href="$const_8h.html" title=" " alt="" coords="556,155,625,181"/>
+<area shape="rect" id="node7" href="$interaction__souris_8h.html" title="differentes fonctions pour gerer la souris avec SDL" alt="" coords="30,80,189,107"/>
+<area shape="rect" id="node8" href="$init__supr__sdl_8h.html" title="différente fonction servant pour la création et la destruction de la sdl" alt="" coords="265,80,389,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="179,229,296,256"/>
+<area shape="rect" id="node9" title=" " alt="" coords="303,155,369,181"/>
+<area shape="rect" id="node10" title=" " alt="" coords="394,155,531,181"/>
 </map>

@@ -1,8 +1,9 @@
 <map id="include/init_supr_sdl.h" name="include/init_supr_sdl.h">
-<area shape="rect" id="node1" title="différente fonction servant pour la création et la destruction de la sdl" alt="" coords="117,5,283,32"/>
+<area shape="rect" id="node1" title="différente fonction servant pour la création et la destruction de la sdl" alt="" coords="189,5,355,32"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,80,72,107"/>
 <area shape="rect" id="node3" title=" " alt="" coords="107,155,203,181"/>
 <area shape="rect" id="node4" title=" " alt="" coords="309,155,427,181"/>
 <area shape="rect" id="node5" title=" " alt="" coords="277,80,414,107"/>
 <area shape="rect" id="node6" href="$struct__sdl_8h.html" title="definition des differente structure utilisé par les fonctions de sdl" alt="" coords="147,80,253,107"/>
+<area shape="rect" id="node7" href="$const_8h.html" title=" " alt="" coords="489,80,567,107"/>
 </map>

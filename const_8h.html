@@ -79,19 +79,21 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <div class="dyncontent">
 <div class="center"><img src="const_8h__dep__incl.png" border="0" usemap="#ainclude_2const_8hdep" alt=""/></div>
 <map name="ainclude_2const_8hdep" id="ainclude_2const_8hdep">
-<area shape="rect" title=" " alt="" coords="337,5,457,32"/>
-<area shape="rect" href="mouvement__ennemi_8h.html" title="vérifie la possiblité de déplacement d&#39;une bille" alt="" coords="5,162,225,189"/>
-<area shape="rect" href="placement__tours_8h.html" title="Afin de mettre une tour sur la carte ou d&#39;en supprimer une." alt="" coords="250,162,445,189"/>
-<area shape="rect" href="possibilite__tours_8h.html" title="Vérification des actions liées aux tours." alt="" coords="607,155,747,196"/>
-<area shape="rect" href="struct_8h.html" title="definition des differente structure utilisé dans le programme" alt="" coords="385,80,507,107"/>
-<area shape="rect" href="mouvement__ennemi_8c.html" title="vérifie si une bille peut se rendre dans la salle suivante, cans ce cas le fait et suprime l&#39;ennemi q..." alt="" coords="20,244,211,271"/>
-<area shape="rect" href="placement__tours_8c.html" title="source fonction placement et suppression des tours" alt="" coords="250,244,415,271"/>
-<area shape="rect" href="possibilite__tours_8c.html" title="source fonction gestion placement et suppression tours" alt="" coords="695,244,858,271"/>
-<area shape="rect" href="jeux_8h.html" title="fonction principale du jeu" alt="" coords="469,162,583,189"/>
-<area shape="rect" href="menu_8h.html" title="menu du jeux" alt="" coords="439,244,562,271"/>
-<area shape="rect" href="jeux_8c.html" title="boucle de jeu" alt="" coords="587,244,671,271"/>
-<area shape="rect" href="menu_8c.html" title="menu principal du jeu" alt="" coords="381,319,474,345"/>
-<area shape="rect" href="tower__defense_8c.html" title="fichier principal du jeu tower defense" alt="" coords="498,319,650,345"/>
+<area shape="rect" title=" " alt="" coords="565,5,685,32"/>
+<area shape="rect" href="init__supr__sdl_8h.html" title="différente fonction servant pour la création et la destruction de la sdl" alt="" coords="207,80,373,107"/>
+<area shape="rect" href="jeux_8h.html" title="fonction principale du jeu" alt="" coords="328,162,441,189"/>
+<area shape="rect" href="mouvement__ennemi_8h.html" title="vérifie la possiblité de déplacement d&#39;une bille" alt="" coords="465,162,685,189"/>
+<area shape="rect" href="placement__tours_8h.html" title="Afin de mettre une tour sur la carte ou d&#39;en supprimer une." alt="" coords="710,162,905,189"/>
+<area shape="rect" href="possibilite__tours_8h.html" title="Vérification des actions liées aux tours." alt="" coords="929,155,1069,196"/>
+<area shape="rect" href="struct_8h.html" title="definition des differente structure utilisé dans le programme" alt="" coords="613,80,735,107"/>
+<area shape="rect" href="menu_8h.html" title="menu du jeux" alt="" coords="242,244,365,271"/>
+<area shape="rect" href="tower__defense_8c.html" title="fichier principal du jeu tower defense" alt="" coords="129,319,281,345"/>
+<area shape="rect" href="init__supr__sdl_8c.html" title="source des fonctions servant pour la création et la destruction de la sdl" alt="" coords="5,162,167,189"/>
+<area shape="rect" href="jeux_8c.html" title="boucle de jeu" alt="" coords="389,244,473,271"/>
+<area shape="rect" href="menu_8c.html" title="menu principal du jeu" alt="" coords="305,319,398,345"/>
+<area shape="rect" href="mouvement__ennemi_8c.html" title="vérifie si une bille peut se rendre dans la salle suivante, cans ce cas le fait et suprime l&#39;ennemi q..." alt="" coords="497,244,688,271"/>
+<area shape="rect" href="placement__tours_8c.html" title="source fonction placement et suppression des tours" alt="" coords="727,244,893,271"/>
+<area shape="rect" href="possibilite__tours_8c.html" title="source fonction gestion placement et suppression tours" alt="" coords="918,244,1081,271"/>
 </map>
 </div>
 </div>
@@ -100,11 +102,17 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a3d3bf5a2f88b1dba6c6bc13bf889c3cc"><td class="memItemLeft" align="right" valign="top"><a id="a3d3bf5a2f88b1dba6c6bc13bf889c3cc"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>LARGEUR</b>&#160;&#160;&#160;10</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LARGEUR</b>&#160;&#160;&#160;16</td></tr>
 <tr class="separator:a3d3bf5a2f88b1dba6c6bc13bf889c3cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad629b1db4ee230dc5de47de843476e72"><td class="memItemLeft" align="right" valign="top"><a id="ad629b1db4ee230dc5de47de843476e72"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>HAUTEUR</b>&#160;&#160;&#160;10</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>HAUTEUR</b>&#160;&#160;&#160;9</td></tr>
 <tr class="separator:ad629b1db4ee230dc5de47de843476e72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e2348634e7c46ec0de6b1879610e61a"><td class="memItemLeft" align="right" valign="top"><a id="a4e2348634e7c46ec0de6b1879610e61a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>TITRE</b>&#160;&#160;&#160;&quot;Tower Defense&quot;</td></tr>
+<tr class="separator:a4e2348634e7c46ec0de6b1879610e61a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb27267522f63290aacbc02530a668ef"><td class="memItemLeft" align="right" valign="top"><a id="acb27267522f63290aacbc02530a668ef"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>RESSOURCES</b>&#160;&#160;&#160;&quot;./ressources/&quot;</td></tr>
+<tr class="separator:acb27267522f63290aacbc02530a668ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><dl class="section author"><dt>Auteur</dt><dd>Antoine Sainty (<a href="#" onclick="location.href='mai'+'lto:'+'Sai'+'nt'+'y.A'+'nt'+'oin'+'e.'+'Etu'+'@u'+'niv'+'-l'+'ema'+'ns'+'.fr'; return false;">Saint<span style="display: none;">.nosp@m.</span>y.An<span style="display: none;">.nosp@m.</span>toine<span style="display: none;">.nosp@m.</span>.Etu<span style="display: none;">.nosp@m.</span>@univ<span style="display: none;">.nosp@m.</span>-lem<span style="display: none;">.nosp@m.</span>ans.f<span style="display: none;">.nosp@m.</span>r</a>) </dd></dl>

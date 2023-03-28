@@ -1,4 +1,5 @@
 <map id="include/possibilite_tours.h" name="include/possibilite_tours.h">
-<area shape="rect" id="node1" title="Vérification des actions liées aux tours." alt="" coords="17,5,157,47"/>
-<area shape="rect" id="node2" href="$possibilite__tours_8c.html" title="source fonction gestion placement et suppression tours" alt="" coords="5,95,168,121"/>
+<area shape="rect" id="node1" title="Vérification des actions liées aux tours." alt="" coords="111,5,251,47"/>
+<area shape="rect" id="node2" href="$placement__tours_8c.html" title="source fonction placement et suppression des tours" alt="" coords="5,95,171,121"/>
+<area shape="rect" id="node3" href="$possibilite__tours_8c.html" title="source fonction gestion placement et suppression tours" alt="" coords="195,95,357,121"/>
 </map>
