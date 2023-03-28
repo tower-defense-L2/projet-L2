@@ -1,8 +1,8 @@
 <map id="src/placement_tours.c" name="src/placement_tours.c">
-<area shape="rect" id="node1" title="source fonction placement et suppression des tours" alt="" coords="87,5,252,32"/>
-<area shape="rect" id="node2" href="$placement__tours_8h.html" title="Afin de mettre une tour sur la carte ou d&#39;en supprimer une." alt="" coords="181,80,336,121"/>
-<area shape="rect" id="node6" href="$possibilite__tour_8h_source.html" title=" " alt="" coords="5,80,157,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="182,169,253,196"/>
-<area shape="rect" id="node4" href="$const_8h.html" title=" " alt="" coords="88,244,157,271"/>
-<area shape="rect" id="node5" href="$struct_8h.html" title="definition des differente structure utilisé dans le programme" alt="" coords="87,169,158,196"/>
+<area shape="rect" id="node1" title="source fonction placement et suppression des tours" alt="" coords="119,5,285,32"/>
+<area shape="rect" id="node2" href="$placement__tours_8h.html" title="Afin de mettre une tour sur la carte ou d&#39;en supprimer une." alt="" coords="37,80,191,121"/>
+<area shape="rect" id="node6" title=" " alt="" coords="215,80,367,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,169,76,196"/>
+<area shape="rect" id="node4" href="$const_8h.html" title=" " alt="" coords="115,244,185,271"/>
+<area shape="rect" id="node5" href="$struct_8h.html" title="definition des differente structure utilisé dans le programme" alt="" coords="152,169,223,196"/>
 </map>
