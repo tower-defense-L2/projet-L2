@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['placement_5ftour_117',['placement_tour',['../placement__tours_8h.html#a079e134723e2156336a66ae06d972d02',1,'placement_tour(emplacement_T *emplacement, joueur_T *joueur, tour_T *tour):&#160;placement_tours.c'],['../placement__tours_8c.html#a079e134723e2156336a66ae06d972d02',1,'placement_tour(emplacement_T *emplacement, joueur_T *joueur, tour_T *tour):&#160;placement_tours.c']]],
-  ['position_5fbouton_118',['position_bouton',['../init__supr__sdl_8h.html#ad1696014c0edce611d36c5f2010938b0',1,'position_bouton(bouton_t *bouton, const int x, const int y):&#160;init_supr_sdl.c'],['../init__supr__sdl_8c.html#ad1696014c0edce611d36c5f2010938b0',1,'position_bouton(bouton_t *bouton, const int x, const int y):&#160;init_supr_sdl.c']]],
-  ['position_5fpossible_119',['position_possible',['../possibilite__tours_8h.html#ab9c01e61371b2334cd8c480ef3a464ee',1,'position_possible(emplacement_T *emplacement, joueur_T *joueur, tour_T *tour, type_case_T *type):&#160;possibilite_tours.c'],['../possibilite__tours_8c.html#ab9c01e61371b2334cd8c480ef3a464ee',1,'position_possible(emplacement_T *emplacement, joueur_T *joueur, tour_T *tour, type_case_T *type):&#160;possibilite_tours.c']]]
+  ['menu_119',['menu',['../menu_8h.html#ae83fcdbeb2b6757fc741ae953b633ee1',1,'menu():&#160;menu.c'],['../menu_8c.html#ae83fcdbeb2b6757fc741ae953b633ee1',1,'menu():&#160;menu.c']]],
+  ['modelage_5ffenetre_5fmenu_120',['modelage_fenetre_menu',['../menu_8c.html#a5004861f5ce1e6daa308bae4d4834ee1',1,'menu.c']]],
+  ['mouvement_5fbille_121',['mouvement_bille',['../mouvement__ennemi_8h.html#a54f4b2663ffc0126a5397cf7ba45d9a4',1,'mouvement_bille(chemin_T *chemin):&#160;mouvement_ennemi.c'],['../mouvement__ennemi_8c.html#a54f4b2663ffc0126a5397cf7ba45d9a4',1,'mouvement_bille(chemin_T *chemin):&#160;mouvement_ennemi.c']]]
 ];

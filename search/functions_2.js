@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['initilalisation_5fsdl_112',['initilalisation_sdl',['../init__supr__sdl_8h.html#a8261c3df42fe4d4d8aac42e68c4908e7',1,'initilalisation_sdl():&#160;init_supr_sdl.c'],['../init__supr__sdl_8c.html#a8261c3df42fe4d4d8aac42e68c4908e7',1,'initilalisation_sdl():&#160;init_supr_sdl.c']]]
+  ['gestion_5fbouton_115',['gestion_bouton',['../interaction__souris_8h.html#a5889a02f431fa5c0581b1e9bb55819c8',1,'gestion_bouton(const bouton_t *bouton, pack_t *fenetre, const int x, const int y):&#160;interaction_souris.c'],['../interaction__souris_8c.html#a5889a02f431fa5c0581b1e9bb55819c8',1,'gestion_bouton(const bouton_t *bouton, pack_t *fenetre, const int x, const int y):&#160;interaction_souris.c']]]
 ];
