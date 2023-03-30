@@ -1,10 +1,14 @@
 var searchData=
 [
-  ['texture_5fs_67',['texture_s',['../structtexture__s.html',1,'']]],
-  ['texture_5ft_68',['texture_t',['../structtexture__t.html',1,'texture_t'],['../struct__sdl_8h.html#a4ccef78cc823a64b176eb792c4744abf',1,'texture_t():&#160;struct_sdl.h']]],
-  ['tour_69',['tour',['../structemplacement___s.html#a024f42964bfeaa44e05589000c955fcc',1,'emplacement_S']]],
-  ['tour_5fs_70',['tour_S',['../structtour___s.html',1,'']]],
-  ['tower_5fdefense_2ec_71',['tower_defense.c',['../tower__defense_8c.html',1,'']]],
-  ['type_72',['type',['../structcase___s.html#a49aa0a3144366c13e316b89b350b5235',1,'case_S']]],
-  ['type_5fcase_5fe_73',['type_case_E',['../struct_8h.html#ac29669aa20f0f4be92d93756f3203ce9',1,'struct.h']]]
+  ['souris_5fdessu_78',['souris_dessu',['../interaction__souris_8h.html#aaaf18754e17d9d0d3a16ad2fd5b5ff42',1,'souris_dessu(const int x, const int y, const SDL_Rect *rect):&#160;interaction_souris.c'],['../interaction__souris_8c.html#aaaf18754e17d9d0d3a16ad2fd5b5ff42',1,'souris_dessu(const int x, const int y, const SDL_Rect *rect):&#160;interaction_souris.c']]],
+  ['struct_2eh_79',['struct.h',['../struct_8h.html',1,'']]],
+  ['struct_5fsdl_2eh_80',['struct_sdl.h',['../struct__sdl_8h.html',1,'']]],
+  ['suivant_81',['suivant',['../structchemin___s.html#a24925b9b275f1c424876b7b2fe6ccfe7',1,'chemin_S']]],
+  ['suppression_5fpossible_82',['suppression_possible',['../possibilite__tours_8h.html#a5ca8820c6710c5a482713fb7dbdcc5fb',1,'suppression_possible(emplacement_T *emplacement, chemin_T *chemin, type_case_T *vide):&#160;possibilite_tours.c'],['../possibilite__tours_8c.html#a5ca8820c6710c5a482713fb7dbdcc5fb',1,'suppression_possible(emplacement_T *emplacement, chemin_T *chemin, type_case_T *vide):&#160;possibilite_tours.c']]],
+  ['suppression_5ftour_83',['suppression_tour',['../placement__tours_8h.html#adb21231177823481b0fbc1086bcfcb9d',1,'suppression_tour(emplacement_T *emplacement, tour_T *tour):&#160;placement_tours.c'],['../placement__tours_8c.html#adb21231177823481b0fbc1086bcfcb9d',1,'suppression_tour(emplacement_T *emplacement, tour_T *tour):&#160;placement_tours.c']]],
+  ['supression_5fbouton_84',['supression_bouton',['../init__supr__sdl_8h.html#a2df32955b0202e068dde703855f27951',1,'supression_bouton(bouton_t **bouton):&#160;init_supr_sdl.c'],['../init__supr__sdl_8c.html#a2df32955b0202e068dde703855f27951',1,'supression_bouton(bouton_t **bouton):&#160;init_supr_sdl.c']]],
+  ['supression_5fpack_85',['supression_pack',['../init__supr__sdl_8h.html#af481f956f543e81037250781e8bf7f56',1,'supression_pack(pack_t **fenetre):&#160;init_supr_sdl.c'],['../init__supr__sdl_8c.html#af481f956f543e81037250781e8bf7f56',1,'supression_pack(pack_t **fenetre):&#160;init_supr_sdl.c']]],
+  ['supression_5fsdl_86',['supression_sdl',['../init__supr__sdl_8h.html#a97ec819672ff9f21645a4320e03a8587',1,'supression_sdl():&#160;init_supr_sdl.c'],['../init__supr__sdl_8c.html#a97ec819672ff9f21645a4320e03a8587',1,'supression_sdl():&#160;init_supr_sdl.c']]],
+  ['supression_5ftexture_87',['supression_texture',['../init__supr__sdl_8h.html#a5e1dc847685ee1f1de2fbc8e114ad108',1,'supression_texture(texture_t *texture):&#160;init_supr_sdl.c'],['../init__supr__sdl_8c.html#a5e1dc847685ee1f1de2fbc8e114ad108',1,'supression_texture(texture_t *texture):&#160;init_supr_sdl.c']]],
+  ['supression_5ftexture_5fliste_88',['supression_texture_liste',['../init__supr__sdl_8h.html#a796bbf8c3fc3cf1353b6241e018a23ef',1,'supression_texture_liste(texture_t *texture):&#160;init_supr_sdl.c'],['../init__supr__sdl_8c.html#a796bbf8c3fc3cf1353b6241e018a23ef',1,'supression_texture_liste(texture_t *texture):&#160;init_supr_sdl.c']]]
 ];

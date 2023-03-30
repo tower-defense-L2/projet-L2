@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['tower_5fdefense_2ec_111',['tower_defense.c',['../tower__defense_8c.html',1,'']]]
+  ['struct_2eh_136',['struct.h',['../struct_8h.html',1,'']]],
+  ['struct_5fsdl_2eh_137',['struct_sdl.h',['../struct__sdl_8h.html',1,'']]]
 ];

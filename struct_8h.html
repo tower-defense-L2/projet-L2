@@ -94,18 +94,19 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <div class="dyncontent">
 <div class="center"><img src="struct_8h__dep__incl.png" border="0" usemap="#ainclude_2struct_8hdep" alt=""/></div>
 <map name="ainclude_2struct_8hdep" id="ainclude_2struct_8hdep">
-<area shape="rect" title="definition des differente structure utilisé dans le programme" alt="" coords="484,5,607,32"/>
-<area shape="rect" href="jeux_8h.html" title="fonction principale du jeu" alt="" coords="182,87,295,114"/>
-<area shape="rect" href="mouvement__ennemi_8h.html" title="vérifie la possiblité de déplacement d&#39;une bille" alt="" coords="319,87,539,114"/>
-<area shape="rect" href="placement__tours_8h.html" title="Afin de mettre une tour sur la carte ou d&#39;en supprimer une." alt="" coords="564,87,759,114"/>
-<area shape="rect" href="possibilite__tours_8h.html" title="Vérification des actions liées aux tours." alt="" coords="783,80,923,121"/>
+<area shape="rect" title="definition des differente structure utilisé dans le programme" alt="" coords="459,5,581,32"/>
+<area shape="rect" href="jeux_8h.html" title="fonction principale du jeu" alt="" coords="133,87,246,114"/>
+<area shape="rect" href="map_8h.html" title="Fichier contenant les fonctions de gestion de la map." alt="" coords="271,87,385,114"/>
+<area shape="rect" href="mouvement__ennemi_8h.html" title="vérifie la possiblité de déplacement d&#39;une bille" alt="" coords="410,87,630,114"/>
+<area shape="rect" href="placement__tours_8h.html" title="Afin de mettre une tour sur la carte ou d&#39;en supprimer une." alt="" coords="655,87,849,114"/>
+<area shape="rect" href="possibilite__tours_8h.html" title="Vérification des actions liées aux tours." alt="" coords="874,80,1014,121"/>
 <area shape="rect" href="menu_8h.html" title="menu du jeux" alt="" coords="64,169,187,196"/>
 <area shape="rect" href="jeux_8c.html" title="boucle de jeu" alt="" coords="211,169,295,196"/>
 <area shape="rect" href="menu_8c.html" title="menu principal du jeu" alt="" coords="5,244,99,271"/>
 <area shape="rect" href="tower__defense_8c.html" title="fichier principal du jeu tower defense" alt="" coords="123,244,275,271"/>
-<area shape="rect" href="mouvement__ennemi_8c.html" title="vérifie si une bille peut se rendre dans la salle suivante, cans ce cas le fait et suprime l&#39;ennemi q..." alt="" coords="334,169,525,196"/>
-<area shape="rect" href="placement__tours_8c.html" title="source fonction placement et suppression des tours" alt="" coords="581,169,747,196"/>
-<area shape="rect" href="possibilite__tours_8c.html" title="source fonction gestion placement et suppression tours" alt="" coords="772,169,935,196"/>
+<area shape="rect" href="mouvement__ennemi_8c.html" title="vérifie si une bille peut se rendre dans la salle suivante, cans ce cas le fait et suprime l&#39;ennemi q..." alt="" coords="425,169,615,196"/>
+<area shape="rect" href="placement__tours_8c.html" title="source fonction placement et suppression des tours" alt="" coords="671,169,836,196"/>
+<area shape="rect" href="possibilite__tours_8c.html" title="source fonction gestion placement et suppression tours" alt="" coords="863,169,1025,196"/>
 </map>
 </div>
 </div>
@@ -176,6 +177,7 @@ typedef struct <a class="el" href="structmap___s.html">map_S</a>&#160;</td><td c
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Énumérations</h2></td></tr>
 <tr class="memitem:ac29669aa20f0f4be92d93756f3203ce9"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_8h.html#ac29669aa20f0f4be92d93756f3203ce9">type_case_E</a> { <a class="el" href="struct_8h.html#ac29669aa20f0f4be92d93756f3203ce9a2fae8bfa1d5574fa3d6fa334712268e5">EMPLACEMENT</a>
+, <a class="el" href="struct_8h.html#ac29669aa20f0f4be92d93756f3203ce9a007c8d1719ecaf8c520afeaa0927a857">OBSTACLE</a>
 , <a class="el" href="struct_8h.html#ac29669aa20f0f4be92d93756f3203ce9a1f28516effaf97bbdd06327a6c68cbf8">CHEMIN</a>
 , <a class="el" href="struct_8h.html#ac29669aa20f0f4be92d93756f3203ce9ad4686f4f969d0e851d9170c09a89a837">VIDE</a>
  }</td></tr>
@@ -202,6 +204,8 @@ Antoine Sainty (<a href="#" onclick="location.href='mai'+'lto:'+'Ant'+'oi'+'ne.'
 </div><div class="memdoc">
 <table class="fieldtable">
 <tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="ac29669aa20f0f4be92d93756f3203ce9a2fae8bfa1d5574fa3d6fa334712268e5"></a>EMPLACEMENT&#160;</td><td class="fielddoc"><p>emplacement de tours possible </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac29669aa20f0f4be92d93756f3203ce9a007c8d1719ecaf8c520afeaa0927a857"></a>OBSTACLE&#160;</td><td class="fielddoc"><p>emplacement d'obstacle </p>
 </td></tr>
 <tr><td class="fieldname"><a id="ac29669aa20f0f4be92d93756f3203ce9a1f28516effaf97bbdd06327a6c68cbf8"></a>CHEMIN&#160;</td><td class="fielddoc"><p>chemin que les ennemis peuvent emprunté </p>
 </td></tr>

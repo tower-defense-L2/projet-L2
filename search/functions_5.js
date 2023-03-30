@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['load_5fbitmap_118',['load_bitmap',['../init__supr__sdl_8h.html#a299caa78ce5d45adf3c65b57dd67db24',1,'load_bitmap(const char *path, SDL_Texture **texture, pack_t *fenetre):&#160;init_supr_sdl.c'],['../init__supr__sdl_8c.html#a5689fe67ac1601c0371870cc1e75d1e5',1,'load_bitmap(const char *path, SDL_Texture **texture, pack_t *fenettre):&#160;init_supr_sdl.c']]]
+  ['jeux_157',['jeux',['../jeux_8h.html#a7e65e71b44968ee786a8f713a6e1d940',1,'jeux(pack_t *fenetre):&#160;jeux.c'],['../jeux_8c.html#a7e65e71b44968ee786a8f713a6e1d940',1,'jeux(pack_t *fenetre):&#160;jeux.c']]]
 ];

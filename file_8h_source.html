@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Tower Defense:  Fichier source de include/file.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Tower Defense
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Ce projet dans le cadre de notre formation de L2 informatique à l&#39;Université Du Mans a pour but de créer un jeu de type &quot;Tower Defense&quot; en utilisant la librairie graphique SDL2.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">file.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="file_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef TOWER_DEFENSE_FILE_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define TOWER_DEFENSE_FILE_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="structelement___s.html">   14</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structelement___s.html">element_S</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">void</span> *data; <span class="comment">// Données de l&#39;élément</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">struct </span><a class="code" href="structelement___s.html">element_S</a> *next; <span class="comment">// Pointeur vers l&#39;élément suivant</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="file_8h.html#abcec8482328f9a56a3fa2a61ea51b8c0">   17</a></span>&#160;} <a class="code" href="file_8h.html#abcec8482328f9a56a3fa2a61ea51b8c0">element_T</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structfile___s.html">   21</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structfile___s.html">file_S</a> {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="structelement___s.html">element_T</a> *first; <span class="comment">// Pointeur vers le premier élément</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="structelement___s.html">element_T</a> *queue; <span class="comment">// Pointeur vers le second élément</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">int</span> length; <span class="comment">// Longueur de la file</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="file_8h.html#aa370f059c1beddd8f0d3826f0335178b">   25</a></span>&#160;} <a class="code" href="file_8h.html#aa370f059c1beddd8f0d3826f0335178b">file_T</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keywordtype">void</span> <a class="code" href="file_8h.html#a83dfcaf88f8a1f2154462870613c4d7b">file_init</a>(<a class="code" href="structfile___s.html">file_T</a> *file);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keywordtype">void</span> <a class="code" href="file_8h.html#ade902c5aa3299001f433a8b662bffdd8">file_push</a>(<a class="code" href="structfile___s.html">file_T</a> *file, <span class="keywordtype">void</span> *data);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keywordtype">void</span> *<a class="code" href="file_8h.html#a685a76851a31f8330a73cef5e8342a00">file_pop</a>(<a class="code" href="structfile___s.html">file_T</a> *file);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordtype">void</span> *<a class="code" href="file_8h.html#a8f4dbaad9af8e59ed78f441cc39d8d05">file_peek</a>(<a class="code" href="structfile___s.html">file_T</a> *file);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keywordtype">int</span> <a class="code" href="file_8h.html#abd28b6116f662f18cbaa4b7eb4568b9e">file_is_empty</a>(<a class="code" href="structfile___s.html">file_T</a> *file);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keywordtype">void</span> <a class="code" href="file_8h.html#a25547e21dff6360c5a02caf2832a09a5">file_clear</a>(<a class="code" href="structfile___s.html">file_T</a> *file);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keywordtype">int</span> <a class="code" href="file_8h.html#a2f2aecd4684ebc7510e96ad1366a06ac">file_length</a>(<a class="code" href="structfile___s.html">file_T</a> *file);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keywordtype">void</span> <a class="code" href="file_8h.html#af1e4f9b4d9c7c30a4202e820b8cad9ee">file_print</a>(<a class="code" href="structfile___s.html">file_T</a> *file, <span class="keywordtype">void</span> (*callback)(<span class="keywordtype">void</span> *));</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//TOWER_DEFENSE_FILE_H</span></div>
+<div class="ttc" id="afile_8h_html_a25547e21dff6360c5a02caf2832a09a5"><div class="ttname"><a href="file_8h.html#a25547e21dff6360c5a02caf2832a09a5">file_clear</a></div><div class="ttdeci">void file_clear(file_T *file)</div><div class="ttdoc">Vide la file.</div><div class="ttdef"><b>Definition:</b> file.c:52</div></div>
+<div class="ttc" id="afile_8h_html_a2f2aecd4684ebc7510e96ad1366a06ac"><div class="ttname"><a href="file_8h.html#a2f2aecd4684ebc7510e96ad1366a06ac">file_length</a></div><div class="ttdeci">int file_length(file_T *file)</div><div class="ttdoc">Récupère la longueur de la file.</div><div class="ttdef"><b>Definition:</b> file.c:58</div></div>
+<div class="ttc" id="afile_8h_html_a685a76851a31f8330a73cef5e8342a00"><div class="ttname"><a href="file_8h.html#a685a76851a31f8330a73cef5e8342a00">file_pop</a></div><div class="ttdeci">void * file_pop(file_T *file)</div><div class="ttdoc">Récupère le premier élément de la file.</div><div class="ttdef"><b>Definition:</b> file.c:25</div></div>
+<div class="ttc" id="afile_8h_html_a83dfcaf88f8a1f2154462870613c4d7b"><div class="ttname"><a href="file_8h.html#a83dfcaf88f8a1f2154462870613c4d7b">file_init</a></div><div class="ttdeci">void file_init(file_T *file)</div><div class="ttdoc">Initialise une file.</div><div class="ttdef"><b>Definition:</b> file.c:5</div></div>
+<div class="ttc" id="afile_8h_html_a8f4dbaad9af8e59ed78f441cc39d8d05"><div class="ttname"><a href="file_8h.html#a8f4dbaad9af8e59ed78f441cc39d8d05">file_peek</a></div><div class="ttdeci">void * file_peek(file_T *file)</div><div class="ttdoc">Récupère le premier élément de la file sans le supprimer.</div><div class="ttdef"><b>Definition:</b> file.c:37</div></div>
+<div class="ttc" id="afile_8h_html_aa370f059c1beddd8f0d3826f0335178b"><div class="ttname"><a href="file_8h.html#aa370f059c1beddd8f0d3826f0335178b">file_T</a></div><div class="ttdeci">struct file_S file_T</div><div class="ttdoc">Représente une file.</div></div>
+<div class="ttc" id="afile_8h_html_abcec8482328f9a56a3fa2a61ea51b8c0"><div class="ttname"><a href="file_8h.html#abcec8482328f9a56a3fa2a61ea51b8c0">element_T</a></div><div class="ttdeci">struct element_S element_T</div><div class="ttdoc">Represent un élément de la file.</div></div>
+<div class="ttc" id="afile_8h_html_abd28b6116f662f18cbaa4b7eb4568b9e"><div class="ttname"><a href="file_8h.html#abd28b6116f662f18cbaa4b7eb4568b9e">file_is_empty</a></div><div class="ttdeci">int file_is_empty(file_T *file)</div><div class="ttdoc">Vérifie si la file est vide.</div><div class="ttdef"><b>Definition:</b> file.c:44</div></div>
+<div class="ttc" id="afile_8h_html_ade902c5aa3299001f433a8b662bffdd8"><div class="ttname"><a href="file_8h.html#ade902c5aa3299001f433a8b662bffdd8">file_push</a></div><div class="ttdeci">void file_push(file_T *file, void *data)</div><div class="ttdoc">Ajoute un élément à la file.</div><div class="ttdef"><b>Definition:</b> file.c:11</div></div>
+<div class="ttc" id="afile_8h_html_af1e4f9b4d9c7c30a4202e820b8cad9ee"><div class="ttname"><a href="file_8h.html#af1e4f9b4d9c7c30a4202e820b8cad9ee">file_print</a></div><div class="ttdeci">void file_print(file_T *file, void(*callback)(void *))</div><div class="ttdoc">Affiche la file.</div><div class="ttdef"><b>Definition:</b> file.c:62</div></div>
+<div class="ttc" id="astructelement___s_html"><div class="ttname"><a href="structelement___s.html">element_S</a></div><div class="ttdoc">Represent un élément de la file.</div><div class="ttdef"><b>Definition:</b> file.h:14</div></div>
+<div class="ttc" id="astructfile___s_html"><div class="ttname"><a href="structfile___s.html">file_S</a></div><div class="ttdoc">Représente une file.</div><div class="ttdef"><b>Definition:</b> file.h:21</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

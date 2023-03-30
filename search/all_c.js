@@ -1,14 +1,17 @@
 var searchData=
 [
-  ['souris_5fdessu_56',['souris_dessu',['../interaction__souris_8h.html#aaaf18754e17d9d0d3a16ad2fd5b5ff42',1,'souris_dessu(const int x, const int y, const SDL_Rect *rect):&#160;interaction_souris.c'],['../interaction__souris_8c.html#aaaf18754e17d9d0d3a16ad2fd5b5ff42',1,'souris_dessu(const int x, const int y, const SDL_Rect *rect):&#160;interaction_souris.c']]],
-  ['struct_2eh_57',['struct.h',['../struct_8h.html',1,'']]],
-  ['struct_5fsdl_2eh_58',['struct_sdl.h',['../struct__sdl_8h.html',1,'']]],
-  ['suivant_59',['suivant',['../structchemin___s.html#a24925b9b275f1c424876b7b2fe6ccfe7',1,'chemin_S']]],
-  ['suppression_5fpossible_60',['suppression_possible',['../possibilite__tours_8h.html#a5ca8820c6710c5a482713fb7dbdcc5fb',1,'suppression_possible(emplacement_T *emplacement, chemin_T *chemin, type_case_T *vide):&#160;possibilite_tours.c'],['../possibilite__tours_8c.html#a5ca8820c6710c5a482713fb7dbdcc5fb',1,'suppression_possible(emplacement_T *emplacement, chemin_T *chemin, type_case_T *vide):&#160;possibilite_tours.c']]],
-  ['suppression_5ftour_61',['suppression_tour',['../placement__tours_8h.html#adb21231177823481b0fbc1086bcfcb9d',1,'suppression_tour(emplacement_T *emplacement, tour_T *tour):&#160;placement_tours.c'],['../placement__tours_8c.html#adb21231177823481b0fbc1086bcfcb9d',1,'suppression_tour(emplacement_T *emplacement, tour_T *tour):&#160;placement_tours.c']]],
-  ['supression_5fbouton_62',['supression_bouton',['../init__supr__sdl_8h.html#a2df32955b0202e068dde703855f27951',1,'supression_bouton(bouton_t **bouton):&#160;init_supr_sdl.c'],['../init__supr__sdl_8c.html#a2df32955b0202e068dde703855f27951',1,'supression_bouton(bouton_t **bouton):&#160;init_supr_sdl.c']]],
-  ['supression_5fpack_63',['supression_pack',['../init__supr__sdl_8h.html#af481f956f543e81037250781e8bf7f56',1,'supression_pack(pack_t **fenetre):&#160;init_supr_sdl.c'],['../init__supr__sdl_8c.html#af481f956f543e81037250781e8bf7f56',1,'supression_pack(pack_t **fenetre):&#160;init_supr_sdl.c']]],
-  ['supression_5fsdl_64',['supression_sdl',['../init__supr__sdl_8h.html#a97ec819672ff9f21645a4320e03a8587',1,'supression_sdl():&#160;init_supr_sdl.c'],['../init__supr__sdl_8c.html#a97ec819672ff9f21645a4320e03a8587',1,'supression_sdl():&#160;init_supr_sdl.c']]],
-  ['supression_5ftexture_65',['supression_texture',['../init__supr__sdl_8h.html#a5e1dc847685ee1f1de2fbc8e114ad108',1,'supression_texture(texture_t *texture):&#160;init_supr_sdl.c'],['../init__supr__sdl_8c.html#a5e1dc847685ee1f1de2fbc8e114ad108',1,'supression_texture(texture_t *texture):&#160;init_supr_sdl.c']]],
-  ['supression_5ftexture_5fliste_66',['supression_texture_liste',['../init__supr__sdl_8h.html#a796bbf8c3fc3cf1353b6241e018a23ef',1,'supression_texture_liste(texture_t *texture):&#160;init_supr_sdl.c'],['../init__supr__sdl_8c.html#a796bbf8c3fc3cf1353b6241e018a23ef',1,'supression_texture_liste(texture_t *texture):&#160;init_supr_sdl.c']]]
+  ['pack_5fs_64',['pack_s',['../structpack__s.html',1,'']]],
+  ['pack_5ft_65',['pack_t',['../structpack__t.html',1,'pack_t'],['../struct__sdl_8h.html#abb2099a4a84479098a41a24475364323',1,'pack_t():&#160;struct_sdl.h']]],
+  ['placement_5ftour_66',['placement_tour',['../placement__tours_8c.html#a079e134723e2156336a66ae06d972d02',1,'placement_tour(emplacement_T *emplacement, joueur_T *joueur, tour_T *tour):&#160;placement_tours.c'],['../placement__tours_8h.html#a079e134723e2156336a66ae06d972d02',1,'placement_tour(emplacement_T *emplacement, joueur_T *joueur, tour_T *tour):&#160;placement_tours.c']]],
+  ['placement_5ftours_2ec_67',['placement_tours.c',['../placement__tours_8c.html',1,'']]],
+  ['placement_5ftours_2eh_68',['placement_tours.h',['../placement__tours_8h.html',1,'']]],
+  ['plein_5fecran_69',['plein_ecran',['../jeux_8c.html#a115c234d7ce31818640ca363a34aed4d',1,'jeux.c']]],
+  ['portee_70',['portee',['../structtour___s.html#a8acd5efd1a635a1173215f53ae15e7fb',1,'tour_S']]],
+  ['position_71',['position',['../structemplacement___s.html#ace1547f778e84deeab1519900a6e69b2',1,'emplacement_S::position()'],['../structchemin___s.html#ace1547f778e84deeab1519900a6e69b2',1,'chemin_S::position()'],['../structennemi___s.html#ace1547f778e84deeab1519900a6e69b2',1,'ennemi_S::position()'],['../structtour___s.html#ace1547f778e84deeab1519900a6e69b2',1,'tour_S::position()']]],
+  ['position_5fbouton_72',['position_bouton',['../init__supr__sdl_8h.html#ad1696014c0edce611d36c5f2010938b0',1,'position_bouton(bouton_t *bouton, const int x, const int y):&#160;init_supr_sdl.c'],['../init__supr__sdl_8c.html#ad1696014c0edce611d36c5f2010938b0',1,'position_bouton(bouton_t *bouton, const int x, const int y):&#160;init_supr_sdl.c']]],
+  ['position_5fpossible_73',['position_possible',['../possibilite__tours_8h.html#ab9c01e61371b2334cd8c480ef3a464ee',1,'position_possible(emplacement_T *emplacement, joueur_T *joueur, tour_T *tour, type_case_T *type):&#160;possibilite_tours.c'],['../possibilite__tours_8c.html#ab9c01e61371b2334cd8c480ef3a464ee',1,'position_possible(emplacement_T *emplacement, joueur_T *joueur, tour_T *tour, type_case_T *type):&#160;possibilite_tours.c']]],
+  ['position_5fs_74',['position_S',['../structposition___s.html',1,'']]],
+  ['possibilite_5ftours_2ec_75',['possibilite_tours.c',['../possibilite__tours_8c.html',1,'']]],
+  ['possibilite_5ftours_2eh_76',['possibilite_tours.h',['../possibilite__tours_8h.html',1,'']]],
+  ['projet_2dl2_77',['projet-L2',['../md__r_e_a_d_m_e.html',1,'']]]
 ];
