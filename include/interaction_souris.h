@@ -26,7 +26,7 @@ int souris_dessu(const int x, const int y, const SDL_Rect *rect);
 
 
 /**
- * \brief gere les boutons pour savoir si la souris est dessus ou non
+ * \brief gere les bitexture pour savoir si la souris est dessus ou non
  * 
  * \param bouton pointeur sur la structure bouton
  * \param fenetre pointeur sur la structure pack
@@ -34,6 +34,6 @@ int souris_dessu(const int x, const int y, const SDL_Rect *rect);
  * \param y position y de la souris
  */
 extern
-int gestion_bouton(const bouton_t * bouton, pack_t * fenetre , const int x, const int y);
+int gestion_bitexture(const bitexture_t * bouton, pack_t * fenetre , const int x, const int y);
 
 #endif

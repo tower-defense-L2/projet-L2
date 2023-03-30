@@ -92,10 +92,10 @@ void supression_texture_liste(texture_t *texture);
  * \param wrap couleur du fond en survol
  * \param x position x du bouton
  * \param y position y du bouton
- * \return bouton_t poiteur sur structure contenant les texture du bouton
+ * \return bitexture_t poiteur sur structure contenant les texture du bouton
  */
 extern
-bouton_t * creation_bouton(pack_t * fenetre, char * texte,
+bitexture_t * creation_bouton(pack_t * fenetre, char * texte,
                 SDL_Color couleur, SDL_Color wrap, int x, int y);
 
 /**
@@ -104,16 +104,30 @@ bouton_t * creation_bouton(pack_t * fenetre, char * texte,
  * \param bouton pointeur sur la structure contenant le bouton
  */
 extern
-void supression_bouton(bouton_t ** bouton);
+void supression_bouton(bitexture_t ** bouton);
 
 /**
- * \brief attribue une position au rectangle du bouton
+ * \brief attribue une position au rectangle de la bitexture
  * 
  * \param bouton pointeur sur la structure contenant le bouton
  * \param x position x du bouton
  * \param y position y du bouton
  */
 extern
-void position_bouton(bouton_t * bouton, const int x, const int y);
+void position_bitexture(bitexture_t * bouton, const int x, const int y);
+
+/**
+ * \brief fonction servant à créer une bitexture
+ * 
+ * \param fenetre pointeur sur la structure contenant le renderer, fenetre et police
+ * \param path1 nom du fichier de la texture normale
+ * \param path2 nom du fichier de la texture survol
+ * \param x position x de la bitexture
+ * \param y position y de la bitexture
+ * \return bitexture_t  pointeur sur la structure contenant les texture et le rectangle
+ */
+extern
+bitexture_t * creation_bitexture(pack_t * fenetre, char * path1, char * path2, int x, int y);
+
 
 #endif

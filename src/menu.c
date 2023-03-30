@@ -31,8 +31,8 @@ int menu(){
     SDL_Event event;
     SDL_bool program_launched = SDL_TRUE;
     SDL_Texture * texture_menu = NULL;
-    bouton_t * bouton = NULL;
-    bouton_t * bouton2 = NULL;
+    bitexture_t * bouton = NULL;
+    bitexture_t * bouton2 = NULL;
     Uint64 start, end;
     float elapsed = 0;
     SDL_Color couleurRouge = {255, 0, 0, 255};
@@ -89,8 +89,8 @@ int menu(){
         SDL_RenderCopy(fenetre->renderer, texture_menu, NULL, &dst);
 
         // reposionnement des boutons et gestion de l'interaction avec la souris
-        position_bouton(bouton, (win.w/4), (win.h/2));
-        if(gestion_bouton(bouton, fenetre, x, y)&& Click==SDL_BUTTON_LEFT){
+        position_bitexture(bouton, (win.w/4), (win.h/2));
+        if(gestion_bitexture(bouton, fenetre, x, y)&& Click==SDL_BUTTON_LEFT){
 
             // lancement du jeu
             jeux(fenetre);
@@ -98,8 +98,8 @@ int menu(){
             // refomatage de la fenetre
             modelage_fenetre_menu(fenetre, &win);
         }
-        position_bouton(bouton2, (win.w/4), (4*win.h/7));
-        if(gestion_bouton(bouton2, fenetre, x, y)&& Click==SDL_BUTTON_LEFT){
+        position_bitexture(bouton2, (win.w/4), (4*win.h/7));
+        if(gestion_bitexture(bouton2, fenetre, x, y)&& Click==SDL_BUTTON_LEFT){
             program_launched = SDL_FALSE;
         }
 

@@ -54,6 +54,7 @@ void jeux(pack_t * fenetre){
     SDL_Texture * texture = NULL;
     SDL_Texture * chemin = NULL;
     SDL_Texture * bordure = NULL;
+    bitexture_t * emplacement = NULL;
     SDL_Texture * bille = NULL;
     SDL_Texture * tour = NULL;
     Uint64 start, end;
@@ -65,17 +66,18 @@ void jeux(pack_t * fenetre){
     
     // variable temporaire
     map_T *map = malloc(sizeof(map_T) + sizeof(case_T*) * HAUTEUR);
-    
-
     for(int i = 0; i < HAUTEUR ; i++){
         for(int j = 0; j < LARGEUR; j++){
             map->cases[i][j] = malloc(sizeof(case_T));
             map->cases[i][j]->type = VIDE;
         }
-        map->cases[i][0]->type = CHEMIN;
-        map->cases[i][LARGEUR-1]->type = CHEMIN;
-        map->cases[i][1]->type = EMPLACEMENT;
     }
+    map->cases[0][0]->type = CHEMIN;
+    map->cases[0][1]->type = CHEMIN;
+    map->cases[0][1]->case_pl.chemin.enemi = 1;
+    map->cases[1][0]->type = EMPLACEMENT;
+    map->cases[1][1]->type = EMPLACEMENT;
+    map->cases[1][1]->case_pl.emplacement.tour = 1;
 
     // chargement de l'image de fond et gestion d'erreur
     if(load_bitmap("font",&texture,fenetre)){
@@ -85,6 +87,7 @@ void jeux(pack_t * fenetre){
     load_bitmap("bordure",&bordure,fenetre);
     load_bitmap("bille",&bille,fenetre);
     load_bitmap("tour",&tour,fenetre);
+    emplacement = creation_bitexture(fenetre, "bordure", "bordure_survol", 0, 0);
 
     SDL_RenderCopy(fenetre->renderer,texture,NULL,NULL);
     SDL_RenderPresent(fenetre->renderer);
@@ -102,8 +105,11 @@ void jeux(pack_t * fenetre){
 
         SDL_RenderClear(fenetre->renderer);
         Click = SDL_GetMouseState(&x, &y);
+
+        // affichage du fond
         SDL_RenderCopy(fenetre->renderer, texture, NULL, NULL);
 
+        // affichage des tuiles
         for(int j = 0; j < LARGEUR; j++){
             for(int i = 0; i < HAUTEUR; i++){
                 tuile.y = (i+1) * tuile.h;
@@ -111,17 +117,29 @@ void jeux(pack_t * fenetre){
                 switch(map->cases[i][j]->type){
                     case CHEMIN:
                         SDL_RenderCopy(fenetre->renderer, chemin, NULL, &tuile);
+                        if(map->cases[i][j]->case_pl.chemin.enemi != NULL){
+                            SDL_RenderCopy(fenetre->renderer, bille, NULL, &tuile);
+                        }
                         break;
                     case EMPLACEMENT:
-                        SDL_RenderCopy(fenetre->renderer, bordure, NULL, &tuile);
+                        if(map->cases[i][j]->case_pl.emplacement.tour != NULL){
+                            SDL_RenderCopy(fenetre->renderer, bordure, NULL, &tuile);
+                            SDL_RenderCopy(fenetre->renderer, tour, NULL, &tuile);
+                        }
+                        else{
+                            emplacement->dst = tuile;
+                            gestion_bitexture(emplacement, fenetre, x, y);
+                        }
                         break;
                     case VIDE:
-                        SDL_RenderCopy(fenetre->renderer, chemin, NULL, &tuile);
-                        SDL_RenderCopy(fenetre->renderer, bille, NULL, &tuile);
+                        SDL_RenderCopy(fenetre->renderer, bordure, NULL, &tuile);
                         break;
                 }
             }
         }
+        // gestion du survol
+
+
         SDL_RenderPresent(fenetre->renderer);
         end = SDL_GetPerformanceCounter();
         elapsed = (end - start) * 1000 / (float)SDL_GetPerformanceFrequency();

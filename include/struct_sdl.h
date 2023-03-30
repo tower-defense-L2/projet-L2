@@ -49,16 +49,16 @@ typedef struct texture_s{
 
 
 /**
- * \brief primitive de la structure bouton_t
+ * \brief primitive de la structure bitexture_t
  */
-typedef struct bouton_s{
+typedef struct bitexture_s{
     SDL_Rect dst; 
     SDL_Texture *normale; 
     SDL_Texture *survol; 
-}bouton_t;
+}bitexture_t;
 /**
- * \struct bouton_t
- * \brief structure contenant le rectangle contenant le bouton et les pointeurs sur les textures du bouton
+ * \struct bitexture_t
+ * \brief structure contenant le rectangle contenant le bouton et les pointeurs sur les textures de l'elemnent
  * 
  * \param dst rectangle taille et position du bouton
  * \param normale pointeur sur la texture normale

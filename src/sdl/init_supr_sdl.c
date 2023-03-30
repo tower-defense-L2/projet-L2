@@ -141,10 +141,10 @@ void supression_texture_liste(texture_t * texture){
 
 
 extern
-bouton_t * creation_bouton(pack_t * fenetre, char * texte,
+bitexture_t * creation_bouton(pack_t * fenetre, char * texte,
                 SDL_Color couleur, SDL_Color wrap, int x, int y){
     
-    bouton_t * bouton = malloc(sizeof(bouton_t));
+    bitexture_t * bouton = malloc(sizeof(bitexture_t));
     SDL_Surface * bouton_surface = NULL;
     // Création de la texture normale
     bouton_surface = TTF_RenderText_Blended(fenetre->police, texte, couleur);
@@ -164,7 +164,7 @@ bouton_t * creation_bouton(pack_t * fenetre, char * texte,
 }
 
 extern
-void supression_bouton(bouton_t ** bouton){
+void supression_bouton(bitexture_t ** bouton){
     // Supression de la texture normale
     SDL_DestroyTexture((*bouton)->normale);
     // Supression de la texture survol
@@ -175,8 +175,22 @@ void supression_bouton(bouton_t ** bouton){
 }
 
 extern
-void position_bouton(bouton_t * bouton, const int x, const int y){
+void position_bitexture(bitexture_t * bouton, const int x, const int y){
     // attribution des coordonnées au bouton
     bouton->dst.x = x;
     bouton->dst.y = y;
+}
+
+extern
+bitexture_t * creation_bitexture(pack_t * fenetre, char * path1, char * path2, int x, int y){
+    bitexture_t * bitexture = malloc(sizeof(bitexture_t));
+    // Chargement de la texture normale
+    load_bitmap(path1, &bitexture->normale, fenetre);
+    // Chargement de la texture survol
+    load_bitmap(path2, &bitexture->survol, fenetre);
+    // attribution des coordonnées au bouton
+    bitexture->dst.x = x;
+    bitexture->dst.y = y;
+    SDL_QueryTexture(bitexture->survol, NULL, NULL, &bitexture->dst.w, &bitexture->dst.h);
+    return bitexture;
 }
