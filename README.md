@@ -69,3 +69,4 @@ Nous suivons la norme C11 pour le code C. <br>
 | clean-doc   | suprime la doc     |
 | install_sdl | installe sdl2      |
 | all         | build+test+doc+sdl |
+| archive     | génere une archive |
