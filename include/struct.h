@@ -77,6 +77,7 @@ typedef struct chemin_S {
 
 typedef enum type_case_E {
     EMPLACEMENT, /*!< emplacement de tours possible */
+    OBSTACLE, /*!< emplacement d'obstacle */
     CHEMIN, /*!< chemin que les ennemis peuvent emprunté */
     VIDE /*!< du décor */
 } type_case_T;
