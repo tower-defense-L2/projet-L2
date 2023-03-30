@@ -11,7 +11,7 @@ Ce projet dans le cadre de notre formation de L2 informatique à l'Université D
 Le but étant pour le joueur, de placer des "Tours" sur une carte donnée afin de passer des vagues d'ennemies passant sur un chemin défini. <br>
 Le jeu va donc avoir plusieurs perspectives :
 - stratégique, dû au placement des tours
-- gestion, suite au système de ressources
+- gestion, suite au système de ressources <br>
 La Documentation est disponible [ici](https://tower-defense-l2.github.io/projet-L2/).
 
 ## Planification
