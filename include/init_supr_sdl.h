@@ -15,6 +15,7 @@
 #include <SDL2/SDL_ttf.h>
 #include <SDL2/SDL_timer.h>
 #include "./struct_sdl.h"
+#include "./const.h"
 
 
 /**

@@ -6,13 +6,27 @@
  * \date 2023-03-16
  * 
  */
-#include "../include/init_supr_sdl.h"
-#include "../include/interaction_souris.h"
-#include "../include/struct_sdl.h"
-#include "../include/jeux.h"
+#include "../include/menu.h"
 
+/**
+ * \brief fonction de reformattage de la fenetre en fenetre de menu
+ * 
+ * \param fenetre pointeur sur la structure pack_t
+ * \param win pointeur sur la structure SDL_Rect
+ */
+static
+void modelage_fenetre_menu(pack_t * fenetre, SDL_Rect * win){
+    SDL_SetWindowBordered(fenetre->fenetre, SDL_TRUE);
+    SDL_SetWindowResizable(fenetre->fenetre, SDL_TRUE);
+    SDL_SetWindowFullscreen(fenetre->fenetre, 0);
+    SDL_SetWindowSize(fenetre->fenetre, 854, 480);
+    SDL_SetWindowPosition(fenetre->fenetre, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED);
+    
+    SDL_GetDisplayBounds(0,win);
+}
 
-int main(){
+extern
+int menu(){
     pack_t * fenetre = NULL;
     SDL_Event event;
     SDL_bool program_launched = SDL_TRUE;
@@ -28,24 +42,21 @@ int main(){
 
     SDL_Rect win = {0, 0, 0, 0};
     SDL_Rect dst = {0, 0, 0, 0};
-    /**
-     * \brief Initialisation de la SDL avec gestion d'erreur
-     */
-    if(initilalisation_sdl()){
-        return 1;
-    }
-    fenetre = creation_pack("menu tower defence", 854, 480, SDL_WINDOW_SHOWN, 30);
+    
+
+    // création de la fenetre
+    fenetre = creation_pack(TITRE, 854, 480, SDL_WINDOW_SHOWN, 30);
     if(fenetre == NULL){
         return 1;
     }
+    modelage_fenetre_menu(fenetre, &win);
     SDL_GetWindowSize(fenetre->fenetre, &win.w, &win.h);
-    if(load_bitmap("./ressources/menu.bmp", &texture_menu, fenetre)){
+    if(load_bitmap("menu", &texture_menu, fenetre)){
         return 1;
     }
 
-    /**
-     * \brief création des boutons et gestion d'erreur 
-     */
+
+    // création des boutons et gestion d'erreur 
     bouton = creation_bouton(fenetre, "Jouer", couleurRouge, couleurNoire, (win.w/4), (win.h/2));
     if(bouton == NULL){
         return 1;
@@ -59,61 +70,47 @@ int main(){
     SDL_PollEvent(&event);
     //boucle principale du programme
     while(program_launched){
-        /**
-         * \brief debut du cronometre pour le temps d'execution de la boucle
-         */
+        // debut du cronometre pour le temps d'execution de la boucle
         start = SDL_GetPerformanceCounter();
 
-        /**
-         * \brief nettoyage du renderer
-         */
+        // nettoyage du renderer
         SDL_RenderClear(fenetre->renderer);
 
-        /**
-         * \brief recuperation de la taille de la fenetre et de la position de la souris
-         */
+        // recuperation de la taille de la fenetre et de la position de la souris
         SDL_GetWindowSize(fenetre->fenetre, &win.w, &win.h);
         Click = SDL_GetMouseState(&x, &y);
         
-        /**
-         * \brief reinitialisation de la taille et de la position du rectangle de destination 
-         */
+        // reinitialisation de la taille et de la position du rectangle de destination 
         dst.h = 0; dst.w = 0; dst.x = 0; dst.y = 0;
         dst.w = win.w;
         dst.h = win.h;
 
-        /**
-         * \brief affichage de l'image de fond 
-         */
+        // affichage de l'image de fond 
         SDL_RenderCopy(fenetre->renderer, texture_menu, NULL, &dst);
 
-        /**
-         * \brief reposionnement des boutons et gestion de l'interaction avec la souris
-         */
+        // reposionnement des boutons et gestion de l'interaction avec la souris
         position_bouton(bouton, (win.w/4), (win.h/2));
         if(gestion_bouton(bouton, fenetre, x, y)&& Click==SDL_BUTTON_LEFT){
-            printf("on lance le jeu\n");
-            jeux();
+
+            // lancement du jeu
+            jeux(fenetre);
+
+            // refomatage de la fenetre
+            modelage_fenetre_menu(fenetre, &win);
         }
         position_bouton(bouton2, (win.w/4), (4*win.h/7));
         if(gestion_bouton(bouton2, fenetre, x, y)&& Click==SDL_BUTTON_LEFT){
             program_launched = SDL_FALSE;
         }
 
-        /**
-         * \brief affichage du rendu
-         */
+        // affichage du rendu
         SDL_RenderPresent(fenetre->renderer);
         
-        /**
-         * \brief fin du cronometre et calcul du temps d'execution de la boucle
-         */
+        // fin du cronometre et calcul du temps d'execution de la boucle
         end = SDL_GetPerformanceCounter();
         elapsed = (end - start) / (float)SDL_GetPerformanceFrequency();
 
-        /**
-         * \brief gestion des evenements et limitation de la boucle a 60 fps
-         */
+        // gestion des evenements et limitation de la boucle a 60 fps
         SDL_WaitEventTimeout(&event, 1000/60 - elapsed);
         switch(event.type){
             case SDL_QUIT:
@@ -129,12 +126,9 @@ int main(){
     }
     // fin de boucle principale du programme
 
-    /**
-     * \brief liberation de la memoire
-     */
+    // liberation de la memoire
     SDL_DestroyTexture(texture_menu);
     texture_menu = NULL;
     supression_pack(&fenetre);
-    supression_sdl();
     return 0;
 }

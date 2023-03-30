@@ -1,4 +1,4 @@
-TARGET=menu
+TARGET=tower_defense
 TARGET_TEST=test_fenetre_sdl test_multitexture_sdl map_test
 
 ifeq ($(OS), Windows_NT)
@@ -62,7 +62,7 @@ TEST:=$(TARGET_TEST:%=$(OBJ_DIR)/%.o)
 
 OBJS:=$(filter-out $(MAINS), $(OBJECTS))
 
-all: install_sdl test build
+all: install_sdl test build doc
 
 run : build
 	@echo "on lance l'app"
