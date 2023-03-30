@@ -54,6 +54,7 @@ void jeux(pack_t * fenetre){
     SDL_Texture * texture = NULL;
     SDL_Texture * chemin = NULL;
     SDL_Texture * bordure = NULL;
+    SDL_Texture * vide = NULL;
     bitexture_t * emplacement = NULL;
     SDL_Texture * bille = NULL;
     SDL_Texture * tour = NULL;
@@ -73,11 +74,13 @@ void jeux(pack_t * fenetre){
         }
     }
     map->cases[0][0]->type = CHEMIN;
+    map->cases[0][0]->case_pl.chemin.enemi = NULL;
     map->cases[0][1]->type = CHEMIN;
-    map->cases[0][1]->case_pl.chemin.enemi = 1;
+    map->cases[0][1]->case_pl.chemin.enemi = malloc(sizeof(ennemi_T));
     map->cases[1][0]->type = EMPLACEMENT;
+    map->cases[1][0]->case_pl.emplacement.tour = NULL;
     map->cases[1][1]->type = EMPLACEMENT;
-    map->cases[1][1]->case_pl.emplacement.tour = 1;
+    map->cases[1][1]->case_pl.emplacement.tour = malloc(sizeof(tour_T));
 
     // chargement de l'image de fond et gestion d'erreur
     if(load_bitmap("font",&texture,fenetre)){
@@ -87,6 +90,7 @@ void jeux(pack_t * fenetre){
     load_bitmap("bordure",&bordure,fenetre);
     load_bitmap("bille",&bille,fenetre);
     load_bitmap("tour",&tour,fenetre);
+    load_bitmap("vide",&vide,fenetre);
     emplacement = creation_bitexture(fenetre, "bordure", "bordure_survol", 0, 0);
 
     SDL_RenderCopy(fenetre->renderer,texture,NULL,NULL);
@@ -132,7 +136,7 @@ void jeux(pack_t * fenetre){
                         }
                         break;
                     case VIDE:
-                        SDL_RenderCopy(fenetre->renderer, bordure, NULL, &tuile);
+                        SDL_RenderCopy(fenetre->renderer, vide, NULL, &tuile);
                         break;
                 }
             }
