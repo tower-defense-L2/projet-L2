@@ -1,7 +1,10 @@
-//
-// Created by SAINTY Antoine on 21/03/2023.
-//
-
+/**
+ * \file file.h
+ * \author Antoine Sainty (Sainty.Antoine.Etu@univ-lemans.fr)
+ * \brief Fichier contenant les fonctions de gestion de la file
+ * \version 0.1.0
+ * \date 30/03/2023
+ */
 #ifndef TOWER_DEFENSE_FILE_H
 #define TOWER_DEFENSE_FILE_H
 
