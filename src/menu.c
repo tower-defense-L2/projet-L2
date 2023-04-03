@@ -21,7 +21,7 @@ void modelage_fenetre_menu(pack_t * fenetre, SDL_Rect * win){
     SDL_SetWindowFullscreen(fenetre->fenetre, 0);
     SDL_SetWindowSize(fenetre->fenetre, 854, 480);
     SDL_SetWindowPosition(fenetre->fenetre, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED);
-    
+    SDL_SetWindowMinimumSize(fenetre->fenetre, 427, 240);
     SDL_GetDisplayBounds(0,win);
 }
 
@@ -62,7 +62,7 @@ int menu(){
         return 1;
     }
     bouton2 = creation_bouton(fenetre, "Quiter", couleurRouge, couleurNoire,
-                    (bouton->dst.w + bouton->dst.x), (bouton->dst.h + bouton->dst.y));
+                    (bouton->dst.x + bouton->dst.w), (bouton->dst.y + bouton->dst.h));
     if(bouton2 == NULL){
         return 1;
     }
@@ -98,7 +98,7 @@ int menu(){
             // refomatage de la fenetre
             modelage_fenetre_menu(fenetre, &win);
         }
-        position_bitexture(bouton2, (win.w/4), (4*win.h/7));
+        position_bitexture(bouton2, (bouton->dst.x), (bouton->dst.y + bouton->dst.h));
         if(gestion_bitexture(bouton2, fenetre, x, y)&& Click==SDL_BUTTON_LEFT){
             program_launched = SDL_FALSE;
         }

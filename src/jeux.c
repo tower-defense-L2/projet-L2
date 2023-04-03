@@ -51,19 +51,23 @@ void jeux(pack_t * fenetre){
     // initialisation des variables
     SDL_Event event;
     SDL_bool program_launched = SDL_TRUE;
+    Uint64 start, end;
+    float elapsed = 0;
+    Uint32 Click = 0; // état du clique
+    int x = 0, y = 0; // position de la souris
+    SDL_bool est_plein_ecran = SDL_TRUE;
+
+    // initialisation des textures
     SDL_Texture * texture = NULL;
     SDL_Texture * chemin = NULL;
     SDL_Texture * bordure = NULL;
     SDL_Texture * vide = NULL;
     bitexture_t * emplacement = NULL;
-    SDL_Texture * bille = NULL;
+    SDL_Texture * enemie = NULL;
     SDL_Texture * tour = NULL;
-    Uint64 start, end;
-    float elapsed = 0;
-    Uint32 Click = 0; // état du clique
-    int x = 0, y = 0; // position de la souris
+    
     SDL_Rect tuile= {0,0,0,0};
-    SDL_bool est_plein_ecran = SDL_TRUE;
+    
     
     // variable temporaire
     map_T *map = malloc(sizeof(map_T) + sizeof(case_T*) * HAUTEUR);
@@ -88,7 +92,7 @@ void jeux(pack_t * fenetre){
     }
     load_bitmap("chemin",&chemin,fenetre);
     load_bitmap("bordure",&bordure,fenetre);
-    load_bitmap("bille",&bille,fenetre);
+    load_bitmap("bille",&enemie,fenetre);
     load_bitmap("tour",&tour,fenetre);
     load_bitmap("vide",&vide,fenetre);
     emplacement = creation_bitexture(fenetre, "bordure", "bordure_survol", 0, 0);
@@ -116,16 +120,20 @@ void jeux(pack_t * fenetre){
         // affichage des tuiles
         for(int j = 0; j < LARGEUR; j++){
             for(int i = 0; i < HAUTEUR; i++){
+                // calcul de la position de la tuile suivante
                 tuile.y = (i+1) * tuile.h;
                 tuile.x = (j+1) * tuile.w;
+
+                // selection de la texture a afficher
                 switch(map->cases[i][j]->type){
                     case CHEMIN:
                         SDL_RenderCopy(fenetre->renderer, chemin, NULL, &tuile);
                         if(map->cases[i][j]->case_pl.chemin.enemi != NULL){
-                            SDL_RenderCopy(fenetre->renderer, bille, NULL, &tuile);
+                            SDL_RenderCopy(fenetre->renderer, enemie, NULL, &tuile);
                         }
                         break;
                     case EMPLACEMENT:
+                        // gestion des textures multiples
                         if(map->cases[i][j]->case_pl.emplacement.tour != NULL){
                             SDL_RenderCopy(fenetre->renderer, bordure, NULL, &tuile);
                             SDL_RenderCopy(fenetre->renderer, tour, NULL, &tuile);
@@ -180,11 +188,11 @@ void jeux(pack_t * fenetre){
     SDL_DestroyTexture(texture);
     SDL_DestroyTexture(chemin);
     SDL_DestroyTexture(bordure);
-    SDL_DestroyTexture(bille);
+    SDL_DestroyTexture(enemie);
     SDL_DestroyTexture(tour);
     texture = NULL;
     chemin = NULL;
     bordure = NULL;
-    bille = NULL;
+    enemie = NULL;
     tour = NULL;
 }
