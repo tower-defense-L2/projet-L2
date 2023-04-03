@@ -8,6 +8,9 @@
 #ifndef TOWER_DEFENSE_FILE_H
 #define TOWER_DEFENSE_FILE_H
 
+#include <stdlib.h>
+#include <stdio.h>
+
 /**
  * \brief Represent un élément de la file
  */

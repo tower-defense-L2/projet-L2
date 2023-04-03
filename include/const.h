@@ -13,4 +13,6 @@
 #define LARGEUR 10
 #define HAUTEUR 10
 
+map_T *map;
+
 #endif //PROJET_L2_CONST_H

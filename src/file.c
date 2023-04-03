@@ -1,6 +1,4 @@
-#include <file.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include "../include/file.h"
 
 void file_init(file_T *file) {
   file->first = NULL;

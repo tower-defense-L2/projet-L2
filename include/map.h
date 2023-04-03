@@ -8,7 +8,12 @@
 #ifndef TOWER_DEFENSE_MAP_H
 #define TOWER_DEFENSE_MAP_H
 
-#include <struct.h>
+#include <stdlib.h>
+#include "./struct.h"
+#include <stdio.h>
+#include "./file.h"
+//#include "debug.h"
+//#include <ANSI-color-codes.h>
 
 /**
  * \brief Génère la map
