@@ -1,12 +1,3 @@
-/**
- * \file init_supr_sdl.c
- * \author meo (meo.prn@outlook.fr)
- * \brief source des fonctions servant pour la création et la destruction de la sdl
- * \version 0.1.0
- * \date 2023-03-22
- * 
- * 
- */
 #include "../../include/init_supr_sdl.h"
 
 extern

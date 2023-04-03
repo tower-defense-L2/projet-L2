@@ -1,14 +1,3 @@
-/**
- * \file mouvement_ennemi.c
- * \author Nathan (Nathan.Duval.Etu@univ-lemans.fr)
- * \brief vérifie si une bille peut se rendre dans la salle suivante, cans ce cas
- *         le fait et suprime l'ennemi qui a bougé de ses anciennes coordonnées
- * \version 0.1
- * \date 2023-03-22
- * 
- * 
- */
-
 #include "../include/mouvement_ennemi.h"
 
 extern

@@ -1,12 +1,3 @@
-/**
- * \file interaction_souris.c
- * \author meo (meo.prn@outlook.fr)
- * \brief source des fonctions de gestion de la souris 
- * \version 0.1.0
- * \date 2023-03-22
- * 
- * 
- */
 #include "../../include/interaction_souris.h"
 
 extern
