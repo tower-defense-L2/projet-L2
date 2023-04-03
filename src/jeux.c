@@ -34,6 +34,7 @@ void fenetree(pack_t * fenetre, SDL_Rect * win){
     SDL_SetWindowBordered(fenetre->fenetre, SDL_TRUE);
     SDL_SetWindowResizable(fenetre->fenetre, SDL_TRUE);
     SDL_SetWindowFullscreen(fenetre->fenetre, 0);
+    SDL_SetWindowSize(fenetre->fenetre,1600,900);
     *win = (SDL_Rect){0,0,0,0};
     SDL_GetWindowSize(fenetre->fenetre,&win->w,&win->h);
 }
@@ -69,6 +70,7 @@ int jeux(pack_t * fenetre){
     
     // initialisation des rectangles
     SDL_Rect tuile= {0,0,0,0};
+    SDL_Rect quiter_rect = {0,0,0,0};
     
     // initialisaion des couleurs
     SDL_Color couleur_blanc = {255,255,255,255};
@@ -109,10 +111,11 @@ int jeux(pack_t * fenetre){
     if(load_bitmap("vide",&vide,fenetre)){
         return 1;
     }
-    quiter = creation_texte(fenetre, "Ecs : quiter le jeu", couleur_blanc);
+    quiter = creation_texte(fenetre, "Ecs : quiter le jeu  F11 : plein ecran", couleur_blanc);
     if (quiter == NULL){
         return 1;
     }
+    SDL_QueryTexture(quiter, NULL, NULL, &quiter_rect.w, &quiter_rect.h);
     emplacement = creation_bitexture(fenetre, "bordure", "bordure_survol", 0, 0);
     if (emplacement == NULL){
         return 1;
@@ -138,6 +141,13 @@ int jeux(pack_t * fenetre){
         // affichage du fond
         SDL_RenderCopy(fenetre->renderer, texture, NULL, NULL);
 
+
+        // affichage menu
+        quiter_rect.x = (win.w/20);
+        quiter_rect.y = (win.h/30);
+        SDL_RenderCopy(fenetre->renderer, quiter, NULL, &quiter_rect);
+        
+        
         // affichage des tuiles
         for(int j = 0; j < LARGEUR; j++){
             for(int i = 0; i < HAUTEUR; i++){
