@@ -41,7 +41,7 @@ void fenetree(pack_t * fenetre, SDL_Rect * win){
 
 
 extern
-void jeux(pack_t * fenetre){
+int jeux(pack_t * fenetre){
     // création de la fenetre
     SDL_Rect win= {0,0,0,0};
     // transformation de la fenetre en fenetre de jeu
@@ -65,10 +65,14 @@ void jeux(pack_t * fenetre){
     bitexture_t * emplacement = NULL;
     SDL_Texture * enemie = NULL;
     SDL_Texture * tour = NULL;
+    SDL_Texture * quiter = NULL;
     
+    // initialisation des rectangles
     SDL_Rect tuile= {0,0,0,0};
     
-    
+    // initialisaion des couleurs
+    SDL_Color couleur_blanc = {255,255,255,255};
+        
     // variable temporaire
     map_T *map = malloc(sizeof(map_T) + sizeof(case_T*) * HAUTEUR);
     for(int i = 0; i < HAUTEUR ; i++){
@@ -88,14 +92,31 @@ void jeux(pack_t * fenetre){
 
     // chargement de l'image de fond et gestion d'erreur
     if(load_bitmap("font",&texture,fenetre)){
-        return;
+        return 1;
     }
-    load_bitmap("chemin",&chemin,fenetre);
-    load_bitmap("bordure",&bordure,fenetre);
-    load_bitmap("bille",&enemie,fenetre);
-    load_bitmap("tour",&tour,fenetre);
-    load_bitmap("vide",&vide,fenetre);
+    if(load_bitmap("chemin",&chemin,fenetre)){
+        return 1;
+    }
+    if(load_bitmap("bordure",&bordure,fenetre)){
+        return 1;
+    }
+    if(load_bitmap("bille",&enemie,fenetre)){
+        return 1;
+    }
+    if(load_bitmap("tour",&tour,fenetre)){
+        return 1;
+    }
+    if(load_bitmap("vide",&vide,fenetre)){
+        return 1;
+    }
+    quiter = creation_texte(fenetre, "Ecs : quiter le jeu", couleur_blanc);
+    if (quiter == NULL){
+        return 1;
+    }
     emplacement = creation_bitexture(fenetre, "bordure", "bordure_survol", 0, 0);
+    if (emplacement == NULL){
+        return 1;
+    }
 
     SDL_RenderCopy(fenetre->renderer,texture,NULL,NULL);
     SDL_RenderPresent(fenetre->renderer);
@@ -195,4 +216,5 @@ void jeux(pack_t * fenetre){
     bordure = NULL;
     enemie = NULL;
     tour = NULL;
+    return 0;
 }

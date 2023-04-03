@@ -139,6 +139,29 @@ void supression_texture_liste(texture_t * texture){
     supression_texture(texture);
 }
 
+extern SDL_Texture * creation_texte(pack_t * fenetre, char * texte, SDL_Color couleur){
+    SDL_Surface * text_surface = NULL;
+    SDL_Texture * text_texture = NULL;
+    // Création de la surface
+    text_surface = TTF_RenderText_Blended(fenetre->police, texte, couleur);
+    // gestion d'erreur de la surface
+    if(text_surface == NULL){
+        printf("Erreur de création de la surface : %s", TTF_GetError());
+        SDL_Quit();
+        return NULL;
+    }
+    text_texture = SDL_CreateTextureFromSurface(fenetre->renderer, text_surface);
+    // gestion d'erreur de la texture
+    if(text_texture == NULL){
+        printf("Erreur de création de la texture : %s", SDL_GetError());
+        SDL_Quit();
+        return NULL;
+    }
+    // libération de la surface
+    SDL_FreeSurface(text_surface);
+    return text_texture;
+}
+
 
 extern
 bitexture_t * creation_bouton(pack_t * fenetre, char * texte,
@@ -147,13 +170,27 @@ bitexture_t * creation_bouton(pack_t * fenetre, char * texte,
     bitexture_t * bouton = malloc(sizeof(bitexture_t));
     SDL_Surface * bouton_surface = NULL;
     // Création de la texture normale
-    bouton_surface = TTF_RenderText_Blended(fenetre->police, texte, couleur);
-    bouton->normale = SDL_CreateTextureFromSurface(fenetre->renderer, bouton_surface);
-    SDL_FreeSurface(bouton_surface);
+    bouton->normale = creation_texte(fenetre, texte, couleur);
+    // gestion d'erreur de la texture
+    if(bouton->normale == NULL){
+        return NULL;
+    }
 
     // Création de la texture survol
     bouton_surface = TTF_RenderText_Shaded_Wrapped (fenetre->police, texte,couleur, wrap, 1000);
+    // gestion d'erreur de la surface
+    if(bouton_surface == NULL){
+        printf("Erreur de création de la surface : %s", TTF_GetError());
+        SDL_Quit();
+        return NULL;
+    }
     bouton->survol = SDL_CreateTextureFromSurface(fenetre->renderer, bouton_surface);
+    // gestion d'erreur de la texture
+    if(bouton->survol == NULL){
+        printf("Erreur de création de la texture : %s", SDL_GetError());
+        SDL_Quit();
+        return NULL;
+    }
     SDL_FreeSurface(bouton_surface);
 
     // brief attribution des coordonnées au bouton
@@ -192,5 +229,10 @@ bitexture_t * creation_bitexture(pack_t * fenetre, char * path1, char * path2, i
     bitexture->dst.x = x;
     bitexture->dst.y = y;
     SDL_QueryTexture(bitexture->survol, NULL, NULL, &bitexture->dst.w, &bitexture->dst.h);
+    // gestion d'erreur de la texture
+    if (bitexture->normale == NULL || bitexture->survol == NULL){
+        SDL_Quit();
+        return NULL;
+    }
     return bitexture;
 }

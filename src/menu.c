@@ -93,7 +93,9 @@ int menu(){
         if(gestion_bitexture(bouton, fenetre, x, y)&& Click==SDL_BUTTON_LEFT){
 
             // lancement du jeu
-            jeux(fenetre);
+            if (jeux(fenetre)){
+                return 1;
+            }
 
             // refomatage de la fenetre
             modelage_fenetre_menu(fenetre, &win);

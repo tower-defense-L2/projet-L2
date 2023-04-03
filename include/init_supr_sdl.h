@@ -83,6 +83,18 @@ void supression_texture(texture_t *texture);
 extern
 void supression_texture_liste(texture_t *texture);
 
+
+/**
+ * \brief fonction servant à créer une texture a partir d'un texte
+ * 
+ * \param fenetre pointeur sur la structure contenant le renderer, fenetre et police
+ * \param texte chaine de caractère a afficher
+ * \param couleur couleur du texte
+ * \return SDL_Texture* pointeur sur la texture crée
+ */
+extern 
+SDL_Texture * creation_texte(pack_t * fenetre, char * texte, SDL_Color couleur);
+
 /**
  * \brief fonction servant à créer un bouton
  * 
