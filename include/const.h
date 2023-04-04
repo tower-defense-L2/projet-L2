@@ -15,4 +15,6 @@
 #define TITRE "Tower Defense"
 #define RESSOURCES "./ressources/"
 
+map_T *map;
+
 #endif //PROJET_L2_CONST_H
