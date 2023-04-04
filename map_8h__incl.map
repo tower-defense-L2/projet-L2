@@ -1,5 +1,8 @@
 <map id="include/map.h" name="include/map.h">
-<area shape="rect" id="node1" title="Fichier contenant les fonctions de gestion de la map." alt="" coords="5,5,120,32"/>
-<area shape="rect" id="node2" href="$struct_8h.html" title="definition des differente structure utilisé dans le programme" alt="" coords="27,80,98,107"/>
-<area shape="rect" id="node3" href="$const_8h.html" title=" " alt="" coords="28,155,97,181"/>
+<area shape="rect" id="node1" title="Fichier contenant les fonctions de gestion de la map." alt="" coords="99,5,214,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="117,155,188,181"/>
+<area shape="rect" id="node3" href="$struct_8h.html" title="definition des differente structure utilisé dans le programme" alt="" coords="5,80,84,107"/>
+<area shape="rect" id="node5" title=" " alt="" coords="219,155,286,181"/>
+<area shape="rect" id="node6" href="$file_8h.html" title="Fichier contenant les fonctions de gestion de la file." alt="" coords="160,80,223,107"/>
+<area shape="rect" id="node4" href="$const_8h.html" title=" " alt="" coords="10,155,79,181"/>
 </map>
