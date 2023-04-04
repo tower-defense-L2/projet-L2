@@ -1,15 +1,10 @@
-#include <stdlib.h>
-#include <map.h>
-#include <stdio.h>
-#include <file.h>
-#include "debug.h"
-#include <ANSI-color-codes.h>
+#include "../include/map.h"
+
 
 #define PLACE 0
 #define RETRY 1
 #define SKIP 2
 
-map_T *map;
 unsigned int _seed;
 
 typedef struct obstacle_S {
