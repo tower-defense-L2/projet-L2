@@ -93,32 +93,32 @@ int jeux(pack_t * fenetre){
     map->cases[1][1]->case_pl.emplacement.tour = malloc(sizeof(tour_T));
 
     // chargement de l'image de fond et gestion d'erreur
-    if(load_bitmap("font",&texture,fenetre)){
-        return 1;
+    if(!load_bitmap("font",&texture,fenetre)){
+        return 0;
     }
-    if(load_bitmap("chemin",&chemin,fenetre)){
-        return 1;
+    if(!load_bitmap("chemin",&chemin,fenetre)){
+        return 0;
     }
-    if(load_bitmap("bordure",&bordure,fenetre)){
-        return 1;
+    if(!load_bitmap("bordure",&bordure,fenetre)){
+        return 0;
     }
-    if(load_bitmap("bille",&enemie,fenetre)){
-        return 1;
+    if(!load_bitmap("bille",&enemie,fenetre)){
+        return 0;
     }
-    if(load_bitmap("tour",&tour,fenetre)){
-        return 1;
+    if(!load_bitmap("tour",&tour,fenetre)){
+        return 0;
     }
-    if(load_bitmap("vide",&vide,fenetre)){
-        return 1;
+    if(!load_bitmap("vide",&vide,fenetre)){
+        return 0;
     }
     quiter = creation_texte(fenetre, "Ecs : quiter le jeu  F11 : plein ecran", couleur_blanc);
     if (quiter == NULL){
-        return 1;
+        return 0;
     }
     SDL_QueryTexture(quiter, NULL, NULL, &quiter_rect.w, &quiter_rect.h);
     emplacement = creation_bitexture(fenetre, "bordure", "bordure_survol", 0, 0);
     if (emplacement == NULL){
-        return 1;
+        return 0;
     }
 
     SDL_RenderCopy(fenetre->renderer,texture,NULL,NULL);
@@ -226,5 +226,5 @@ int jeux(pack_t * fenetre){
     bordure = NULL;
     enemie = NULL;
     tour = NULL;
-    return 0;
+    return 1;
 }

@@ -36,7 +36,7 @@ pack_t * creation_pack(char * titre, int width, int height, int flags, int taill
  * \brief fonction d'initialation de la sdl et ttf
  * 
  * \param fenetre structure contenant un poiteur sur le rederer et la fenetre
- * \return int 0 si tout c'est bien passé 1 sinon
+ * \return int 1 si tout c'est bien passé 0 sinon
  */
 extern
 int initilalisation_sdl();
@@ -62,7 +62,7 @@ void supression_sdl();
  * \param path chemin de la bitmap
  * \param texture structure devant contenir la structure
  * \param fenetre structure contenant le renderer
- * \return int 0 si tout c'est bien passé 1 sinon
+ * \return int 1 si tout c'est bien passé 0 sinon
  */
 extern
 int load_bitmap(const char *path, SDL_Texture **texture, pack_t *fenetre);

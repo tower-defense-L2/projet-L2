@@ -19,7 +19,7 @@
  * \brief fonction principale du jeu
  * 
  * \param fenetre pack_t de la fenetre
- * \return int 0 si tout c'est bien passé 1 sinon
+ * \return int 1 si tout c'est bien passé 0 sinon
  */
 extern
 int jeux(pack_t * fenetre);

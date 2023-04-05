@@ -49,15 +49,15 @@ int initilalisation_sdl(){
     if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER) < 0){
         printf("Erreur d'initialisation de la SDL : %s", SDL_GetError());
         SDL_Quit();
-        return 1 ;
+        return 0 ;
     }
     // Initialisation de SDL_ttf avec gestion d'erreur
     if(TTF_Init() < 0){
         printf("Erreur d'initialisation de SDL_ttf : %s", TTF_GetError());
         SDL_Quit();
-        return 1 ;
+        return 0 ;
     }
-    return 0;
+    return 1;
 }
 
 
@@ -95,7 +95,7 @@ int load_bitmap(const char *path, SDL_Texture ** texture, pack_t * fenettre){
     if(fond == NULL){
         printf("Erreur de chargement de l'image : %s", SDL_GetError());
         SDL_Quit();
-        return 1 ;
+        return 0 ;
     }
 
 
@@ -105,12 +105,12 @@ int load_bitmap(const char *path, SDL_Texture ** texture, pack_t * fenettre){
     if(*texture == NULL){
         printf("Erreur de création de la texture : %s", SDL_GetError());
         SDL_Quit();
-        return 1 ;
+        return 0 ;
     }
 
     // libération de la surface
     SDL_FreeSurface(fond);
-    return 0;
+    return 1;
 }
 
 extern
@@ -222,9 +222,15 @@ extern
 bitexture_t * creation_bitexture(pack_t * fenetre, char * path1, char * path2, int x, int y){
     bitexture_t * bitexture = malloc(sizeof(bitexture_t));
     // Chargement de la texture normale
-    load_bitmap(path1, &bitexture->normale, fenetre);
+    if(!load_bitmap(path1, &bitexture->normale, fenetre)){
+        SDL_Quit();
+        return NULL;
+    }
     // Chargement de la texture survol
-    load_bitmap(path2, &bitexture->survol, fenetre);
+    if(!load_bitmap(path2, &bitexture->survol, fenetre)){
+        SDL_Quit();
+        return NULL;
+    }
     // attribution des coordonnées au bouton
     bitexture->dst.x = x;
     bitexture->dst.y = y;

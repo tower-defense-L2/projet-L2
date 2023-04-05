@@ -47,24 +47,24 @@ int menu(){
     // création de la fenetre
     fenetre = creation_pack(TITRE, 854, 480, SDL_WINDOW_SHOWN, 30);
     if(fenetre == NULL){
-        return 1;
+        return 0;
     }
     modelage_fenetre_menu(fenetre, &win);
     SDL_GetWindowSize(fenetre->fenetre, &win.w, &win.h);
     if(load_bitmap("menu", &texture_menu, fenetre)){
-        return 1;
+        return 0;
     }
 
 
     // création des boutons et gestion d'erreur 
     bouton = creation_bouton(fenetre, "Jouer", couleurRouge, couleurNoire, (win.w/4), (win.h/2));
     if(bouton == NULL){
-        return 1;
+        return 0;
     }
     bouton2 = creation_bouton(fenetre, "Quiter", couleurRouge, couleurNoire,
                     (bouton->dst.x + bouton->dst.w), (bouton->dst.y + bouton->dst.h));
     if(bouton2 == NULL){
-        return 1;
+        return 0;
     }
 
     SDL_PollEvent(&event);
@@ -93,8 +93,8 @@ int menu(){
         if(gestion_bitexture(bouton, fenetre, x, y)&& Click==SDL_BUTTON_LEFT){
 
             // lancement du jeu
-            if (jeux(fenetre)){
-                return 1;
+            if (!jeux(fenetre)){
+                return 0;
             }
 
             // refomatage de la fenetre
@@ -132,5 +132,5 @@ int menu(){
     SDL_DestroyTexture(texture_menu);
     texture_menu = NULL;
     supression_pack(&fenetre);
-    return 0;
+    return 1;
 }
