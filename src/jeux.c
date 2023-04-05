@@ -9,6 +9,8 @@
  */
 #include "../include/jeux.h"
 
+#include "../test/deff.h"
+
 /**
  * \brief fonction qui passe la fenetre en plein écran
  * 
@@ -35,6 +37,7 @@ void fenetree(pack_t * fenetre, SDL_Rect * win){
     SDL_SetWindowResizable(fenetre->fenetre, SDL_TRUE);
     SDL_SetWindowFullscreen(fenetre->fenetre, 0);
     SDL_SetWindowSize(fenetre->fenetre,1600,900);
+    SDL_SetWindowMinimumSize(fenetre->fenetre,854,480);
     *win = (SDL_Rect){0,0,0,0};
     SDL_GetWindowSize(fenetre->fenetre,&win->w,&win->h);
 }
@@ -57,6 +60,7 @@ int jeux(pack_t * fenetre){
     Uint32 Click = 0; // état du clique
     int x = 0, y = 0; // position de la souris
     SDL_bool est_plein_ecran = SDL_TRUE;
+    char * info= malloc(sizeof(char)*30);
 
     // initialisation des textures
     SDL_Texture * texture = NULL;
@@ -66,31 +70,44 @@ int jeux(pack_t * fenetre){
     bitexture_t * emplacement = NULL;
     SDL_Texture * enemie = NULL;
     SDL_Texture * tour = NULL;
+    // texture de texte
     SDL_Texture * quiter = NULL;
+    SDL_Texture * argent = NULL;
+    SDL_Texture * vie = NULL;
     
     // initialisation des rectangles
     SDL_Rect tuile= {0,0,0,0};
     SDL_Rect quiter_rect = {0,0,0,0};
+    SDL_Rect argent_rect = {0,0,0,0};
+    SDL_Rect vie_rect = {0,0,0,0};
     
     // initialisaion des couleurs
     SDL_Color couleur_blanc = {255,255,255,255};
+    SDL_Color couleur_doree = {255,215,0,255};
+    SDL_Color couleur_rouge = {255,0,0,255};
         
     // variable temporaire
-    map_T *map = malloc(sizeof(map_T) + sizeof(case_T*) * HAUTEUR);
-    for(int i = 0; i < HAUTEUR ; i++){
-        for(int j = 0; j < LARGEUR; j++){
-            map->cases[i][j] = malloc(sizeof(case_T));
-            map->cases[i][j]->type = VIDE;
+        map = malloc(sizeof(map_T) + sizeof(case_T*) * HAUTEUR);
+        for(int i = 0; i < HAUTEUR ; i++){
+            for(int j = 0; j < LARGEUR; j++){
+                map->cases[i][j] = malloc(sizeof(case_T));
+                map->cases[i][j]->type = VIDE;
+            }
         }
-    }
-    map->cases[0][0]->type = CHEMIN;
-    map->cases[0][0]->case_pl.chemin.enemi = NULL;
-    map->cases[0][1]->type = CHEMIN;
-    map->cases[0][1]->case_pl.chemin.enemi = malloc(sizeof(ennemi_T));
-    map->cases[1][0]->type = EMPLACEMENT;
-    map->cases[1][0]->case_pl.emplacement.tour = NULL;
-    map->cases[1][1]->type = EMPLACEMENT;
-    map->cases[1][1]->case_pl.emplacement.tour = malloc(sizeof(tour_T));
+        map->cases[0][0]->type = CHEMIN;
+        map->cases[0][0]->case_pl.chemin.enemi = NULL;
+        map->cases[0][1]->type = CHEMIN;
+        map->cases[0][1]->case_pl.chemin.enemi = malloc(sizeof(ennemi_T));
+        map->cases[1][0]->type = EMPLACEMENT;
+        map->cases[1][0]->case_pl.emplacement.tour = NULL;
+        map->cases[1][1]->type = EMPLACEMENT;
+        map->cases[1][1]->case_pl.emplacement.tour = malloc(sizeof(tour_T));
+
+        joueur = malloc(sizeof(joueur_T));
+        joueur->argent = 100;
+        joueur->vie = 100;
+    
+
 
     // chargement de l'image de fond et gestion d'erreur
     if(load_bitmap("font",&texture,fenetre)){
@@ -143,9 +160,30 @@ int jeux(pack_t * fenetre){
 
 
         // affichage menu
-        quiter_rect.x = (win.w/20);
-        quiter_rect.y = (win.h/30);
         SDL_RenderCopy(fenetre->renderer, quiter, NULL, &quiter_rect);
+
+           
+        // creation des texte d'information
+        sprintf(info, "%d", joueur->vie);
+        strcat(info," : pv");
+        vie = creation_texte(fenetre, info, couleur_rouge);
+        SDL_QueryTexture(vie, NULL, NULL, &vie_rect.w, &vie_rect.h);
+        vie_rect.x = win.w - vie_rect.w;
+
+        sprintf(info, "%d", joueur->argent);
+        strcat(info, " : or");
+        argent = creation_texte(fenetre, info, couleur_doree);
+        SDL_QueryTexture(argent, NULL, NULL, &argent_rect.w, &argent_rect.h);
+        argent_rect.x = win.w - argent_rect.w - vie_rect.w - 30;
+
+        SDL_RenderCopy(fenetre->renderer, vie, NULL, &vie_rect);
+        SDL_RenderCopy(fenetre->renderer, argent, NULL, &argent_rect);
+        SDL_DestroyTexture(vie);
+        SDL_DestroyTexture(argent);
+        vie = NULL;
+        argent = NULL;
+
+     
         
         
         // affichage des tuiles
@@ -217,10 +255,16 @@ int jeux(pack_t * fenetre){
 
     // destruction de la texture
     SDL_DestroyTexture(texture);
+    SDL_DestroyTexture(quiter);
     SDL_DestroyTexture(chemin);
     SDL_DestroyTexture(bordure);
     SDL_DestroyTexture(enemie);
     SDL_DestroyTexture(tour);
+    SDL_DestroyTexture(emplacement->normale);
+    SDL_DestroyTexture(emplacement->survol);
+    free(emplacement);
+    free(info);
+    emplacement = NULL;
     texture = NULL;
     chemin = NULL;
     bordure = NULL;
