@@ -9,6 +9,9 @@
  */
 #include "../include/jeux.h"
 
+map_T *map;
+joueur_T *joueur;
+
 /**
  * \brief fonction qui passe la fenetre en plein écran
  * 
