@@ -128,7 +128,7 @@ int jeux(pack_t * fenetre){
     if(load_bitmap("vide",&vide,fenetre)){
         return 1;
     }
-    quiter = creation_texte(fenetre, "Ecs : quiter le jeu  F11 : plein ecran", couleur_blanc);
+    quiter = creation_texte(fenetre, "Esc : quiter le jeu  F11 : plein ecran", couleur_blanc);
     if (quiter == NULL){
         return 1;
     }
