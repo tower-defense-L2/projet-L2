@@ -64,7 +64,7 @@ void jeux(pack_t * fenetre){
     SDL_bool est_plein_ecran = SDL_TRUE;
     
     // variable temporaire
-    map_T *map = malloc(sizeof(map_T) + sizeof(case_T*) * HAUTEUR);
+    map = malloc(sizeof(map_T) + sizeof(case_T*) * HAUTEUR);
     
 
     for(int i = 0; i < HAUTEUR ; i++){
