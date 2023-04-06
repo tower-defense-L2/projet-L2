@@ -1,11 +1,13 @@
 <map id="include/struct.h" name="include/struct.h">
-<area shape="rect" id="node1" title="definition des differente structure utilisé dans le programme" alt="" coords="400,5,523,32"/>
-<area shape="rect" id="node2" href="$jeux_8h.html" title="fonction principale du jeu" alt="" coords="74,87,187,114"/>
-<area shape="rect" id="node6" href="$map_8h.html" title="Fichier contenant les fonctions de gestion de la map." alt="" coords="212,87,327,114"/>
-<area shape="rect" id="node7" href="$mouvement__ennemi_8h.html" title="vérifie la possiblité de déplacement d&#39;une bille" alt="" coords="351,87,571,114"/>
-<area shape="rect" id="node8" href="$placement__tours_8h.html" title="Afin de mettre une tour sur la carte ou d&#39;en supprimer une." alt="" coords="596,87,791,114"/>
-<area shape="rect" id="node9" href="$possibilite__tours_8h.html" title="Vérification des actions liées aux tours." alt="" coords="815,80,955,121"/>
-<area shape="rect" id="node3" href="$menu_8h.html" title="menu du jeux" alt="" coords="5,169,128,196"/>
-<area shape="rect" id="node5" href="$jeux_8c.html" title="boucle de jeu" alt="" coords="153,169,237,196"/>
-<area shape="rect" id="node4" href="$menu_8c.html" title="menu principal du jeu" alt="" coords="20,244,113,271"/>
+<area shape="rect" id="node1" title="definition des differente structure utilisé dans le programme" alt="" coords="287,5,409,32"/>
+<area shape="rect" id="node2" href="$dega_8h.html" title="primitve de gestion des degas des tours et des enemis" alt="" coords="5,169,123,196"/>
+<area shape="rect" id="node4" href="$jeux_8h.html" title="fonction principale du jeu" alt="" coords="197,87,310,114"/>
+<area shape="rect" id="node8" href="$map_8h.html" title="Fichier contenant les fonctions de gestion de la map." alt="" coords="57,87,172,114"/>
+<area shape="rect" id="node9" href="$mouvement__ennemi_8h.html" title="vérifie la possiblité de déplacement d&#39;une bille" alt="" coords="334,87,554,114"/>
+<area shape="rect" id="node10" href="$placement__tours_8h.html" title="Afin de mettre une tour sur la carte ou d&#39;en supprimer une." alt="" coords="579,87,773,114"/>
+<area shape="rect" id="node11" href="$possibilite__tours_8h.html" title="Vérification des actions liées aux tours." alt="" coords="798,80,938,121"/>
+<area shape="rect" id="node3" href="$dega_8c.html" title="gestion des degats des tours et des ennemis" alt="" coords="20,244,108,271"/>
+<area shape="rect" id="node5" href="$menu_8h.html" title="menu du jeux" alt="" coords="169,169,292,196"/>
+<area shape="rect" id="node7" href="$jeux_8c.html" title="boucle de jeu" alt="" coords="317,169,401,196"/>
+<area shape="rect" id="node6" href="$menu_8c.html" title="menu principal du jeu" alt="" coords="184,244,277,271"/>
 </map>

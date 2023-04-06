@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['file_2eh_116',['file.h',['../file_8h.html',1,'']]]
+  ['dega_2ec_118',['dega.c',['../dega_8c.html',1,'']]],
+  ['dega_2eh_119',['dega.h',['../dega_8h.html',1,'']]]
 ];

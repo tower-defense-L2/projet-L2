@@ -1,4 +1,6 @@
 <map id="include/file.h" name="include/file.h">
-<area shape="rect" id="node1" title="Fichier contenant les fonctions de gestion de la file." alt="" coords="10,5,115,32"/>
-<area shape="rect" id="node2" href="$map_8h.html" title="Fichier contenant les fonctions de gestion de la map." alt="" coords="5,80,120,107"/>
+<area shape="rect" id="node1" title="Fichier contenant les fonctions de gestion de la file." alt="" coords="11,5,117,32"/>
+<area shape="rect" id="node2" href="$map_8h.html" title="Fichier contenant les fonctions de gestion de la map." alt="" coords="7,80,121,107"/>
+<area shape="rect" id="node3" href="$dega_8h.html" title="primitve de gestion des degas des tours et des enemis" alt="" coords="5,155,123,181"/>
+<area shape="rect" id="node4" href="$dega_8c.html" title="gestion des degats des tours et des ennemis" alt="" coords="20,229,108,256"/>
 </map>

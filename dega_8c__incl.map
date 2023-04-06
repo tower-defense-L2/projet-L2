@@ -1,0 +1,11 @@
+<map id="src/dega.c" name="src/dega.c">
+<area shape="rect" id="node1" title="gestion des degats des tours et des ennemis" alt="" coords="105,5,193,32"/>
+<area shape="rect" id="node2" href="$dega_8h.html" title="primitve de gestion des degas des tours et des enemis" alt="" coords="85,80,214,107"/>
+<area shape="rect" id="node3" href="$const_8h.html" title=" " alt="" coords="5,304,75,331"/>
+<area shape="rect" id="node4" href="$struct_8h.html" title="definition des differente structure utilisé dans le programme" alt="" coords="41,229,111,256"/>
+<area shape="rect" id="node5" href="$map_8h.html" title="Fichier contenant les fonctions de gestion de la map." alt="" coords="187,155,250,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="165,304,235,331"/>
+<area shape="rect" id="node9" title=" " alt="" coords="275,155,349,181"/>
+<area shape="rect" id="node7" title=" " alt="" coords="283,304,349,331"/>
+<area shape="rect" id="node8" href="$file_8h.html" title="Fichier contenant les fonctions de gestion de la file." alt="" coords="238,229,301,256"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="include/map.h" name="include/map.h">
+<area shape="rect" id="node1" title="Fichier contenant les fonctions de gestion de la map." alt="" coords="7,5,121,32"/>
+<area shape="rect" id="node2" href="$dega_8h.html" title="primitve de gestion des degas des tours et des enemis" alt="" coords="5,80,123,107"/>
+<area shape="rect" id="node3" href="$dega_8c.html" title="gestion des degats des tours et des ennemis" alt="" coords="20,155,108,181"/>
+</map>
