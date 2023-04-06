@@ -61,7 +61,7 @@ int menu(){
     if(bouton == NULL){
         return 0;
     }
-    bouton2 = creation_bouton(fenetre, "Quiter", couleurRouge, couleurNoire,
+    bouton2 = creation_bouton(fenetre, "Quitter", couleurRouge, couleurNoire,
                     (bouton->dst.x + bouton->dst.w), (bouton->dst.y + bouton->dst.h));
     if(bouton2 == NULL){
         return 0;
@@ -130,7 +130,15 @@ int menu(){
 
     // liberation de la memoire
     SDL_DestroyTexture(texture_menu);
+    SDL_DestroyTexture(bouton->normale);
+    SDL_DestroyTexture(bouton->survol);
+    SDL_DestroyTexture(bouton2->normale);
+    SDL_DestroyTexture(bouton2->survol);
+    free(bouton);
+    free(bouton2);
     texture_menu = NULL;
+    bouton = NULL;
+    bouton2 = NULL;
     supression_pack(&fenetre);
     return 1;
 }

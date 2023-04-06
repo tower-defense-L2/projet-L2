@@ -100,6 +100,7 @@ int load_bitmap(const char *path, SDL_Texture ** texture, pack_t * fenettre){
     }
 
     // libération de la surface
+    free(path2);
     SDL_FreeSurface(fond);
     return 1;
 }
