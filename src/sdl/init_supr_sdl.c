@@ -1,12 +1,3 @@
-/**
- * \file init_supr_sdl.c
- * \author meo (meo.prn@outlook.fr)
- * \brief source des fonctions servant pour la création et la destruction de la sdl
- * \version 0.1.0
- * \date 2023-03-22
- * 
- * 
- */
 #include "../../include/init_supr_sdl.h"
 
 extern
@@ -164,8 +155,7 @@ extern SDL_Texture * creation_texte(pack_t * fenetre, char * texte, SDL_Color co
 
 
 extern
-bitexture_t * creation_bouton(pack_t * fenetre, char * texte,
-                SDL_Color couleur, SDL_Color wrap, int x, int y){
+bitexture_t * creation_bouton(pack_t * fenetre, char * texte, SDL_Color couleur, SDL_Color wrap, int x, int y){
     
     bitexture_t * bouton = malloc(sizeof(bitexture_t));
     SDL_Surface * bouton_surface = NULL;
