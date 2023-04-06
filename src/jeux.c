@@ -34,6 +34,7 @@ void fenetree(pack_t * fenetre, SDL_Rect * win){
     SDL_SetWindowBordered(fenetre->fenetre, SDL_TRUE);
     SDL_SetWindowResizable(fenetre->fenetre, SDL_TRUE);
     SDL_SetWindowFullscreen(fenetre->fenetre, 0);
+    SDL_SetWindowSize(fenetre->fenetre,1600,900);
     *win = (SDL_Rect){0,0,0,0};
     SDL_GetWindowSize(fenetre->fenetre,&win->w,&win->h);
 }
@@ -41,7 +42,7 @@ void fenetree(pack_t * fenetre, SDL_Rect * win){
 
 
 extern
-void jeux(pack_t * fenetre){
+int jeux(pack_t * fenetre){
     // création de la fenetre
     SDL_Rect win= {0,0,0,0};
     // transformation de la fenetre en fenetre de jeu
@@ -51,40 +52,74 @@ void jeux(pack_t * fenetre){
     // initialisation des variables
     SDL_Event event;
     SDL_bool program_launched = SDL_TRUE;
-    SDL_Texture * texture = NULL;
-    SDL_Texture * chemin = NULL;
-    SDL_Texture * bordure = NULL;
-    SDL_Texture * bille = NULL;
-    SDL_Texture * tour = NULL;
     Uint64 start, end;
     float elapsed = 0;
     Uint32 Click = 0; // état du clique
     int x = 0, y = 0; // position de la souris
-    SDL_Rect tuile= {0,0,0,0};
     SDL_bool est_plein_ecran = SDL_TRUE;
+
+    // initialisation des textures
+    SDL_Texture * texture = NULL;
+    SDL_Texture * chemin = NULL;
+    SDL_Texture * bordure = NULL;
+    SDL_Texture * vide = NULL;
+    bitexture_t * emplacement = NULL;
+    SDL_Texture * enemie = NULL;
+    SDL_Texture * tour = NULL;
+    SDL_Texture * quiter = NULL;
     
+    // initialisation des rectangles
+    SDL_Rect tuile= {0,0,0,0};
+    SDL_Rect quiter_rect = {0,0,0,0};
+    
+    // initialisaion des couleurs
+    SDL_Color couleur_blanc = {255,255,255,255};
+        
     // variable temporaire
     map_T *map = malloc(sizeof(map_T) + sizeof(case_T*) * HAUTEUR);
-    
-
     for(int i = 0; i < HAUTEUR ; i++){
         for(int j = 0; j < LARGEUR; j++){
             map->cases[i][j] = malloc(sizeof(case_T));
             map->cases[i][j]->type = VIDE;
         }
-        map->cases[i][0]->type = CHEMIN;
-        map->cases[i][LARGEUR-1]->type = CHEMIN;
-        map->cases[i][1]->type = EMPLACEMENT;
     }
+    map->cases[0][0]->type = CHEMIN;
+    map->cases[0][0]->case_pl.chemin.enemi = NULL;
+    map->cases[0][1]->type = CHEMIN;
+    map->cases[0][1]->case_pl.chemin.enemi = malloc(sizeof(ennemi_T));
+    map->cases[1][0]->type = EMPLACEMENT;
+    map->cases[1][0]->case_pl.emplacement.tour = NULL;
+    map->cases[1][1]->type = EMPLACEMENT;
+    map->cases[1][1]->case_pl.emplacement.tour = malloc(sizeof(tour_T));
 
     // chargement de l'image de fond et gestion d'erreur
-    if(load_bitmap("font",&texture,fenetre)){
-        return;
+    if(!load_bitmap("font",&texture,fenetre)){
+        return 0;
     }
-    load_bitmap("chemin",&chemin,fenetre);
-    load_bitmap("bordure",&bordure,fenetre);
-    load_bitmap("bille",&bille,fenetre);
-    load_bitmap("tour",&tour,fenetre);
+    if(!load_bitmap("chemin",&chemin,fenetre)){
+        return 0;
+    }
+    if(!load_bitmap("bordure",&bordure,fenetre)){
+        return 0;
+    }
+    if(!load_bitmap("bille",&enemie,fenetre)){
+        return 0;
+    }
+    if(!load_bitmap("tour",&tour,fenetre)){
+        return 0;
+    }
+    if(!load_bitmap("vide",&vide,fenetre)){
+        return 0;
+    }
+    quiter = creation_texte(fenetre, "Ecs : quiter le jeu  F11 : plein ecran", couleur_blanc);
+    if (quiter == NULL){
+        return 0;
+    }
+    SDL_QueryTexture(quiter, NULL, NULL, &quiter_rect.w, &quiter_rect.h);
+    emplacement = creation_bitexture(fenetre, "bordure", "bordure_survol", 0, 0);
+    if (emplacement == NULL){
+        return 0;
+    }
 
     SDL_RenderCopy(fenetre->renderer,texture,NULL,NULL);
     SDL_RenderPresent(fenetre->renderer);
@@ -102,26 +137,52 @@ void jeux(pack_t * fenetre){
 
         SDL_RenderClear(fenetre->renderer);
         Click = SDL_GetMouseState(&x, &y);
+
+        // affichage du fond
         SDL_RenderCopy(fenetre->renderer, texture, NULL, NULL);
 
+
+        // affichage menu
+        quiter_rect.x = (win.w/20);
+        quiter_rect.y = (win.h/30);
+        SDL_RenderCopy(fenetre->renderer, quiter, NULL, &quiter_rect);
+        
+        
+        // affichage des tuiles
         for(int j = 0; j < LARGEUR; j++){
             for(int i = 0; i < HAUTEUR; i++){
+                // calcul de la position de la tuile suivante
                 tuile.y = (i+1) * tuile.h;
                 tuile.x = (j+1) * tuile.w;
+
+                // selection de la texture a afficher
                 switch(map->cases[i][j]->type){
                     case CHEMIN:
                         SDL_RenderCopy(fenetre->renderer, chemin, NULL, &tuile);
+                        if(map->cases[i][j]->case_pl.chemin.enemi != NULL){
+                            SDL_RenderCopy(fenetre->renderer, enemie, NULL, &tuile);
+                        }
                         break;
                     case EMPLACEMENT:
-                        SDL_RenderCopy(fenetre->renderer, bordure, NULL, &tuile);
+                        // gestion des textures multiples
+                        if(map->cases[i][j]->case_pl.emplacement.tour != NULL){
+                            SDL_RenderCopy(fenetre->renderer, bordure, NULL, &tuile);
+                            SDL_RenderCopy(fenetre->renderer, tour, NULL, &tuile);
+                        }
+                        else{
+                            emplacement->dst = tuile;
+                            gestion_bitexture(emplacement, fenetre, x, y);
+                        }
                         break;
                     case VIDE:
-                        SDL_RenderCopy(fenetre->renderer, chemin, NULL, &tuile);
-                        SDL_RenderCopy(fenetre->renderer, bille, NULL, &tuile);
+                        SDL_RenderCopy(fenetre->renderer, vide, NULL, &tuile);
                         break;
                 }
             }
         }
+        // gestion du survol
+
+
         SDL_RenderPresent(fenetre->renderer);
         end = SDL_GetPerformanceCounter();
         elapsed = (end - start) * 1000 / (float)SDL_GetPerformanceFrequency();
@@ -158,11 +219,12 @@ void jeux(pack_t * fenetre){
     SDL_DestroyTexture(texture);
     SDL_DestroyTexture(chemin);
     SDL_DestroyTexture(bordure);
-    SDL_DestroyTexture(bille);
+    SDL_DestroyTexture(enemie);
     SDL_DestroyTexture(tour);
     texture = NULL;
     chemin = NULL;
     bordure = NULL;
-    bille = NULL;
+    enemie = NULL;
     tour = NULL;
+    return 1;
 }

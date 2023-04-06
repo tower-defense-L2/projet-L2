@@ -12,18 +12,18 @@ int main(){
     /**
      * \brief Initialisation de la SDL avec gestion d'erreur
      */
-    if(initilalisation_sdl()){
+    if(!initilalisation_sdl()){
         return 1;
     }
     fenetre = creation_pack("test multitexture", 800, 600, SDL_WINDOW_SHOWN, 30);
     if(fenetre == NULL){
         return 1;
     }
-    if(load_bitmap("./ressources/test/font.bmp", &texture_fond, fenetre)){
+    if(!load_bitmap("test/font", &texture_fond, fenetre)){
         return 1;
     }
 
-    if(load_bitmap("./ressources/test/font2.bmp", &texture_fond2, fenetre)){
+    if(!load_bitmap("test/font2", &texture_fond2, fenetre)){
         return 1;
     }
 

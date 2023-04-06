@@ -3,12 +3,12 @@
 
 int main(){
     //Initialisation de la SDL avec gestion d'erreur
-    if(initilalisation_sdl()){
+    if(!initilalisation_sdl()){
         return 1;
     }
     
     //appel du menu principal avec gestion d'erreur
-    if (menu()){
+    if (!menu()){
         return 1;
     }
 
