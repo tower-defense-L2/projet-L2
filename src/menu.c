@@ -21,7 +21,7 @@ void modelage_fenetre_menu(pack_t * fenetre, SDL_Rect * win){
     SDL_SetWindowFullscreen(fenetre->fenetre, 0);
     SDL_SetWindowSize(fenetre->fenetre, 854, 480);
     SDL_SetWindowPosition(fenetre->fenetre, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED);
-    
+    SDL_SetWindowMinimumSize(fenetre->fenetre, 427, 240);
     SDL_GetDisplayBounds(0,win);
 }
 
@@ -31,8 +31,8 @@ int menu(){
     SDL_Event event;
     SDL_bool program_launched = SDL_TRUE;
     SDL_Texture * texture_menu = NULL;
-    bouton_t * bouton = NULL;
-    bouton_t * bouton2 = NULL;
+    bitexture_t * bouton = NULL;
+    bitexture_t * bouton2 = NULL;
     Uint64 start, end;
     float elapsed = 0;
     SDL_Color couleurRouge = {255, 0, 0, 255};
@@ -47,24 +47,24 @@ int menu(){
     // création de la fenetre
     fenetre = creation_pack(TITRE, 854, 480, SDL_WINDOW_SHOWN, 30);
     if(fenetre == NULL){
-        return 1;
+        return 0;
     }
     modelage_fenetre_menu(fenetre, &win);
     SDL_GetWindowSize(fenetre->fenetre, &win.w, &win.h);
     if(load_bitmap("menu", &texture_menu, fenetre)){
-        return 1;
+        return 0;
     }
 
 
     // création des boutons et gestion d'erreur 
     bouton = creation_bouton(fenetre, "Jouer", couleurRouge, couleurNoire, (win.w/4), (win.h/2));
     if(bouton == NULL){
-        return 1;
+        return 0;
     }
     bouton2 = creation_bouton(fenetre, "Quiter", couleurRouge, couleurNoire,
-                    (bouton->dst.w + bouton->dst.x), (bouton->dst.h + bouton->dst.y));
+                    (bouton->dst.x + bouton->dst.w), (bouton->dst.y + bouton->dst.h));
     if(bouton2 == NULL){
-        return 1;
+        return 0;
     }
 
     SDL_PollEvent(&event);
@@ -89,17 +89,19 @@ int menu(){
         SDL_RenderCopy(fenetre->renderer, texture_menu, NULL, &dst);
 
         // reposionnement des boutons et gestion de l'interaction avec la souris
-        position_bouton(bouton, (win.w/4), (win.h/2));
-        if(gestion_bouton(bouton, fenetre, x, y)&& Click==SDL_BUTTON_LEFT){
+        position_bitexture(bouton, (win.w/4), (win.h/2));
+        if(gestion_bitexture(bouton, fenetre, x, y)&& Click==SDL_BUTTON_LEFT){
 
             // lancement du jeu
-            jeux(fenetre);
+            if (!jeux(fenetre)){
+                return 0;
+            }
 
             // refomatage de la fenetre
             modelage_fenetre_menu(fenetre, &win);
         }
-        position_bouton(bouton2, (win.w/4), (4*win.h/7));
-        if(gestion_bouton(bouton2, fenetre, x, y)&& Click==SDL_BUTTON_LEFT){
+        position_bitexture(bouton2, (bouton->dst.x), (bouton->dst.y + bouton->dst.h));
+        if(gestion_bitexture(bouton2, fenetre, x, y)&& Click==SDL_BUTTON_LEFT){
             program_launched = SDL_FALSE;
         }
 
@@ -130,5 +132,5 @@ int menu(){
     SDL_DestroyTexture(texture_menu);
     texture_menu = NULL;
     supression_pack(&fenetre);
-    return 0;
+    return 1;
 }
