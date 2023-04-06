@@ -14,7 +14,6 @@
 #include "const.h"
 #include "struct.h"
 #include "map.h"
-#include "global.h"
 #include <stdlib.h>
 
 #endif

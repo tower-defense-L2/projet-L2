@@ -9,11 +9,13 @@
 #define JEUX_H
 
 #include <SDL2/SDL.h>
+#include <time.h>
 #include "./struct_sdl.h"
 #include "./struct.h"
 #include "./const.h"
 #include "./interaction_souris.h"
 #include "./init_supr_sdl.h"
+#include "./map.h"
 
 /**
  * \brief fonction principale du jeu

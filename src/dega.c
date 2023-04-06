@@ -19,6 +19,6 @@ void dega_tour(tour_T *tour, ennemi_T **ennemi){
 }
 
 static
-void dega_enemi(ennemi_T *enemi){
+void dega_enemi(ennemi_T *enemi, joueur_T *joueur){
     joueur->vie -= enemi->degat;
 }

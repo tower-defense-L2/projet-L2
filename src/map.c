@@ -6,6 +6,7 @@
 #define SKIP 2
 
 unsigned int _seed;
+map_T *_map;
 
 typedef struct obstacle_S {
     int largeur;
@@ -25,7 +26,7 @@ obstacle_T obstacles[] = {
         {3, 3, NULL},
 };
 
-int generate_obstacle(map_T * map,int nb, position_T *blacklist, int blacklist_size) {
+int generate_obstacle(int nb, position_T *blacklist, int blacklist_size) {
   int i, x, y, j, k, state = PLACE, try = 0, skipped = 0;
   for (i = 0; i < nb; i++) {
     x = rand() % HAUTEUR;
@@ -37,7 +38,7 @@ int generate_obstacle(map_T * map,int nb, position_T *blacklist, int blacklist_s
         skipped++;
         break;
       }
-      if ((x == blacklist[j].x && y == blacklist[j].y) || map->cases[x][y]->type == OBSTACLE) {
+      if ((x == blacklist[j].x && y == blacklist[j].y) || _map->cases[x][y]->type == OBSTACLE) {
         try++;
         i--;
         state = RETRY;
@@ -64,7 +65,7 @@ int generate_obstacle(map_T * map,int nb, position_T *blacklist, int blacklist_s
           skipped++;
           break;
         }
-        if (map->cases[x + j][y + k]->type == OBSTACLE) {
+        if (_map->cases[x + j][y + k]->type == OBSTACLE) {
           try++;
           state = RETRY;
           i--;
@@ -80,7 +81,7 @@ int generate_obstacle(map_T * map,int nb, position_T *blacklist, int blacklist_s
     }
     for (j = 0; j < obstacle.hauteur; j++) {
       for (k = 0; k < obstacle.largeur; k++) {
-        map->cases[x + j][y + k]->type = OBSTACLE;
+        _map->cases[x + j][y + k]->type = OBSTACLE;
       }
     }
   }
@@ -94,11 +95,11 @@ position_T *create_pos(int x, int y) {
   return pos;
 }
 
-void a_star(map_T * map, int tab[HAUTEUR][LARGEUR], position_T start) {
+void a_star(int tab[HAUTEUR][LARGEUR], position_T start) {
   int i, j;
   for (i = 0; i < HAUTEUR; ++i) {
     for (j = 0; j < LARGEUR; ++j) {
-      tab[i][j] = get_case(map, i, j)->type == OBSTACLE ? -10 : -1;
+      tab[i][j] = get_case(i, j)->type == OBSTACLE ? -10 : -1;
     }
   }
 
@@ -114,25 +115,25 @@ void a_star(map_T * map, int tab[HAUTEUR][LARGEUR], position_T start) {
     int y = pos->y;
     int cost = tab[x][y];
     int affected_size = 0;
-    if (x > 0 && map->cases[x - 1][y]->type != OBSTACLE && tab[x - 1][y] == -1) {
+    if (x > 0 && _map->cases[x - 1][y]->type != OBSTACLE && tab[x - 1][y] == -1) {
       new_pos = create_pos(x - 1, y);
       file_push(&file, new_pos);
       tab[x - 1][y] = cost + 1;
       affected[affected_size++] = *new_pos;
     }
-    if (x < HAUTEUR - 1 && map->cases[x + 1][y]->type != OBSTACLE && tab[x + 1][y] == -1) {
+    if (x < HAUTEUR - 1 && _map->cases[x + 1][y]->type != OBSTACLE && tab[x + 1][y] == -1) {
       new_pos = create_pos(x + 1, y);
       file_push(&file, new_pos);
       tab[x + 1][y] = cost + 1;
       affected[affected_size++] = *new_pos;
     }
-    if (y > 0 && map->cases[x][y - 1]->type != OBSTACLE && tab[x][y - 1] == -1) {
+    if (y > 0 && _map->cases[x][y - 1]->type != OBSTACLE && tab[x][y - 1] == -1) {
       new_pos = create_pos(x, y - 1);
       file_push(&file, new_pos);
       tab[x][y - 1] = cost + 1;
       affected[affected_size++] = *new_pos;
     }
-    if (y < LARGEUR - 1 && map->cases[x][y + 1]->type != OBSTACLE && tab[x][y + 1] == -1) {
+    if (y < LARGEUR - 1 && _map->cases[x][y + 1]->type != OBSTACLE && tab[x][y + 1] == -1) {
       new_pos = create_pos(x, y + 1);
       file_push(&file, new_pos);
       tab[x][y + 1] = cost + 1;
@@ -142,7 +143,7 @@ void a_star(map_T * map, int tab[HAUTEUR][LARGEUR], position_T start) {
   free(affected);
 }
 
-void create_path(map_T * map, int tab[HAUTEUR][LARGEUR], position_T end) {
+void create_path(int tab[HAUTEUR][LARGEUR], position_T end) {
   int x = end.x;
   int y = end.y;
   int cost = tab[x][y];
@@ -158,11 +159,11 @@ void create_path(map_T * map, int tab[HAUTEUR][LARGEUR], position_T end) {
       y++;
     }
     tab[x][y] = 100;
-    map->cases[x][y]->type = CHEMIN;
+    _map->cases[x][y]->type = CHEMIN;
     cost--;
   }
   tab[x][y] = 1000;
-  case_T *old_caset, *caset = map->cases[x][y];
+  case_T *old_caset, *caset = _map->cases[x][y];
   while (x != end.x || y != end.y) {
     if (caset->type == CHEMIN) {
       if (x > 0 && (tab[x - 1][y] == 100 || (x - 1 == end.x && y == end.y))) {
@@ -176,34 +177,76 @@ void create_path(map_T * map, int tab[HAUTEUR][LARGEUR], position_T end) {
       }
       tab[x][y] *= 10;
       old_caset = caset;
-      caset = map->cases[x][y];
+      caset = _map->cases[x][y];
       position_T pos = {x, y};
       caset->case_pl.chemin.position = pos;
       old_caset->case_pl.chemin.suivant = &caset->case_pl.chemin;
     }
   }
   old_caset = caset;
-  caset = map->cases[end.x][end.y];
+  caset = _map->cases[end.x][end.y];
   caset->type = CHEMIN;
   caset->case_pl.chemin.position = end;
   old_caset->case_pl.chemin.suivant = &caset->case_pl.chemin;
 }
 
-void generate_map(map_T * map, unsigned int seed, position_T start, position_T end, void (*callback)(map_T *, position_T)) {
+void ajout_emplacement(){
+	for (int i = 0; i < HAUTEUR; ++i){
+		for (int j = 0; j < LARGEUR; ++j){
+			if (_map->cases[i][j]->type == CHEMIN){
+        _map->cases[i][j]->case_pl.chemin.enemi = NULL;
+				if (i > 0 && _map->cases[i - 1][j]->type == VIDE){
+					_map->cases[i - 1][j]->type = EMPLACEMENT;
+					_map->cases[i - 1][j]->case_pl.emplacement.tour = NULL;
+				}
+				if (i > 0 && j > 0 && _map->cases[i - 1][j - 1]->type == VIDE){
+					_map->cases[i - 1][j - 1]->type = EMPLACEMENT;
+					_map->cases[i - 1][j - 1]->case_pl.emplacement.tour = NULL;
+				}
+				if (i > 0 && j < LARGEUR - 1 && _map->cases[i - 1][j + 1]->type == VIDE){
+					_map->cases[i - 1][j + 1]->type = EMPLACEMENT;
+					_map->cases[i - 1][j + 1]->case_pl.emplacement.tour = NULL;
+				}
+				if (i < HAUTEUR - 1 && _map->cases[i + 1][j]->type == VIDE){
+					_map->cases[i + 1][j]->type = EMPLACEMENT;
+					_map->cases[i + 1][j]->case_pl.emplacement.tour = NULL;
+				}
+				if (i < HAUTEUR - 1 && j > 0 && _map->cases[i + 1][j - 1]->type == VIDE){
+					_map->cases[i + 1][j - 1]->type = EMPLACEMENT;
+					_map->cases[i + 1][j - 1]->case_pl.emplacement.tour = NULL;
+				}
+				if (i < HAUTEUR - 1 && j < LARGEUR - 1 && _map->cases[i + 1][j + 1]->type == VIDE){
+					_map->cases[i + 1][j + 1]->type = EMPLACEMENT;
+					_map->cases[i + 1][j + 1]->case_pl.emplacement.tour = NULL;
+				}
+				if (j > 0 && _map->cases[i][j - 1]->type == VIDE){
+					_map->cases[i][j - 1]->type = EMPLACEMENT;
+					_map->cases[i][j - 1]->case_pl.emplacement.tour = NULL;
+				}
+				if (j < LARGEUR - 1 && _map->cases[i][j + 1]->type == VIDE){
+					_map->cases[i][j + 1]->type = EMPLACEMENT;
+					_map->cases[i][j + 1]->case_pl.emplacement.tour = NULL;
+				}
+			}
+		}
+	}
+}
+
+void generate_map(unsigned int seed, position_T start, position_T end, void (*callback)(map_T *, position_T)) {
   _seed = seed;
   srand(seed);
-  map = malloc(sizeof(map_T) + sizeof(case_T **) * HAUTEUR);
+  _map = malloc(sizeof(map_T) + sizeof(case_T **) * HAUTEUR);
   int i, j;
   for (i = 0; i < HAUTEUR; ++i) {
     for (j = 0; j < LARGEUR; ++j) {
-      map->cases[i][j] = malloc(sizeof(case_T));
-      map->cases[i][j]->type = VIDE;
+      _map->cases[i][j] = malloc(sizeof(case_T));
+      _map->cases[i][j]->type = VIDE;
     }
   }
   position_T blacklisted_pos[] = {start, end};
-  int skipped = generate_obstacle(map, 100, blacklisted_pos, 2);
+  int skipped = generate_obstacle(100, blacklisted_pos, 2);
   int calculated_path[HAUTEUR][LARGEUR];
-  a_star(map, calculated_path, start);
+  a_star(calculated_path, start);
   if (calculated_path[end.x][end.y] == -1) {
     printf("No path found\nTrying to find a new end position\n");
     int x, found = 0;
@@ -219,33 +262,35 @@ void generate_map(map_T * map, unsigned int seed, position_T start, position_T e
       printf("No path found\n");
     }
   }
-  create_path(map, calculated_path, end);
+  create_path(calculated_path, end);
 //  print_meta_array(calculated_path);
+  ajout_emplacement();
+
 }
 
-void destroy_map(map_T * map) {
+void destroy_map() {
   int i, j;
   for (i = 0; i < HAUTEUR; ++i) {
     for (j = 0; j < LARGEUR; ++j) {
-      free(map->cases[i][j]);
+      free(_map->cases[i][j]);
     }
   }
-  free(map->cases);
-  map = NULL;
+  free(_map->cases);
+  _map = NULL;
 }
 
-int map_initialized(map_T * map) {
-  return map != NULL;
+int map_initialized() {
+  return _map != NULL;
 }
 
-map_T *get_map(map_T * map) {
-  return map;
+map_T *get_map() {
+  return _map;
 }
 
 int get_seed() {
   return _seed;
 }
 
-case_T *get_case(map_T * map, int x, int y) {
-  return map->cases[x][y];
+case_T *get_case(int x, int y) {
+  return _map->cases[x][y];
 }

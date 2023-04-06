@@ -62,6 +62,9 @@ int jeux(pack_t * fenetre){
     int x = 0, y = 0; // position de la souris
     SDL_bool est_plein_ecran = SDL_TRUE;
     char * info= malloc(sizeof(char)*30);
+    // positon du depart et de l'arrivé
+    position_T depart = {5,0};
+    position_T arrivee = {HAUTEUR-4,LARGEUR-1};
 
     // initialisation des textures
     SDL_Texture * texture = NULL;
@@ -71,6 +74,7 @@ int jeux(pack_t * fenetre){
     bitexture_t * emplacement = NULL;
     SDL_Texture * enemie = NULL;
     SDL_Texture * tour = NULL;
+    SDL_Texture * obstacle= NULL;
     // texture de texte
     SDL_Texture * quiter = NULL;
     SDL_Texture * argent = NULL;
@@ -87,22 +91,9 @@ int jeux(pack_t * fenetre){
     SDL_Color couleur_doree = {255,215,0,255};
     SDL_Color couleur_rouge = {255,0,0,255};
         
-    // variable temporaire
-        map = malloc(sizeof(map_T) + sizeof(case_T*) * HAUTEUR);
-        for(int i = 0; i < HAUTEUR ; i++){
-            for(int j = 0; j < LARGEUR; j++){
-                map->cases[i][j] = malloc(sizeof(case_T));
-                map->cases[i][j]->type = VIDE;
-            }
-        }
-        map->cases[0][0]->type = CHEMIN;
-        map->cases[0][0]->case_pl.chemin.enemi = NULL;
-        map->cases[0][1]->type = CHEMIN;
-        map->cases[0][1]->case_pl.chemin.enemi = malloc(sizeof(ennemi_T));
-        map->cases[1][0]->type = EMPLACEMENT;
-        map->cases[1][0]->case_pl.emplacement.tour = NULL;
-        map->cases[1][1]->type = EMPLACEMENT;
-        map->cases[1][1]->case_pl.emplacement.tour = malloc(sizeof(tour_T));
+    // initialisation des variables globales
+        generate_map(time(NULL), depart, arrivee, NULL);
+        map = get_map();
 
         joueur = malloc(sizeof(joueur_T));
         joueur->argent = 100;
@@ -127,6 +118,9 @@ int jeux(pack_t * fenetre){
         return 0;
     }
     if(!load_bitmap("vide",&vide,fenetre)){
+        return 0;
+    }
+    if(!load_bitmap("obstacle",&obstacle,fenetre)){
         return 0;
     }
     quiter = creation_texte(fenetre, "Esc : quiter le jeu  F11 : plein ecran", couleur_blanc);
@@ -212,6 +206,9 @@ int jeux(pack_t * fenetre){
                             emplacement->dst = tuile;
                             gestion_bitexture(emplacement, fenetre, x, y);
                         }
+                        break;
+                    case OBSTACLE:
+                        SDL_RenderCopy(fenetre->renderer, obstacle, NULL, &tuile);
                         break;
                     case VIDE:
                         SDL_RenderCopy(fenetre->renderer, vide, NULL, &tuile);
