@@ -17,7 +17,7 @@
 /**
  * \brief fonction qui affiche le menu et lance le jeux
  * 
- * \return int 0 si tout c'est bien passé 1 sinon
+ * \return int 1 si tout c'est bien passé 0 sinon
  */
 extern
 int menu();
