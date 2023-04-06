@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['bouton_5fs_1',['bouton_s',['../structbouton__s.html',1,'']]],
-  ['bouton_5ft_2',['bouton_t',['../structbouton__t.html',1,'bouton_t'],['../struct__sdl_8h.html#a708299c7249bf34bce6fa5a631f64785',1,'bouton_t():&#160;struct_sdl.h']]]
+  ['bitexture_5fs_1',['bitexture_s',['../structbitexture__s.html',1,'']]],
+  ['bitexture_5ft_2',['bitexture_t',['../structbitexture__t.html',1,'bitexture_t'],['../struct__sdl_8h.html#a4e476b12205d4ad2b35c06e2f3348164',1,'bitexture_t():&#160;struct_sdl.h']]]
 ];
