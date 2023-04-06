@@ -119,6 +119,10 @@ clean_doc:
 	@rm -rf ./doc/html
 	@rm -rf ./doc/latex
 
+.PHONY: archive
+archive : remove
+	@tar -zcvf $(TARGET).tar.gz ./test ./src ./ressources ./include ./doc ./Makefile ./README.md
+
 install_sdl:
 ifneq ($(OS), Windows_NT)
 	@rm -rf SDL_lib
