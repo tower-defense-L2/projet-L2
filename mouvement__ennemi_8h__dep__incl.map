@@ -1,4 +1,0 @@
-<map id="include/mouvement_ennemi.h" name="include/mouvement_ennemi.h">
-<area shape="rect" id="node1" title="vérifie la possiblité de déplacement d&#39;une bille" alt="" coords="5,5,225,32"/>
-<area shape="rect" id="node2" href="$mouvement__ennemi_8c.html" title="vérifie si une bille peut se rendre dans la salle suivante, cans ce cas le fait et suprime l&#39;ennemi q..." alt="" coords="20,80,211,107"/>
-</map>

@@ -1,12 +1,9 @@
 <map id="include/struct_sdl.h" name="include/struct_sdl.h">
-<area shape="rect" id="node1" title="definition des differente structure utilisé par les fonctions de sdl" alt="" coords="275,5,423,32"/>
-<area shape="rect" id="node2" href="$init__supr__sdl_8h.html" title="différente fonction servant pour la création et la destruction de la sdl" alt="" coords="119,87,285,114"/>
-<area shape="rect" id="node3" href="$jeux_8h.html" title="fonction principale du jeu" alt="" coords="359,177,472,203"/>
-<area shape="rect" id="node4" href="$menu_8h.html" title="menu du jeux" alt="" coords="259,259,382,285"/>
-<area shape="rect" id="node9" href="$interaction__souris_8h.html" title="differentes fonctions pour gerer la souris avec SDL" alt="" coords="433,80,576,121"/>
-<area shape="rect" id="node6" href="$tower__defense_8c.html" title="fichier principal du jeu tower defense" alt="" coords="129,333,281,360"/>
-<area shape="rect" id="node8" href="$init__supr__sdl_8c.html" title="source des fonctions servant pour la création et la destruction de la sdl" alt="" coords="5,177,167,203"/>
-<area shape="rect" id="node7" href="$jeux_8c.html" title="boucle de jeu" alt="" coords="407,259,491,285"/>
-<area shape="rect" id="node5" href="$menu_8c.html" title="menu principal du jeu" alt="" coords="305,333,398,360"/>
-<area shape="rect" id="node10" href="$interaction__souris_8c.html" title="source des fonctions de gestion de la souris" alt="" coords="547,169,686,211"/>
+<area shape="rect" id="node1" title="definition des differente structure utilisé par les fonctions de sdl" alt="" coords="128,5,276,32"/>
+<area shape="rect" id="node2" href="$init__supr__sdl_8h.html" title="différente fonction servant pour la création et la destruction de la sdl" alt="" coords="30,87,196,114"/>
+<area shape="rect" id="node3" href="$jeux_8h.html" title="fonction principale du jeu" alt="" coords="230,169,343,196"/>
+<area shape="rect" id="node4" href="$menu_8h.html" title="menu du jeux" alt="" coords="77,244,200,271"/>
+<area shape="rect" id="node7" href="$interaction__souris_8h.html" title="differentes fonctions pour gerer la souris avec SDL" alt="" coords="220,80,363,121"/>
+<area shape="rect" id="node6" href="$jeux_8c.html" title="boucle de jeu" alt="" coords="244,244,328,271"/>
+<area shape="rect" id="node5" href="$menu_8c.html" title="menu principal du jeu" alt="" coords="92,319,185,345"/>
 </map>
