@@ -9,7 +9,8 @@
  */
 #include "../include/jeux.h"
 
-#include "../test/deff.h"
+map_T *map;
+joueur_T *joueur;
 
 /**
  * \brief fonction qui passe la fenetre en plein écran
