@@ -10,11 +10,11 @@
 #include "../include/dega.h"
 
 static
-void dega_tour(tour_T *tour, ennemi_T **ennemi){
-    (*ennemi)->vie -= tour->degat;
-    if((*ennemi)->vie <= 0){
-        free(*ennemi);
-        *ennemi = NULL;
+void dega_tour(joueur_T * joueur,tour_T *tour, ennemi_T *ennemi){
+    ennemi->vie -= tour->degat;
+    if(ennemi->vie <= 0){
+        joueur->argent += ennemi->reconpense;
+        detruire_enemi(ennemi->id);
     }
 }
 

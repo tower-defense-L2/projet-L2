@@ -9,8 +9,9 @@
  * 
  */
 
-
-#include "stdlib.h"
+#ifndef MOUVEMENT_ENNEMI_H
+#define MOUVEMENT_ENNEMI_H
+#include <stdlib.h>
 #include "const.h"
 #include "struct.h"
 
@@ -22,3 +23,11 @@
  */
 extern
 int mouvement_bille(chemin_T *chemin);
+
+
+extern
+void detruire_enemi(int id);
+
+extern
+void detruire_enemis();
+#endif

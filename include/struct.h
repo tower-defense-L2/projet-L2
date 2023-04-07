@@ -42,7 +42,8 @@ typedef struct tour_S {
 typedef struct ennemi_S {
     int id; /*!< identifiant de l'ennemi */
     int vie; /*!< vie de l'ennemi */
-    int vitesse; /*!< vitesse de l'ennemi */
+    int reconpense; /*!< argent gagné en tuant l'ennemi */
+    int vitesse; /*!< vitesse de l'ennemi en s/60 */
     int degat; /*!< degat de l'ennemi */
     position_T position; /*!< position de l'ennemi */
 } ennemi_T;
