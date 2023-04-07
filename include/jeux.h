@@ -17,6 +17,7 @@
 #include "./init_supr_sdl.h"
 #include "./map.h"
 #include "./placement_tours.h"
+#include "./mouvement_ennemi.h"
 
 /**
  * \brief fonction principale du jeu

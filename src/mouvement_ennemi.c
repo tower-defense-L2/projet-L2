@@ -1,12 +1,12 @@
 #include "../include/mouvement_ennemi.h"
 
-typedef struct liste_enemi_S {
+typedef struct liste_ennemi_S {
     ennemi_T *enemi;
-    struct liste_enemi_S *suivant;
-    struct liste_enemi_S *precedent;
-} liste_enemi_T;
+    struct liste_ennemi_S *suivant;
+    struct liste_ennemi_S *precedent;
+} liste_ennemi_T;
 
-liste_enemi_T *liste_enemi = NULL;
+liste_ennemi_T *liste_enemi = NULL;
 
 case_T * hors_jeux;
 
@@ -17,9 +17,9 @@ case_T * hors_jeux;
  * \param joueur pointeur vers le joueur
  */
 static
-void dega_enemi(ennemi_T *enemi, joueur_T *joueur){
+void dega_ennemi(ennemi_T *enemi, joueur_T *joueur){
     joueur->vie -= enemi->degat;
-    detruire_enemi(enemi->id);
+    detruire_ennemi(enemi->id);
 }
 
 /**
@@ -52,13 +52,9 @@ int mouvement_bille(ennemi_T* bille, joueur_T *joueur)
     if(chemin == NULL){
         return -1;
     }
-    //vérifie que la case n'est pas bloquée
-    if(chemin->case_pl.chemin.enemi != NULL){
-        return 0;
-    }
     //vérifie que la case suivante existe sinon l'ennemi est arrivé
     if (chemin->case_pl.chemin.suivant == NULL){
-        dega_enemi(bille, joueur);
+        dega_ennemi(bille, joueur);
         chemin->case_pl.chemin.enemi = NULL;
         return 1;
     }
@@ -73,9 +69,9 @@ int mouvement_bille(ennemi_T* bille, joueur_T *joueur)
 }
 
 extern
-void detruire_enemi(int id)
+void detruire_ennemi(int id)
 {
-    liste_enemi_T *tmp = liste_enemi;
+    liste_ennemi_T *tmp = liste_enemi;
     while (tmp != NULL)
     {
         if (tmp->enemi->id == id)
@@ -90,19 +86,23 @@ void detruire_enemi(int id)
             }
             free(tmp->enemi);
             free(tmp);
+            if (liste_enemi->enemi == NULL)
+                free(liste_enemi);
             return;
         }
         tmp = tmp->suivant;
     }
+    if (liste_enemi->enemi == NULL)
+        free(liste_enemi);
 }
 
 extern
-void detruire_enemis()
+void detruire_ennemis()
 {
-    liste_enemi_T *tmp = liste_enemi;
+    liste_ennemi_T *tmp = liste_enemi;
     while (tmp != NULL)
     {
-        liste_enemi_T *tmp2 = tmp->suivant;
+        liste_ennemi_T *tmp2 = tmp->suivant;
         free(tmp->enemi);
         free(tmp);
         tmp = tmp2;
@@ -118,7 +118,7 @@ void detruire_enemis()
  * \param degat dégat de la bille
  */
 static
-void creer_enemi(int vie, int reconpense, int vitesse, int degat)
+void creer_ennemi(int vie, int reconpense, int vitesse, int degat)
 {
     ennemi_T *enemi = malloc(sizeof(ennemi_T));
     enemi->id = 1;
@@ -128,13 +128,13 @@ void creer_enemi(int vie, int reconpense, int vitesse, int degat)
     enemi->degat = degat;
     enemi->position = (position_T){-1, -1};
 
-    liste_enemi_T *tmp = malloc(sizeof(liste_enemi_T));
+    liste_ennemi_T *tmp = malloc(sizeof(liste_ennemi_T));
     tmp->enemi = enemi;
     tmp->suivant = NULL;
     tmp->precedent = liste_enemi;
     if (liste_enemi != NULL)
     {
-        liste_enemi->precedent = tmp;
+        liste_enemi->suivant = tmp;
         tmp->enemi->id = liste_enemi->enemi->id + 1;
     }
     liste_enemi = tmp;
@@ -152,12 +152,12 @@ void creer_vague(int num_vague)
     }
     for(int i = 0; i < 3*num_vague; i++)
     {
-        creer_enemi(VIE_ENNEMI_BASE, RECOMPENSE_ENNEMI_BASE, VITESSE_ENNEMI_BASE, DEGAT_ENNEMI_BASE);
+        creer_ennemi(VIE_ENNEMI_BASE, RECOMPENSE_ENNEMI_BASE, VITESSE_ENNEMI_BASE, DEGAT_ENNEMI_BASE);
     }
 }
 
 extern
-int vague_termine(){
+int vague_terminee(){
     if (liste_enemi == NULL)
     {
         return 1;
@@ -171,10 +171,10 @@ int vague_termine(){
  * \return liste_enemi_T* pointeur vers l'ennemi avec l'id le plus petit
  */
 static
-liste_enemi_T *get_mini_id()
+liste_ennemi_T *get_mini_id()
 {
-    liste_enemi_T *tmp = liste_enemi;
-    liste_enemi_T *mini = tmp;
+    liste_ennemi_T *tmp = liste_enemi;
+    liste_ennemi_T *mini = tmp;
     while (tmp != NULL)
     {
         if (tmp->enemi->id < mini->enemi->id)
@@ -188,12 +188,14 @@ liste_enemi_T *get_mini_id()
 
 
 extern
-void enemi_avancer(joueur_T *joueur)
+void ennemi_avancer(joueur_T *joueur, unsigned int diviseur)
 {
-    liste_enemi_T *tmp = get_mini_id();
+    liste_ennemi_T *tmp = get_mini_id();
     while (tmp != NULL)
     {
-        mouvement_bille(tmp->enemi,joueur);
-        tmp = tmp->suivant;
+        if(tmp->enemi->vitesse % diviseur == 0){
+            mouvement_bille(tmp->enemi,joueur);
+        }
+        tmp = tmp->precedent;
     }
 }

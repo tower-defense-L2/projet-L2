@@ -11,6 +11,7 @@
 
 map_T *map;
 joueur_T *joueur;
+int vague = 1;
 
 /**
  * \brief fonction qui passe la fenetre en plein écran
@@ -64,6 +65,19 @@ void initialisation(int demarage, position_T depart, position_T arrivee){
     }
 }
 
+static
+void logic(unsigned int diviseur, SDL_bool * program_launched){
+    if(vague_terminee()){
+        creer_vague(vague);
+        vague++;
+    }
+    ennemi_avancer(joueur, diviseur);
+    if(joueur->vie <= 0){
+        *program_launched = SDL_FALSE;
+    }
+    tour_action(joueur, map, diviseur);
+}
+
 
 
 extern
@@ -92,7 +106,7 @@ int jeux(pack_t * fenetre){
         position_T depart = {X_START,Y_START};
         position_T arrivee = {X_END,Y_END};
         // diviseur de temps
-        unsigned int diviseur = 0;
+        unsigned int diviseur = 1;
         // initialisation des textures
         SDL_Texture * texture = NULL;
         SDL_Texture * chemin = NULL;
@@ -162,6 +176,9 @@ int jeux(pack_t * fenetre){
     
     
     while(program_launched){
+        // gestion de la logique
+        logic(diviseur, &program_launched);
+
         // la taille de la fenetre est mise a jour
         SDL_GetWindowSize(fenetre->fenetre, &win.w, &win.h);
         start = SDL_GetPerformanceCounter();
@@ -278,6 +295,7 @@ int jeux(pack_t * fenetre){
 
     // destruction des tours
     detruire_tours();
+    detruire_ennemis();
 
     // destruction de la texture
     SDL_DestroyTexture(texture);

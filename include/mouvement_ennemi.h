@@ -23,14 +23,14 @@
  * \param id id de la bille à détruire
  */
 extern
-void detruire_enemi(int id);
+void detruire_ennemi(int id);
 
 /**
  * \brief détruit toutes les billes
  * 
  */
 extern
-void detruire_enemis();
+void detruire_ennemis();
 
 
 /**
@@ -55,5 +55,5 @@ int vague_terminee();
  * \param joueur pointeur sur le joueur
  */
 extern
-void enemi_avancer(joueur_T *joueur);
+void ennemi_avancer(joueur_T *joueur, unsigned int diviseur);
 #endif

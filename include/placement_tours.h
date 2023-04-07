@@ -13,6 +13,9 @@
 #include <stdlib.h>
 #include "const.h"
 #include "struct.h"
+#include "mouvement_ennemi.h"
+
+
 
 /**
  * \brief Vérifie si le placement de la tour est possible
@@ -58,12 +61,22 @@ tour_T * cree_tour();
  * \param tour pointeur sur la tour à détruire
  */
 extern
-detruire_tour(tour_T *tour);
+void detruire_tour(tour_T *tour);
 
 /**
  * \brief detruit toutes les tours de la carte
  * 
  */
 extern
-detruire_tours();
+void detruire_tours();
+
+/**
+ * \brief effectue les actions de toutes les tours
+ * 
+ * \param joueur pointeur sur le joueur
+ * \param map pointeur sur la map
+ * \param diviseur coefficient de vitesse
+ */
+extern
+void tour_action(joueur_T * joueur, map_T *map, unsigned int diviseur);
 #endif
