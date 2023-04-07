@@ -51,7 +51,7 @@ int menu(){
     }
     modelage_fenetre_menu(fenetre, &win);
     SDL_GetWindowSize(fenetre->fenetre, &win.w, &win.h);
-    if(load_bitmap("menu", &texture_menu, fenetre)){
+    if(!load_bitmap("menu", &texture_menu, fenetre)){
         return 0;
     }
 

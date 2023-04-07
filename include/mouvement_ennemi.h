@@ -1,7 +1,7 @@
-
 /**
  * \file mouvement_ennemi.h
  * \author Nathan (Nathan.Duval.Etu@univ-lemans.fr)
+ * \author meo (meo.prn@outlook.fr)
  * \brief vérifie la possiblité de déplacement d'une bille
  * \version 0.1
  * \date 2023-03-22
@@ -9,16 +9,51 @@
  * 
  */
 
-
-#include "stdlib.h"
+#ifndef MOUVEMENT_ENNEMI_H
+#define MOUVEMENT_ENNEMI_H
+#include <stdlib.h>
 #include "const.h"
 #include "struct.h"
+#include "map.h"
+
 
 /**
- * \brief vérifie si la bille peux aller sur la case suivante et l'y met si tel est le cas.
+ * \brief détruit une bille dont l'id est donné en paramètre
  * 
- * \param chemin // Le type de case ou les ennemis peuvent se déplacer
- * \return int int 0 si impossible / 1 si possible
+ * \param id id de la bille à détruire
  */
 extern
-int mouvement_bille(chemin_T *chemin);
+void detruire_ennemi(int id);
+
+/**
+ * \brief détruit toutes les billes
+ * 
+ */
+extern
+void detruire_ennemis();
+
+
+/**
+ * \brief crée une vague d'ennemis en augmentant la difficulté avec le numéro de la vague
+ * 
+ * \param num_vague numéro de la vague
+ */
+extern
+void creer_vague(int num_vague);
+
+/**
+ * \brief vérifie si toutes les billes sont détruites
+ * 
+ * \return int 1 si toutes les billes sont détruites / 0 sinon
+ */
+extern
+int vague_terminee();
+
+/**
+ * \brief déplace toutes les billes et vérifie si elles sont arrivées au bout du chemin
+ * 
+ * \param joueur pointeur sur le joueur
+ */
+extern
+void ennemi_avancer(joueur_T *joueur, unsigned int diviseur);
+#endif

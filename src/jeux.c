@@ -11,6 +11,7 @@
 
 map_T *map;
 joueur_T *joueur;
+int vague = 1;
 
 /**
  * \brief fonction qui passe la fenetre en plein écran
@@ -43,6 +44,40 @@ void fenetree(pack_t * fenetre, SDL_Rect * win){
     SDL_GetWindowSize(fenetre->fenetre,&win->w,&win->h);
 }
 
+/**
+ * \brief fonction qui initialise les variables globales en fonction de la sauvegarde
+ * 
+ * \param demarage indique si c'est le début du jeu ou si c'est un chargement de sauvegarde
+ * \param depart position de départ en cas de début de jeu
+ * \param arrivee position d'arrivé en cas de début de jeu
+ */
+static
+void initialisation(int demarage, position_T depart, position_T arrivee){
+    if(demarage){
+        generate_map(time(NULL), depart, arrivee, NULL);
+        map = get_map();
+        joueur = malloc(sizeof(joueur_T));
+        joueur->argent = 100;
+        joueur->vie = 100;
+    }
+    else{
+        // fonction de chargement de sauvegarde
+    }
+}
+
+static
+void logic(unsigned int diviseur, SDL_bool * program_launched){
+    if(vague_terminee()){
+        creer_vague(vague);
+        vague++;
+    }
+    ennemi_avancer(joueur, diviseur);
+    if(joueur->vie <= 0){
+        *program_launched = SDL_FALSE;
+    }
+    tour_action(joueur, map, diviseur);
+}
+
 
 
 extern
@@ -51,30 +86,40 @@ int jeux(pack_t * fenetre){
     SDL_Rect win= {0,0,0,0};
     // transformation de la fenetre en fenetre de jeu
     plein_ecran(fenetre, &win);
+    SDL_bool est_plein_ecran = SDL_TRUE;
     
 
     // initialisation des variables
-    SDL_Event event;
-    SDL_bool program_launched = SDL_TRUE;
-    Uint64 start, end;
-    float elapsed = 0;
-    Uint32 Click = 0; // état du clique
-    int x = 0, y = 0; // position de la souris
-    SDL_bool est_plein_ecran = SDL_TRUE;
-    char * info= malloc(sizeof(char)*30);
-
-    // initialisation des textures
-    SDL_Texture * texture = NULL;
-    SDL_Texture * chemin = NULL;
-    SDL_Texture * bordure = NULL;
-    SDL_Texture * vide = NULL;
-    bitexture_t * emplacement = NULL;
-    SDL_Texture * enemie = NULL;
-    SDL_Texture * tour = NULL;
-    // texture de texte
-    SDL_Texture * quiter = NULL;
-    SDL_Texture * argent = NULL;
-    SDL_Texture * vie = NULL;
+        // gestion evenement
+        SDL_Event event;
+        Uint32 Click = 0; // état du clique
+        int x = 0, y = 0; // position de la souris
+        // arrêt du programme
+        SDL_bool program_launched = SDL_TRUE;
+        // gestion du temps
+        Uint64 start, end;
+        float elapsed = 0;
+        
+        // variable de texte
+        char * info= malloc(sizeof(char)*30);
+        // positon du depart et de l'arrivé
+        position_T depart = {X_START,Y_START};
+        position_T arrivee = {X_END,Y_END};
+        // diviseur de temps
+        unsigned int diviseur = 1;
+        // initialisation des textures
+        SDL_Texture * texture = NULL;
+        SDL_Texture * chemin = NULL;
+        SDL_Texture * bordure = NULL;
+        SDL_Texture * vide = NULL;
+        bitexture_t * emplacement = NULL;
+        SDL_Texture * enemie = NULL;
+        SDL_Texture * tour = NULL;
+        SDL_Texture * obstacle= NULL;
+        // texture de texte
+        SDL_Texture * quiter = NULL;
+        SDL_Texture * argent = NULL;
+        SDL_Texture * vie = NULL;
     
     // initialisation des rectangles
     SDL_Rect tuile= {0,0,0,0};
@@ -87,26 +132,8 @@ int jeux(pack_t * fenetre){
     SDL_Color couleur_doree = {255,215,0,255};
     SDL_Color couleur_rouge = {255,0,0,255};
         
-    // variable temporaire
-        map = malloc(sizeof(map_T) + sizeof(case_T*) * HAUTEUR);
-        for(int i = 0; i < HAUTEUR ; i++){
-            for(int j = 0; j < LARGEUR; j++){
-                map->cases[i][j] = malloc(sizeof(case_T));
-                map->cases[i][j]->type = VIDE;
-            }
-        }
-        map->cases[0][0]->type = CHEMIN;
-        map->cases[0][0]->case_pl.chemin.enemi = NULL;
-        map->cases[0][1]->type = CHEMIN;
-        map->cases[0][1]->case_pl.chemin.enemi = malloc(sizeof(ennemi_T));
-        map->cases[1][0]->type = EMPLACEMENT;
-        map->cases[1][0]->case_pl.emplacement.tour = NULL;
-        map->cases[1][1]->type = EMPLACEMENT;
-        map->cases[1][1]->case_pl.emplacement.tour = malloc(sizeof(tour_T));
-
-        joueur = malloc(sizeof(joueur_T));
-        joueur->argent = 100;
-        joueur->vie = 100;
+    // initialisation des variables globales
+    initialisation(1, depart, arrivee);
     
 
 
@@ -129,6 +156,9 @@ int jeux(pack_t * fenetre){
     if(!load_bitmap("vide",&vide,fenetre)){
         return 0;
     }
+    if(!load_bitmap("obstacle",&obstacle,fenetre)){
+        return 0;
+    }
     quiter = creation_texte(fenetre, "Esc : quiter le jeu  F11 : plein ecran", couleur_blanc);
     if (quiter == NULL){
         return 0;
@@ -146,6 +176,9 @@ int jeux(pack_t * fenetre){
     
     
     while(program_launched){
+        // gestion de la logique
+        logic(diviseur, &program_launched);
+
         // la taille de la fenetre est mise a jour
         SDL_GetWindowSize(fenetre->fenetre, &win.w, &win.h);
         start = SDL_GetPerformanceCounter();
@@ -183,7 +216,6 @@ int jeux(pack_t * fenetre){
         SDL_DestroyTexture(argent);
         vie = NULL;
         argent = NULL;
-
      
         
         
@@ -207,11 +239,17 @@ int jeux(pack_t * fenetre){
                         if(map->cases[i][j]->case_pl.emplacement.tour != NULL){
                             SDL_RenderCopy(fenetre->renderer, bordure, NULL, &tuile);
                             SDL_RenderCopy(fenetre->renderer, tour, NULL, &tuile);
+                            
                         }
                         else{
                             emplacement->dst = tuile;
-                            gestion_bitexture(emplacement, fenetre, x, y);
+                            if(gestion_bitexture(emplacement, fenetre, x, y) && Click == SDL_BUTTON_LEFT){
+                                placement_tour(&map->cases[i][j]->case_pl.emplacement, joueur, cree_tour());
+                            }
                         }
+                        break;
+                    case OBSTACLE:
+                        SDL_RenderCopy(fenetre->renderer, obstacle, NULL, &tuile);
                         break;
                     case VIDE:
                         SDL_RenderCopy(fenetre->renderer, vide, NULL, &tuile);
@@ -219,8 +257,8 @@ int jeux(pack_t * fenetre){
                 }
             }
         }
-        // gestion du survol
 
+        // gestion des tours et billes
 
         SDL_RenderPresent(fenetre->renderer);
         end = SDL_GetPerformanceCounter();
@@ -251,7 +289,14 @@ int jeux(pack_t * fenetre){
                 }
                 break;
         }
+        diviseur ++;
     }
+
+
+    // destruction des tours
+    detruire_tours();
+    detruire_ennemis();
+    destroy_map();
 
 
     // destruction de la texture

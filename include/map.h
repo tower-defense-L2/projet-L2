@@ -21,24 +21,24 @@
  * \param start La position de départ
  * \param end La position d'arrivée
  */
-void generate_map(map_T * map, unsigned int seed, position_T start, position_T end, void (*callback)(map_T*, position_T));
+void generate_map(unsigned int seed, position_T start, position_T end, void (*callback)(map_T*, position_T));
 
 /**
  * \brief Détruit la map
  */
-void destroy_map(map_T * map);
+void destroy_map();
 
 /**
  * \brief Vérifie si la map est initialisée
  * \return 1 si la map est initialisée, 0 sinon
  */
-int map_initialized(map_T * map);
+int map_initialized();
 
 /**
  * \brief Récupère la map
  * \return La map
  */
-map_T *get_map(map_T * map);
+map_T *get_map();
 
 /**
  * \brief Récupère une case de la map
@@ -46,12 +46,21 @@ map_T *get_map(map_T * map);
  * \param y La position y de la case
  * \return La case
  */
-case_T *get_case(map_T * map, int x, int y);
+case_T *get_case(int x, int y);
 
 /**
  * \brief Récupère la graine de génération de la map
  * \return La graine de génération de la map
  */
 int get_seed();
+
+/**
+ * \brief indique si la position est dans la map
+ * 
+ * \param position position a vérifier
+ * \return int 1 si la position est dans la map, 0 sinon
+ */
+extern
+int dans_map(position_T position);
 
 #endif //TOWER_DEFENSE_MAP_H

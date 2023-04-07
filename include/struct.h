@@ -31,7 +31,7 @@ typedef struct tour_S {
     int degat; /*!< degat de la tour */
     int portee; /*!< portée de la tour */
     int cout; /*!< cout de la tour */
-    int frequence; /*!< frequence de tir de la tour */
+    int frequence; /*!< frequence de tir de la tour en s/60 */
     position_T position; /*!< position de la tour */
 } tour_T;
 
@@ -42,7 +42,8 @@ typedef struct tour_S {
 typedef struct ennemi_S {
     int id; /*!< identifiant de l'ennemi */
     int vie; /*!< vie de l'ennemi */
-    int vitesse; /*!< vitesse de l'ennemi */
+    int reconpense; /*!< argent gagné en tuant l'ennemi */
+    int vitesse; /*!< vitesse de l'ennemi en s/60 */
     int degat; /*!< degat de l'ennemi */
     position_T position; /*!< position de l'ennemi */
 } ennemi_T;
@@ -75,6 +76,10 @@ typedef struct chemin_S {
     struct chemin_S* suivant; /*!< pointeur sur le chemin suivant, NULL si la fin du parcours */
 } chemin_T;
 
+/**
+ * \enum type_case_E
+ * \brief enumeration des type de case
+ */
 typedef enum type_case_E {
     EMPLACEMENT, /*!< emplacement de tours possible */
     OBSTACLE, /*!< emplacement d'obstacle */
@@ -91,7 +96,10 @@ typedef union case_U {
     chemin_T chemin; /*!< chemin de la case */
 } case_TU;
 
-
+/**
+ * \struct case_S
+ * \brief structure contenant les informations d'une case
+ */
 typedef struct case_S {
     type_case_T type; /*!< type de la case */
     case_TU case_pl; /*!< case */

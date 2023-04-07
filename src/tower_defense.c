@@ -1,3 +1,11 @@
+/**
+ * \file tower_defense.c
+ * \author meo (meo.prn@outlook.fr)
+ * \brief fichier principal du jeu
+ * \version 0.1.0
+ * \date 2023-04-07
+ * 
+ */
 #include "../include/init_supr_sdl.h"
 #include "../include/menu.h"
 
