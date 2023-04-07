@@ -16,6 +16,7 @@
 #include "./interaction_souris.h"
 #include "./init_supr_sdl.h"
 #include "./map.h"
+#include "./placement_tours.h"
 
 /**
  * \brief fonction principale du jeu

@@ -31,7 +31,7 @@ typedef struct tour_S {
     int degat; /*!< degat de la tour */
     int portee; /*!< portée de la tour */
     int cout; /*!< cout de la tour */
-    int frequence; /*!< frequence de tir de la tour */
+    int frequence; /*!< frequence de tir de la tour en s/60 */
     position_T position; /*!< position de la tour */
 } tour_T;
 
