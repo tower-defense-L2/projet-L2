@@ -1,0 +1,483 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Tower Defense: Référence du fichier src/placement_tours.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Tower Defense
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Ce projet dans le cadre de notre formation de L2 informatique à l&#39;Université Du Mans a pour but de créer un jeu de type &quot;Tower Defense&quot; en utilisant la librairie graphique SDL2.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Structures de données</a> &#124;
+<a href="#typedef-members">Définitions de type</a> &#124;
+<a href="#func-members">Fonctions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier placement_tours.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>fonction permettant de gére le comportement des tours  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="placement__tours_8h_source.html">../include/placement_tours.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de placement_tours.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="placement__tours_8c__incl.png" border="0" usemap="#asrc_2placement__tours_8c" alt=""/></div>
+<map name="asrc_2placement__tours_8c" id="asrc_2placement__tours_8c">
+<area shape="rect" title="fonction permettant de gére le comportement des tours" alt="" coords="206,5,371,32"/>
+<area shape="rect" href="placement__tours_8h.html" title="Afin de mettre une tour sur la carte ou d&#39;en supprimer une." alt="" coords="211,80,366,121"/>
+<area shape="rect" title=" " alt="" coords="5,393,76,420"/>
+<area shape="rect" href="const_8h.html" title=" " alt="" coords="287,393,357,420"/>
+<area shape="rect" href="struct_8h.html" title="definition des differente structure utilisé dans le programme" alt="" coords="287,319,357,345"/>
+<area shape="rect" href="mouvement__ennemi_8h.html" title="vérifie la possiblité de déplacement d&#39;une bille" alt="" coords="143,169,312,196"/>
+<area shape="rect" href="map_8h.html" title="Fichier contenant les fonctions de gestion de la map." alt="" coords="148,244,211,271"/>
+<area shape="rect" title=" " alt="" coords="114,393,181,420"/>
+<area shape="rect" href="file_8h.html" title="Fichier contenant les fonctions de gestion de la file." alt="" coords="97,319,160,345"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structliste__tour___s.html">liste_tour_S</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">primitive de la structure <a class="el" href="structliste__tour___t.html" title="structure contenant les pointeurs sur la tour et les pointeurs sur les tours suivantes">liste_tour_T</a>  <a href="structliste__tour___s.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Définitions de type</h2></td></tr>
+<tr class="memitem:a7e8da3266ad10ad544ccd2a4a42eff66"><td class="memItemLeft" align="right" valign="top"><a id="a7e8da3266ad10ad544ccd2a4a42eff66"></a>
+typedef struct <a class="el" href="structliste__tour___s.html">liste_tour_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="placement__tours_8c.html#a7e8da3266ad10ad544ccd2a4a42eff66">liste_tour_T</a></td></tr>
+<tr class="memdesc:a7e8da3266ad10ad544ccd2a4a42eff66"><td class="mdescLeft">&#160;</td><td class="mdescRight">primitive de la structure <a class="el" href="structliste__tour___t.html" title="structure contenant les pointeurs sur la tour et les pointeurs sur les tours suivantes">liste_tour_T</a> <br /></td></tr>
+<tr class="separator:a7e8da3266ad10ad544ccd2a4a42eff66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a35d3b00124de4a8a819d7cb835b41035"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="placement__tours_8c.html#a35d3b00124de4a8a819d7cb835b41035">placement_possible</a> (<a class="el" href="structemplacement___s.html">emplacement_T</a> *emplacement, <a class="el" href="structjoueur___s.html">joueur_T</a> *joueur, <a class="el" href="structtour___s.html">tour_T</a> *tour)</td></tr>
+<tr class="memdesc:a35d3b00124de4a8a819d7cb835b41035"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie si le placement de la tour est possible.  <a href="placement__tours_8c.html#a35d3b00124de4a8a819d7cb835b41035">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a35d3b00124de4a8a819d7cb835b41035"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a079e134723e2156336a66ae06d972d02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="placement__tours_8c.html#a079e134723e2156336a66ae06d972d02">placement_tour</a> (<a class="el" href="structemplacement___s.html">emplacement_T</a> *emplacement, <a class="el" href="structjoueur___s.html">joueur_T</a> *joueur, <a class="el" href="structtour___s.html">tour_T</a> *tour)</td></tr>
+<tr class="memdesc:a079e134723e2156336a66ae06d972d02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pose une tour sur la case et débite la solde du joueur de son coût.  <a href="placement__tours_8c.html#a079e134723e2156336a66ae06d972d02">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a079e134723e2156336a66ae06d972d02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb21231177823481b0fbc1086bcfcb9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="placement__tours_8c.html#adb21231177823481b0fbc1086bcfcb9d">suppression_tour</a> (<a class="el" href="structemplacement___s.html">emplacement_T</a> *emplacement, <a class="el" href="structtour___s.html">tour_T</a> *tour)</td></tr>
+<tr class="memdesc:adb21231177823481b0fbc1086bcfcb9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprime la tour de la case.  <a href="placement__tours_8c.html#adb21231177823481b0fbc1086bcfcb9d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:adb21231177823481b0fbc1086bcfcb9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc595839497266c9b3a54e5c489cf0b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtour___s.html">tour_T</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="placement__tours_8c.html#afc595839497266c9b3a54e5c489cf0b2">cree_tour</a> ()</td></tr>
+<tr class="memdesc:afc595839497266c9b3a54e5c489cf0b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée une tour avec les caractéristiques de base.  <a href="placement__tours_8c.html#afc595839497266c9b3a54e5c489cf0b2">Plus de détails...</a><br /></td></tr>
+<tr class="separator:afc595839497266c9b3a54e5c489cf0b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a650708b3816bf2ac1b6ad22c00cc6e61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="placement__tours_8c.html#a650708b3816bf2ac1b6ad22c00cc6e61">detruire_tour</a> (<a class="el" href="structtour___s.html">tour_T</a> *tour)</td></tr>
+<tr class="memdesc:a650708b3816bf2ac1b6ad22c00cc6e61"><td class="mdescLeft">&#160;</td><td class="mdescRight">detruit une tour donnée en paramètre  <a href="placement__tours_8c.html#a650708b3816bf2ac1b6ad22c00cc6e61">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a650708b3816bf2ac1b6ad22c00cc6e61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a3f6488b129c23e5a9b37397f240526"><td class="memItemLeft" align="right" valign="top"><a id="a1a3f6488b129c23e5a9b37397f240526"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="placement__tours_8c.html#a1a3f6488b129c23e5a9b37397f240526">detruire_tours</a> ()</td></tr>
+<tr class="memdesc:a1a3f6488b129c23e5a9b37397f240526"><td class="mdescLeft">&#160;</td><td class="mdescRight">detruit toutes les tours de la carte <br /></td></tr>
+<tr class="separator:a1a3f6488b129c23e5a9b37397f240526"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9deae0bda36a2440b4beb33ea3d72775"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="placement__tours_8c.html#a9deae0bda36a2440b4beb33ea3d72775">dega_tour</a> (<a class="el" href="structjoueur___s.html">joueur_T</a> *joueur, <a class="el" href="structtour___s.html">tour_T</a> *tour, <a class="el" href="structennemi___s.html">ennemi_T</a> *ennemi)</td></tr>
+<tr class="memdesc:a9deae0bda36a2440b4beb33ea3d72775"><td class="mdescLeft">&#160;</td><td class="mdescRight">inflige des dégats à un ennemi et le tue si il n'a plus de vie  <a href="placement__tours_8c.html#a9deae0bda36a2440b4beb33ea3d72775">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a9deae0bda36a2440b4beb33ea3d72775"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5abe540859c8393804c7777e97a759e6"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="placement__tours_8c.html#a5abe540859c8393804c7777e97a759e6">tour_portee</a> (<a class="el" href="structtour___s.html">tour_T</a> *tour, <a class="el" href="structmap___s.html">map_T</a> *map, <a class="el" href="structjoueur___s.html">joueur_T</a> *joueur)</td></tr>
+<tr class="memdesc:a5abe540859c8393804c7777e97a759e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">vérifie si un ennemi est dans la portée de la tour et l'attaque si c'est le cas  <a href="placement__tours_8c.html#a5abe540859c8393804c7777e97a759e6">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a5abe540859c8393804c7777e97a759e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5107ac85970b12f97f5e2d80e882ea8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="placement__tours_8c.html#ab5107ac85970b12f97f5e2d80e882ea8">tour_action</a> (<a class="el" href="structjoueur___s.html">joueur_T</a> *joueur, <a class="el" href="structmap___s.html">map_T</a> *map, unsigned int diviseur)</td></tr>
+<tr class="memdesc:ab5107ac85970b12f97f5e2d80e882ea8"><td class="mdescLeft">&#160;</td><td class="mdescRight">effectue les actions de toutes les tours  <a href="placement__tours_8c.html#ab5107ac85970b12f97f5e2d80e882ea8">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab5107ac85970b12f97f5e2d80e882ea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:aa3406d8439d001768d287888fd1a03ea"><td class="memItemLeft" align="right" valign="top"><a id="aa3406d8439d001768d287888fd1a03ea"></a>
+<a class="el" href="structliste__tour___t.html">liste_tour_T</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>liste_tour</b> = NULL</td></tr>
+<tr class="separator:aa3406d8439d001768d287888fd1a03ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>fonction permettant de gére le comportement des tours </p>
+<dl class="section author"><dt>Auteur</dt><dd>meo (<a href="#" onclick="location.href='mai'+'lto:'+'meo'+'.p'+'rn@'+'ou'+'tlo'+'ok'+'.fr'; return false;">meo.p<span style="display: none;">.nosp@m.</span>rn@o<span style="display: none;">.nosp@m.</span>utloo<span style="display: none;">.nosp@m.</span>k.fr</a>) </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.1.0 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2023-04-07 </dd></dl>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="afc595839497266c9b3a54e5c489cf0b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc595839497266c9b3a54e5c489cf0b2">&#9670;&nbsp;</a></span>cree_tour()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtour___s.html">tour_T</a>* cree_tour </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Crée une tour avec les caractéristiques de base. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>tour_T* pointeur sur la tour créée </dd></dl>
+
+</div>
+</div>
+<a id="a9deae0bda36a2440b4beb33ea3d72775"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9deae0bda36a2440b4beb33ea3d72775">&#9670;&nbsp;</a></span>dega_tour()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void dega_tour </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structjoueur___s.html">joueur_T</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structtour___s.html">tour_T</a> *&#160;</td>
+          <td class="paramname"><em>tour</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structennemi___s.html">ennemi_T</a> *&#160;</td>
+          <td class="paramname"><em>ennemi</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>inflige des dégats à un ennemi et le tue si il n'a plus de vie </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">joueur</td><td>pointeur sur le joueur </td></tr>
+    <tr><td class="paramname">tour</td><td>pointeur sur la tour </td></tr>
+    <tr><td class="paramname">ennemi</td><td>pointeur sur l'ennemi </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a650708b3816bf2ac1b6ad22c00cc6e61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a650708b3816bf2ac1b6ad22c00cc6e61">&#9670;&nbsp;</a></span>detruire_tour()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void detruire_tour </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structtour___s.html">tour_T</a> *&#160;</td>
+          <td class="paramname"><em>tour</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>detruit une tour donnée en paramètre </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tour</td><td>pointeur sur la tour à détruire </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a35d3b00124de4a8a819d7cb835b41035"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35d3b00124de4a8a819d7cb835b41035">&#9670;&nbsp;</a></span>placement_possible()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int placement_possible </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structemplacement___s.html">emplacement_T</a> *&#160;</td>
+          <td class="paramname"><em>emplacement</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structjoueur___s.html">joueur_T</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structtour___s.html">tour_T</a> *&#160;</td>
+          <td class="paramname"><em>tour</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vérifie si le placement de la tour est possible. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">emplacement</td><td>position a vérifier </td></tr>
+    <tr><td class="paramname">joueur</td><td>pointeur sur le joueur </td></tr>
+    <tr><td class="paramname">tour</td><td>tour a placer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int 1 si le placement est possible, 0 sinon </dd></dl>
+
+</div>
+</div>
+<a id="a079e134723e2156336a66ae06d972d02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a079e134723e2156336a66ae06d972d02">&#9670;&nbsp;</a></span>placement_tour()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void placement_tour </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structemplacement___s.html">emplacement_T</a> *&#160;</td>
+          <td class="paramname"><em>emplacement</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structjoueur___s.html">joueur_T</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structtour___s.html">tour_T</a> *&#160;</td>
+          <td class="paramname"><em>tour</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pose une tour sur la case et débite la solde du joueur de son coût. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">emplacement</td><td>// La case visée pour le placement de la tours sur la carte </td></tr>
+    <tr><td class="paramname">joueur</td><td>// Pour soustraire le coût d'une tour à l'argent du joueur </td></tr>
+    <tr><td class="paramname">tour</td><td>// Est null si il n'y a pas de tour </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adb21231177823481b0fbc1086bcfcb9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb21231177823481b0fbc1086bcfcb9d">&#9670;&nbsp;</a></span>suppression_tour()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void suppression_tour </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structemplacement___s.html">emplacement_T</a> *&#160;</td>
+          <td class="paramname"><em>emplacement</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structtour___s.html">tour_T</a> *&#160;</td>
+          <td class="paramname"><em>tour</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Supprime la tour de la case. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">emplacement</td><td>// La case visée pour le placement de la tours sur la carte </td></tr>
+    <tr><td class="paramname">tour</td><td>Est null si il n'y a pas de tour </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab5107ac85970b12f97f5e2d80e882ea8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5107ac85970b12f97f5e2d80e882ea8">&#9670;&nbsp;</a></span>tour_action()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tour_action </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structjoueur___s.html">joueur_T</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structmap___s.html">map_T</a> *&#160;</td>
+          <td class="paramname"><em>map</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>diviseur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>effectue les actions de toutes les tours </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">joueur</td><td>pointeur sur le joueur </td></tr>
+    <tr><td class="paramname">map</td><td>pointeur sur la map </td></tr>
+    <tr><td class="paramname">diviseur</td><td>coefficient de vitesse </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5abe540859c8393804c7777e97a759e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5abe540859c8393804c7777e97a759e6">&#9670;&nbsp;</a></span>tour_portee()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int tour_portee </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structtour___s.html">tour_T</a> *&#160;</td>
+          <td class="paramname"><em>tour</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structmap___s.html">map_T</a> *&#160;</td>
+          <td class="paramname"><em>map</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structjoueur___s.html">joueur_T</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>vérifie si un ennemi est dans la portée de la tour et l'attaque si c'est le cas </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tour</td><td>pointeur sur la tour </td></tr>
+    <tr><td class="paramname">map</td><td>pointeur sur la map </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int 1 si l'ennemi est dans la portée / 0 sinon </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<map id="include/placement_tours.h" name="include/placement_tours.h">
+<area shape="rect" id="node1" title="Afin de mettre une tour sur la carte ou d&#39;en supprimer une." alt="" coords="173,5,368,32"/>
+<area shape="rect" id="node2" href="$jeux_8h.html" title="fonction principale du jeu" alt="" coords="133,80,246,107"/>
+<area shape="rect" id="node7" href="$placement__tours_8c.html" title="fonction permettant de gére le comportement des tours" alt="" coords="271,80,436,107"/>
+<area shape="rect" id="node3" href="$menu_8h.html" title="menu du jeux" alt="" coords="64,155,187,181"/>
+<area shape="rect" id="node6" href="$jeux_8c.html" title="boucle de jeu" alt="" coords="211,155,295,181"/>
+<area shape="rect" id="node4" href="$menu_8c.html" title="menu principal du jeu" alt="" coords="5,229,99,256"/>
+<area shape="rect" id="node5" href="$tower__defense_8c.html" title="fichier principal du jeu" alt="" coords="123,229,275,256"/>
+</map>

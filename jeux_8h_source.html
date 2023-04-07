@@ -77,20 +77,27 @@ $(function() {
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define JEUX_H</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;SDL2/SDL.h&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="struct__sdl_8h.html">./struct_sdl.h</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="struct_8h.html">./struct.h</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="const_8h.html">./const.h</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="interaction__souris_8h.html">./interaction_souris.h</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="init__supr__sdl_8h.html">./init_supr_sdl.h</a>&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">extern</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">int</span> <a class="code" href="jeux_8h.html#ac0077883024dfa9bd746832c43984fc8">jeux</a>(<a class="code" href="structpack__t.html">pack_t</a> * fenetre);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="struct__sdl_8h.html">./struct_sdl.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="struct_8h.html">./struct.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="const_8h.html">./const.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="interaction__souris_8h.html">./interaction_souris.h</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="init__supr__sdl_8h.html">./init_supr_sdl.h</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="map_8h.html">./map.h</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="placement__tours_8h.html">./placement_tours.h</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mouvement__ennemi_8h.html">./mouvement_ennemi.h</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">extern</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">int</span> <a class="code" href="jeux_8h.html#ac0077883024dfa9bd746832c43984fc8">jeux</a>(<a class="code" href="structpack__t.html">pack_t</a> * fenetre);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aconst_8h_html"><div class="ttname"><a href="const_8h.html">const.h</a></div></div>
 <div class="ttc" id="ainit__supr__sdl_8h_html"><div class="ttname"><a href="init__supr__sdl_8h.html">init_supr_sdl.h</a></div><div class="ttdoc">différente fonction servant pour la création et la destruction de la sdl</div></div>
 <div class="ttc" id="ainteraction__souris_8h_html"><div class="ttname"><a href="interaction__souris_8h.html">interaction_souris.h</a></div><div class="ttdoc">differentes fonctions pour gerer la souris avec SDL</div></div>
-<div class="ttc" id="ajeux_8h_html_ac0077883024dfa9bd746832c43984fc8"><div class="ttname"><a href="jeux_8h.html#ac0077883024dfa9bd746832c43984fc8">jeux</a></div><div class="ttdeci">int jeux(pack_t *fenetre)</div><div class="ttdoc">fonction principale du jeu</div><div class="ttdef"><b>Definition:</b> jeux.c:49</div></div>
+<div class="ttc" id="ajeux_8h_html_ac0077883024dfa9bd746832c43984fc8"><div class="ttname"><a href="jeux_8h.html#ac0077883024dfa9bd746832c43984fc8">jeux</a></div><div class="ttdeci">int jeux(pack_t *fenetre)</div><div class="ttdoc">fonction principale du jeu</div><div class="ttdef"><b>Definition:</b> jeux.c:84</div></div>
+<div class="ttc" id="amap_8h_html"><div class="ttname"><a href="map_8h.html">map.h</a></div><div class="ttdoc">Fichier contenant les fonctions de gestion de la map.</div></div>
+<div class="ttc" id="amouvement__ennemi_8h_html"><div class="ttname"><a href="mouvement__ennemi_8h.html">mouvement_ennemi.h</a></div><div class="ttdoc">vérifie la possiblité de déplacement d'une bille</div></div>
+<div class="ttc" id="aplacement__tours_8h_html"><div class="ttname"><a href="placement__tours_8h.html">placement_tours.h</a></div><div class="ttdoc">Afin de mettre une tour sur la carte ou d'en supprimer une.</div></div>
 <div class="ttc" id="astruct_8h_html"><div class="ttname"><a href="struct_8h.html">struct.h</a></div><div class="ttdoc">definition des differente structure utilisé dans le programme</div></div>
 <div class="ttc" id="astruct__sdl_8h_html"><div class="ttname"><a href="struct__sdl_8h.html">struct_sdl.h</a></div><div class="ttdoc">definition des differente structure utilisé par les fonctions de sdl</div></div>
 <div class="ttc" id="astructpack__t_html"><div class="ttname"><a href="structpack__t.html">pack_t</a></div><div class="ttdoc">structure contenant les pointeurs sur la fenetre, le renderer et la police</div></div>

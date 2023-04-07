@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['load_5fbitmap_154',['load_bitmap',['../init__supr__sdl_8h.html#a299caa78ce5d45adf3c65b57dd67db24',1,'init_supr_sdl.c']]]
+  ['jeux_190',['jeux',['../jeux_8h.html#ac0077883024dfa9bd746832c43984fc8',1,'jeux(pack_t *fenetre):&#160;jeux.c'],['../jeux_8c.html#ac0077883024dfa9bd746832c43984fc8',1,'jeux(pack_t *fenetre):&#160;jeux.c']]]
 ];

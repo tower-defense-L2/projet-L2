@@ -1,0 +1,5 @@
+<map id="liste_ennemi_S" name="liste_ennemi_S">
+<area shape="rect" id="node1" title="primitive de la structure liste_ennemi_T" alt="" coords="5,185,127,212"/>
+<area shape="rect" id="node2" href="$structennemi___s.html" title="structure contenant les informations d&#39;un ennemi" alt="" coords="23,95,109,121"/>
+<area shape="rect" id="node3" href="$structposition___s.html" title="structure contenant les coordonnées d&#39;un élément" alt="" coords="21,5,111,32"/>
+</map>

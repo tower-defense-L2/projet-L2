@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['vie_186',['vie',['../structennemi___s.html#a0bfaa2753f83b4e0d815541c60a20d5b',1,'ennemi_S::vie()'],['../structjoueur___s.html#a0bfaa2753f83b4e0d815541c60a20d5b',1,'joueur_S::vie()']]],
-  ['vitesse_187',['vitesse',['../structennemi___s.html#a4b512d0a6dcc3c7d7e6dd9a7714852c4',1,'ennemi_S']]]
+  ['tour_224',['tour',['../structemplacement___s.html#a024f42964bfeaa44e05589000c955fcc',1,'emplacement_S']]],
+  ['type_225',['type',['../structcase___s.html#a49aa0a3144366c13e316b89b350b5235',1,'case_S']]]
 ];

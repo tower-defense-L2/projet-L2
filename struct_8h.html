@@ -94,17 +94,17 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <div class="dyncontent">
 <div class="center"><img src="struct_8h__dep__incl.png" border="0" usemap="#ainclude_2struct_8hdep" alt=""/></div>
 <map name="ainclude_2struct_8hdep" id="ainclude_2struct_8hdep">
-<area shape="rect" title="definition des differente structure utilisé dans le programme" alt="" coords="287,5,409,32"/>
-<area shape="rect" href="dega_8h.html" title="primitve de gestion des degas des tours et des enemis" alt="" coords="5,169,123,196"/>
-<area shape="rect" href="jeux_8h.html" title="fonction principale du jeu" alt="" coords="197,87,310,114"/>
-<area shape="rect" href="map_8h.html" title="Fichier contenant les fonctions de gestion de la map." alt="" coords="57,87,172,114"/>
-<area shape="rect" href="mouvement__ennemi_8h.html" title="vérifie la possiblité de déplacement d&#39;une bille" alt="" coords="334,87,554,114"/>
-<area shape="rect" href="placement__tours_8h.html" title="Afin de mettre une tour sur la carte ou d&#39;en supprimer une." alt="" coords="579,87,773,114"/>
-<area shape="rect" href="possibilite__tours_8h.html" title="Vérification des actions liées aux tours." alt="" coords="798,80,938,121"/>
-<area shape="rect" href="dega_8c.html" title="gestion des degats des tours et des ennemis" alt="" coords="20,244,108,271"/>
-<area shape="rect" href="menu_8h.html" title="menu du jeux" alt="" coords="169,169,292,196"/>
-<area shape="rect" href="jeux_8c.html" title="boucle de jeu" alt="" coords="317,169,401,196"/>
-<area shape="rect" href="menu_8c.html" title="menu principal du jeu" alt="" coords="184,244,277,271"/>
+<area shape="rect" title="definition des differente structure utilisé dans le programme" alt="" coords="220,5,343,32"/>
+<area shape="rect" href="jeux_8h.html" title="fonction principale du jeu" alt="" coords="133,304,246,331"/>
+<area shape="rect" href="map_8h.html" title="Fichier contenant les fonctions de gestion de la map." alt="" coords="177,80,292,107"/>
+<area shape="rect" href="mouvement__ennemi_8h.html" title="vérifie la possiblité de déplacement d&#39;une bille" alt="" coords="219,155,439,181"/>
+<area shape="rect" href="placement__tours_8h.html" title="Afin de mettre une tour sur la carte ou d&#39;en supprimer une." alt="" coords="468,229,663,256"/>
+<area shape="rect" href="menu_8h.html" title="menu du jeux" alt="" coords="64,379,187,405"/>
+<area shape="rect" href="jeux_8c.html" title="boucle de jeu" alt="" coords="211,379,295,405"/>
+<area shape="rect" href="menu_8c.html" title="menu principal du jeu" alt="" coords="5,453,99,480"/>
+<area shape="rect" href="tower__defense_8c.html" title="fichier principal du jeu" alt="" coords="123,453,275,480"/>
+<area shape="rect" href="mouvement__ennemi_8c.html" title="fonction permettant de gére le comportement des ennemis" alt="" coords="253,229,443,256"/>
+<area shape="rect" href="placement__tours_8c.html" title="fonction permettant de gére le comportement des tours" alt="" coords="483,304,648,331"/>
 </map>
 </div>
 </div>
@@ -134,6 +134,7 @@ Structures de données</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">union contenant les informations d'une case  <a href="unioncase___u.html#details">Plus de détails...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcase___s.html">case_S</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">structure contenant les informations d'une case  <a href="structcase___s.html#details">Plus de détails...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmap___s.html">map_S</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">structure contenant les informations d'une carte  <a href="structmap___s.html#details">Plus de détails...</a><br /></td></tr>
@@ -179,6 +180,7 @@ typedef struct <a class="el" href="structmap___s.html">map_S</a>&#160;</td><td c
 , <a class="el" href="struct_8h.html#ac29669aa20f0f4be92d93756f3203ce9a1f28516effaf97bbdd06327a6c68cbf8">CHEMIN</a>
 , <a class="el" href="struct_8h.html#ac29669aa20f0f4be92d93756f3203ce9ad4686f4f969d0e851d9170c09a89a837">VIDE</a>
  }</td></tr>
+<tr class="memdesc:ac29669aa20f0f4be92d93756f3203ce9"><td class="mdescLeft">&#160;</td><td class="mdescRight">enumeration des type de case  <a href="struct_8h.html#ac29669aa20f0f4be92d93756f3203ce9">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ac29669aa20f0f4be92d93756f3203ce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
@@ -200,6 +202,8 @@ Antoine Sainty (<a href="#" onclick="location.href='mai'+'lto:'+'Ant'+'oi'+'ne.'
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>enumeration des type de case </p>
 <table class="fieldtable">
 <tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="ac29669aa20f0f4be92d93756f3203ce9a2fae8bfa1d5574fa3d6fa334712268e5"></a>EMPLACEMENT&#160;</td><td class="fielddoc"><p>emplacement de tours possible </p>
 </td></tr>

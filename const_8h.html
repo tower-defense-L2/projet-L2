@@ -79,19 +79,19 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <div class="dyncontent">
 <div class="center"><img src="const_8h__dep__incl.png" border="0" usemap="#ainclude_2const_8hdep" alt=""/></div>
 <map name="ainclude_2const_8hdep" id="ainclude_2const_8hdep">
-<area shape="rect" title=" " alt="" coords="484,5,604,32"/>
-<area shape="rect" href="dega_8h.html" title="primitve de gestion des degas des tours et des enemis" alt="" coords="536,244,653,271"/>
-<area shape="rect" href="init__supr__sdl_8h.html" title="différente fonction servant pour la création et la destruction de la sdl" alt="" coords="78,80,245,107"/>
-<area shape="rect" href="jeux_8h.html" title="fonction principale du jeu" alt="" coords="105,162,218,189"/>
-<area shape="rect" href="mouvement__ennemi_8h.html" title="vérifie la possiblité de déplacement d&#39;une bille" alt="" coords="242,162,462,189"/>
-<area shape="rect" href="placement__tours_8h.html" title="Afin de mettre une tour sur la carte ou d&#39;en supprimer une." alt="" coords="676,162,871,189"/>
-<area shape="rect" href="possibilite__tours_8h.html" title="Vérification des actions liées aux tours." alt="" coords="895,155,1035,196"/>
-<area shape="rect" href="struct_8h.html" title="definition des differente structure utilisé dans le programme" alt="" coords="483,80,605,107"/>
-<area shape="rect" href="dega_8c.html" title="gestion des degats des tours et des ennemis" alt="" coords="551,319,639,345"/>
-<area shape="rect" href="menu_8h.html" title="menu du jeux" alt="" coords="5,244,128,271"/>
-<area shape="rect" href="jeux_8c.html" title="boucle de jeu" alt="" coords="153,244,237,271"/>
-<area shape="rect" href="menu_8c.html" title="menu principal du jeu" alt="" coords="20,319,113,345"/>
-<area shape="rect" href="map_8h.html" title="Fichier contenant les fonctions de gestion de la map." alt="" coords="537,162,652,189"/>
+<area shape="rect" title=" " alt="" coords="355,5,475,32"/>
+<area shape="rect" href="init__supr__sdl_8h.html" title="différente fonction servant pour la création et la destruction de la sdl" alt="" coords="9,304,175,331"/>
+<area shape="rect" href="jeux_8h.html" title="fonction principale du jeu" alt="" coords="222,379,335,405"/>
+<area shape="rect" href="mouvement__ennemi_8h.html" title="vérifie la possiblité de déplacement d&#39;une bille" alt="" coords="353,229,573,256"/>
+<area shape="rect" href="placement__tours_8h.html" title="Afin de mettre une tour sur la carte ou d&#39;en supprimer une." alt="" coords="619,304,813,331"/>
+<area shape="rect" href="struct_8h.html" title="definition des differente structure utilisé dans le programme" alt="" coords="353,80,476,107"/>
+<area shape="rect" href="menu_8h.html" title="menu du jeux" alt="" coords="119,453,241,480"/>
+<area shape="rect" href="tower__defense_8c.html" title="fichier principal du jeu" alt="" coords="5,528,157,555"/>
+<area shape="rect" href="jeux_8c.html" title="boucle de jeu" alt="" coords="266,453,350,480"/>
+<area shape="rect" href="menu_8c.html" title="menu principal du jeu" alt="" coords="181,528,275,555"/>
+<area shape="rect" href="mouvement__ennemi_8c.html" title="fonction permettant de gére le comportement des ennemis" alt="" coords="353,304,543,331"/>
+<area shape="rect" href="placement__tours_8c.html" title="fonction permettant de gére le comportement des tours" alt="" coords="633,379,799,405"/>
+<area shape="rect" href="map_8h.html" title="Fichier contenant les fonctions de gestion de la map." alt="" coords="311,155,425,181"/>
 </map>
 </div>
 </div>
@@ -111,6 +111,42 @@ Macros</h2></td></tr>
 <tr class="memitem:acb27267522f63290aacbc02530a668ef"><td class="memItemLeft" align="right" valign="top"><a id="acb27267522f63290aacbc02530a668ef"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>RESSOURCES</b>&#160;&#160;&#160;&quot;./ressources/&quot;</td></tr>
 <tr class="separator:acb27267522f63290aacbc02530a668ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad723bb2528a93e4c095e0c08a07448fd"><td class="memItemLeft" align="right" valign="top"><a id="ad723bb2528a93e4c095e0c08a07448fd"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>X_START</b>&#160;&#160;&#160;HAUTEUR-2</td></tr>
+<tr class="separator:ad723bb2528a93e4c095e0c08a07448fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35be867cad93b0e9d1dde28e75ef870c"><td class="memItemLeft" align="right" valign="top"><a id="a35be867cad93b0e9d1dde28e75ef870c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>Y_START</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a35be867cad93b0e9d1dde28e75ef870c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f7f5e5eda12cb88aa68cea987608b80"><td class="memItemLeft" align="right" valign="top"><a id="a1f7f5e5eda12cb88aa68cea987608b80"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>X_END</b>&#160;&#160;&#160;HAUTEUR-7</td></tr>
+<tr class="separator:a1f7f5e5eda12cb88aa68cea987608b80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60ae2d40e1155f1bf1a4b6cf8838ad88"><td class="memItemLeft" align="right" valign="top"><a id="a60ae2d40e1155f1bf1a4b6cf8838ad88"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>Y_END</b>&#160;&#160;&#160;LARGEUR-1</td></tr>
+<tr class="separator:a60ae2d40e1155f1bf1a4b6cf8838ad88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ca127871286b5828f012063fa3bd5e5"><td class="memItemLeft" align="right" valign="top"><a id="a0ca127871286b5828f012063fa3bd5e5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DEGAT_TOUR_BASE</b>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:a0ca127871286b5828f012063fa3bd5e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31f2b0a3fd9c47933885d7a2c649d6f6"><td class="memItemLeft" align="right" valign="top"><a id="a31f2b0a3fd9c47933885d7a2c649d6f6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>COUT_TOUR_BASE</b>&#160;&#160;&#160;100</td></tr>
+<tr class="separator:a31f2b0a3fd9c47933885d7a2c649d6f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac73785cd04d2231d723ef459e91c5046"><td class="memItemLeft" align="right" valign="top"><a id="ac73785cd04d2231d723ef459e91c5046"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PORTEE_TOUR_BASE</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:ac73785cd04d2231d723ef459e91c5046"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43b62a0422a0062ccb594a24234ba148"><td class="memItemLeft" align="right" valign="top"><a id="a43b62a0422a0062ccb594a24234ba148"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>FREQUENCE_TOUR_BASE</b>&#160;&#160;&#160;60</td></tr>
+<tr class="separator:a43b62a0422a0062ccb594a24234ba148"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6cdfed0e8dde1f47002c2f4c73ef2be"><td class="memItemLeft" align="right" valign="top"><a id="ab6cdfed0e8dde1f47002c2f4c73ef2be"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DEGAT_ENNEMI_BASE</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:ab6cdfed0e8dde1f47002c2f4c73ef2be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86352023f04d1af59e6d6ba698aa8a96"><td class="memItemLeft" align="right" valign="top"><a id="a86352023f04d1af59e6d6ba698aa8a96"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>VIE_ENNEMI_BASE</b>&#160;&#160;&#160;5</td></tr>
+<tr class="separator:a86352023f04d1af59e6d6ba698aa8a96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75e02caa948ce294b17b01b556aa267b"><td class="memItemLeft" align="right" valign="top"><a id="a75e02caa948ce294b17b01b556aa267b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>RECOMPENSE_ENNEMI_BASE</b>&#160;&#160;&#160;20</td></tr>
+<tr class="separator:a75e02caa948ce294b17b01b556aa267b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab44e9bf03a30029d0ae021ea3581f7d5"><td class="memItemLeft" align="right" valign="top"><a id="ab44e9bf03a30029d0ae021ea3581f7d5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>VITESSE_ENNEMI_BASE</b>&#160;&#160;&#160;30</td></tr>
+<tr class="separator:ab44e9bf03a30029d0ae021ea3581f7d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><dl class="section author"><dt>Auteur</dt><dd>Antoine Sainty (<a href="#" onclick="location.href='mai'+'lto:'+'Sai'+'nt'+'y.A'+'nt'+'oin'+'e.'+'Etu'+'@u'+'niv'+'-l'+'ema'+'ns'+'.fr'; return false;">Saint<span style="display: none;">.nosp@m.</span>y.An<span style="display: none;">.nosp@m.</span>toine<span style="display: none;">.nosp@m.</span>.Etu<span style="display: none;">.nosp@m.</span>@univ<span style="display: none;">.nosp@m.</span>-lem<span style="display: none;">.nosp@m.</span>ans.f<span style="display: none;">.nosp@m.</span>r</a>) </dd></dl>

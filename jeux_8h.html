@@ -78,26 +78,36 @@ $(function() {
 <p>fonction principale du jeu  
 <a href="#details">Plus de détails...</a></p>
 <div class="textblock"><code>#include &lt;SDL2/SDL.h&gt;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="struct__sdl_8h_source.html">./struct_sdl.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="struct_8h_source.html">./struct.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="const_8h_source.html">./const.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="interaction__souris_8h_source.html">./interaction_souris.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="init__supr__sdl_8h_source.html">./init_supr_sdl.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="map_8h_source.html">./map.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="placement__tours_8h_source.html">./placement_tours.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="mouvement__ennemi_8h_source.html">./mouvement_ennemi.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de jeux.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="jeux_8h__incl.png" border="0" usemap="#ainclude_2jeux_8h" alt=""/></div>
 <map name="ainclude_2jeux_8h" id="ainclude_2jeux_8h">
-<area shape="rect" title="fonction principale du jeu" alt="" coords="219,5,333,32"/>
-<area shape="rect" title=" " alt="" coords="31,229,127,256"/>
-<area shape="rect" href="struct__sdl_8h.html" title="definition des differente structure utilisé par les fonctions de sdl" alt="" coords="71,155,177,181"/>
-<area shape="rect" href="struct_8h.html" title="definition des differente structure utilisé dans le programme" alt="" coords="529,80,607,107"/>
-<area shape="rect" href="const_8h.html" title=" " alt="" coords="556,155,625,181"/>
-<area shape="rect" href="interaction__souris_8h.html" title="differentes fonctions pour gerer la souris avec SDL" alt="" coords="30,80,189,107"/>
-<area shape="rect" href="init__supr__sdl_8h.html" title="différente fonction servant pour la création et la destruction de la sdl" alt="" coords="265,80,389,107"/>
-<area shape="rect" title=" " alt="" coords="179,229,296,256"/>
-<area shape="rect" title=" " alt="" coords="303,155,369,181"/>
-<area shape="rect" title=" " alt="" coords="394,155,531,181"/>
+<area shape="rect" title="fonction principale du jeu" alt="" coords="373,5,486,32"/>
+<area shape="rect" title=" " alt="" coords="161,229,257,256"/>
+<area shape="rect" title=" " alt="" coords="44,80,108,107"/>
+<area shape="rect" href="struct__sdl_8h.html" title="definition des differente structure utilisé par les fonctions de sdl" alt="" coords="234,155,339,181"/>
+<area shape="rect" href="struct_8h.html" title="definition des differente structure utilisé dans le programme" alt="" coords="781,304,859,331"/>
+<area shape="rect" href="const_8h.html" title=" " alt="" coords="657,379,727,405"/>
+<area shape="rect" href="interaction__souris_8h.html" title="differentes fonctions pour gerer la souris avec SDL" alt="" coords="183,80,342,107"/>
+<area shape="rect" href="init__supr__sdl_8h.html" title="différente fonction servant pour la création et la destruction de la sdl" alt="" coords="418,80,542,107"/>
+<area shape="rect" href="map_8h.html" title="Fichier contenant les fonctions de gestion de la map." alt="" coords="983,229,1054,256"/>
+<area shape="rect" href="placement__tours_8h.html" title="Afin de mettre une tour sur la carte ou d&#39;en supprimer une." alt="" coords="818,80,969,107"/>
+<area shape="rect" href="mouvement__ennemi_8h.html" title="vérifie la possiblité de déplacement d&#39;une bille" alt="" coords="909,155,1078,181"/>
+<area shape="rect" title=" " alt="" coords="296,229,413,256"/>
+<area shape="rect" title=" " alt="" coords="915,379,981,405"/>
+<area shape="rect" title=" " alt="" coords="517,155,654,181"/>
+<area shape="rect" title=" " alt="" coords="1077,379,1147,405"/>
+<area shape="rect" href="file_8h.html" title="Fichier contenant les fonctions de gestion de la file." alt="" coords="986,304,1049,331"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -105,10 +115,11 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <div class="dyncontent">
 <div class="center"><img src="jeux_8h__dep__incl.png" border="0" usemap="#ainclude_2jeux_8hdep" alt=""/></div>
 <map name="ainclude_2jeux_8hdep" id="ainclude_2jeux_8hdep">
-<area shape="rect" title="fonction principale du jeu" alt="" coords="74,5,187,32"/>
-<area shape="rect" href="menu_8h.html" title="menu du jeux" alt="" coords="5,80,128,107"/>
-<area shape="rect" href="jeux_8c.html" title="boucle de jeu" alt="" coords="153,80,237,107"/>
-<area shape="rect" href="menu_8c.html" title="menu principal du jeu" alt="" coords="20,155,113,181"/>
+<area shape="rect" title="fonction principale du jeu" alt="" coords="133,5,246,32"/>
+<area shape="rect" href="menu_8h.html" title="menu du jeux" alt="" coords="64,80,187,107"/>
+<area shape="rect" href="jeux_8c.html" title="boucle de jeu" alt="" coords="211,80,295,107"/>
+<area shape="rect" href="menu_8c.html" title="menu principal du jeu" alt="" coords="5,155,99,181"/>
+<area shape="rect" href="tower__defense_8c.html" title="fichier principal du jeu" alt="" coords="123,155,275,181"/>
 </map>
 </div>
 </div>

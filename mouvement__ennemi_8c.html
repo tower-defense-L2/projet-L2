@@ -1,0 +1,451 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Tower Defense: Référence du fichier src/mouvement_ennemi.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Tower Defense
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Ce projet dans le cadre de notre formation de L2 informatique à l&#39;Université Du Mans a pour but de créer un jeu de type &quot;Tower Defense&quot; en utilisant la librairie graphique SDL2.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Structures de données</a> &#124;
+<a href="#typedef-members">Définitions de type</a> &#124;
+<a href="#func-members">Fonctions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier mouvement_ennemi.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>fonction permettant de gére le comportement des ennemis  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="mouvement__ennemi_8h_source.html">../include/mouvement_ennemi.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de mouvement_ennemi.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="mouvement__ennemi_8c__incl.png" border="0" usemap="#asrc_2mouvement__ennemi_8c" alt=""/></div>
+<map name="asrc_2mouvement__ennemi_8c" id="asrc_2mouvement__ennemi_8c">
+<area shape="rect" title="fonction permettant de gére le comportement des ennemis" alt="" coords="120,5,311,32"/>
+<area shape="rect" href="mouvement__ennemi_8h.html" title="vérifie la possiblité de déplacement d&#39;une bille" alt="" coords="133,80,297,121"/>
+<area shape="rect" title=" " alt="" coords="5,319,76,345"/>
+<area shape="rect" href="const_8h.html" title=" " alt="" coords="234,319,303,345"/>
+<area shape="rect" href="struct_8h.html" title="definition des differente structure utilisé dans le programme" alt="" coords="217,244,288,271"/>
+<area shape="rect" href="map_8h.html" title="Fichier contenant les fonctions de gestion de la map." alt="" coords="148,169,211,196"/>
+<area shape="rect" title=" " alt="" coords="130,319,197,345"/>
+<area shape="rect" href="file_8h.html" title="Fichier contenant les fonctions de gestion de la file." alt="" coords="79,244,141,271"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structliste__ennemi___s.html">liste_ennemi_S</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">primitive de la structure <a class="el" href="structliste__ennemi___t.html" title="structure contenant les pointeurs sur l&#39;ennemi et les pointeurs sur les ennemis suivantes et précéden...">liste_ennemi_T</a>  <a href="structliste__ennemi___s.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Définitions de type</h2></td></tr>
+<tr class="memitem:a7ce61a766d26292db5515e43f3669c79"><td class="memItemLeft" align="right" valign="top"><a id="a7ce61a766d26292db5515e43f3669c79"></a>
+typedef struct <a class="el" href="structliste__ennemi___s.html">liste_ennemi_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouvement__ennemi_8c.html#a7ce61a766d26292db5515e43f3669c79">liste_ennemi_T</a></td></tr>
+<tr class="memdesc:a7ce61a766d26292db5515e43f3669c79"><td class="mdescLeft">&#160;</td><td class="mdescRight">primitive de la structure <a class="el" href="structliste__ennemi___t.html" title="structure contenant les pointeurs sur l&#39;ennemi et les pointeurs sur les ennemis suivantes et précéden...">liste_ennemi_T</a> <br /></td></tr>
+<tr class="separator:a7ce61a766d26292db5515e43f3669c79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a1484b1e84f0f0fd542db950cd6b338b1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouvement__ennemi_8c.html#a1484b1e84f0f0fd542db950cd6b338b1">dega_ennemi</a> (<a class="el" href="structennemi___s.html">ennemi_T</a> *enemi, <a class="el" href="structjoueur___s.html">joueur_T</a> *joueur)</td></tr>
+<tr class="memdesc:a1484b1e84f0f0fd542db950cd6b338b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">inflige des degats a un joueur et detruit l'ennemi  <a href="mouvement__ennemi_8c.html#a1484b1e84f0f0fd542db950cd6b338b1">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a1484b1e84f0f0fd542db950cd6b338b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60f1d00f72a9190e86f7628710fe4f82"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouvement__ennemi_8c.html#a60f1d00f72a9190e86f7628710fe4f82">mouvement_bille</a> (<a class="el" href="structennemi___s.html">ennemi_T</a> *bille, <a class="el" href="structjoueur___s.html">joueur_T</a> *joueur)</td></tr>
+<tr class="memdesc:a60f1d00f72a9190e86f7628710fe4f82"><td class="mdescLeft">&#160;</td><td class="mdescRight">fait avancer toutes les billes et vérifie si elles sont arrivées au bout du chemin  <a href="mouvement__ennemi_8c.html#a60f1d00f72a9190e86f7628710fe4f82">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a60f1d00f72a9190e86f7628710fe4f82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e3b0636744ce20c26aaa7a15fb05443"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouvement__ennemi_8c.html#a3e3b0636744ce20c26aaa7a15fb05443">detruire_ennemi</a> (int id)</td></tr>
+<tr class="memdesc:a3e3b0636744ce20c26aaa7a15fb05443"><td class="mdescLeft">&#160;</td><td class="mdescRight">détruit une bille dont l'id est donné en paramètre  <a href="mouvement__ennemi_8c.html#a3e3b0636744ce20c26aaa7a15fb05443">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3e3b0636744ce20c26aaa7a15fb05443"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a624e5cc6480c62ba7b708e9b50bedd"><td class="memItemLeft" align="right" valign="top"><a id="a9a624e5cc6480c62ba7b708e9b50bedd"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouvement__ennemi_8c.html#a9a624e5cc6480c62ba7b708e9b50bedd">detruire_ennemis</a> ()</td></tr>
+<tr class="memdesc:a9a624e5cc6480c62ba7b708e9b50bedd"><td class="mdescLeft">&#160;</td><td class="mdescRight">détruit toutes les billes <br /></td></tr>
+<tr class="separator:a9a624e5cc6480c62ba7b708e9b50bedd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa484137f6e61b6a6e073eabc8bf1a8ce"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouvement__ennemi_8c.html#aa484137f6e61b6a6e073eabc8bf1a8ce">creer_ennemi</a> (int vie, int reconpense, int vitesse, int degat)</td></tr>
+<tr class="memdesc:aa484137f6e61b6a6e073eabc8bf1a8ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">crée une bille avec les paramètres donnés en position -1 -1 et l'ajoute à la liste des billes  <a href="mouvement__ennemi_8c.html#aa484137f6e61b6a6e073eabc8bf1a8ce">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aa484137f6e61b6a6e073eabc8bf1a8ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae34d3aa497248a8dbdcdb7e5a4083ce7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouvement__ennemi_8c.html#ae34d3aa497248a8dbdcdb7e5a4083ce7">creer_vague</a> (int num_vague)</td></tr>
+<tr class="memdesc:ae34d3aa497248a8dbdcdb7e5a4083ce7"><td class="mdescLeft">&#160;</td><td class="mdescRight">crée une vague d'ennemis en augmentant la difficulté avec le numéro de la vague  <a href="mouvement__ennemi_8c.html#ae34d3aa497248a8dbdcdb7e5a4083ce7">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae34d3aa497248a8dbdcdb7e5a4083ce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6563b22c3f83f1df0f6607f2e3bed05b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouvement__ennemi_8c.html#a6563b22c3f83f1df0f6607f2e3bed05b">vague_terminee</a> ()</td></tr>
+<tr class="memdesc:a6563b22c3f83f1df0f6607f2e3bed05b"><td class="mdescLeft">&#160;</td><td class="mdescRight">vérifie si toutes les billes sont détruites  <a href="mouvement__ennemi_8c.html#a6563b22c3f83f1df0f6607f2e3bed05b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a6563b22c3f83f1df0f6607f2e3bed05b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95b3e1eed6e5622661a73a5bd88afee4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structliste__ennemi___t.html">liste_ennemi_T</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouvement__ennemi_8c.html#a95b3e1eed6e5622661a73a5bd88afee4">get_mini_id</a> ()</td></tr>
+<tr class="memdesc:a95b3e1eed6e5622661a73a5bd88afee4"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie l'ennemi avec l'id le plus petit de la liste des ennemis (le plus en avant sur le chemin)  <a href="mouvement__ennemi_8c.html#a95b3e1eed6e5622661a73a5bd88afee4">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a95b3e1eed6e5622661a73a5bd88afee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4618b843b872bee419c22c52584e95f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouvement__ennemi_8c.html#a4618b843b872bee419c22c52584e95f7">ennemi_avancer</a> (<a class="el" href="structjoueur___s.html">joueur_T</a> *joueur, unsigned int diviseur)</td></tr>
+<tr class="memdesc:a4618b843b872bee419c22c52584e95f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">déplace toutes les billes et vérifie si elles sont arrivées au bout du chemin  <a href="mouvement__ennemi_8c.html#a4618b843b872bee419c22c52584e95f7">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a4618b843b872bee419c22c52584e95f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:aada03ea73ca8266c420ffe3b1a8ab61f"><td class="memItemLeft" align="right" valign="top"><a id="aada03ea73ca8266c420ffe3b1a8ab61f"></a>
+<a class="el" href="structliste__ennemi___t.html">liste_ennemi_T</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>liste_enemi</b> = NULL</td></tr>
+<tr class="separator:aada03ea73ca8266c420ffe3b1a8ab61f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a548efa8b3f824344d02b65ae2973b56b"><td class="memItemLeft" align="right" valign="top"><a id="a548efa8b3f824344d02b65ae2973b56b"></a>
+<a class="el" href="structcase___s.html">case_T</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>hors_jeux</b></td></tr>
+<tr class="separator:a548efa8b3f824344d02b65ae2973b56b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>fonction permettant de gére le comportement des ennemis </p>
+<dl class="section author"><dt>Auteur</dt><dd>meo (<a href="#" onclick="location.href='mai'+'lto:'+'meo'+'.p'+'rn@'+'ou'+'tlo'+'ok'+'.fr'; return false;">meo.p<span style="display: none;">.nosp@m.</span>rn@o<span style="display: none;">.nosp@m.</span>utloo<span style="display: none;">.nosp@m.</span>k.fr</a>) </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.1.0 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2023-04-07 </dd></dl>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="aa484137f6e61b6a6e073eabc8bf1a8ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa484137f6e61b6a6e073eabc8bf1a8ce">&#9670;&nbsp;</a></span>creer_ennemi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void creer_ennemi </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>vie</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>reconpense</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>vitesse</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>degat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>crée une bille avec les paramètres donnés en position -1 -1 et l'ajoute à la liste des billes </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vie</td><td>vie de la bille </td></tr>
+    <tr><td class="paramname">reconpense</td><td>argent gagné en tuant la bille </td></tr>
+    <tr><td class="paramname">vitesse</td><td>fréquence de déplacement de la bille en s/60 </td></tr>
+    <tr><td class="paramname">degat</td><td>dégat de la bille </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae34d3aa497248a8dbdcdb7e5a4083ce7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae34d3aa497248a8dbdcdb7e5a4083ce7">&#9670;&nbsp;</a></span>creer_vague()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void creer_vague </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num_vague</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>crée une vague d'ennemis en augmentant la difficulté avec le numéro de la vague </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num_vague</td><td>numéro de la vague </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1484b1e84f0f0fd542db950cd6b338b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1484b1e84f0f0fd542db950cd6b338b1">&#9670;&nbsp;</a></span>dega_ennemi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void dega_ennemi </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structennemi___s.html">ennemi_T</a> *&#160;</td>
+          <td class="paramname"><em>enemi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structjoueur___s.html">joueur_T</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>inflige des degats a un joueur et detruit l'ennemi </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enemi</td><td>pointeur vers l'ennemi </td></tr>
+    <tr><td class="paramname">joueur</td><td>pointeur vers le joueur </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3e3b0636744ce20c26aaa7a15fb05443"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e3b0636744ce20c26aaa7a15fb05443">&#9670;&nbsp;</a></span>detruire_ennemi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void detruire_ennemi </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>détruit une bille dont l'id est donné en paramètre </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>id de la bille à détruire </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4618b843b872bee419c22c52584e95f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4618b843b872bee419c22c52584e95f7">&#9670;&nbsp;</a></span>ennemi_avancer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ennemi_avancer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structjoueur___s.html">joueur_T</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>diviseur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>déplace toutes les billes et vérifie si elles sont arrivées au bout du chemin </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">joueur</td><td>pointeur sur le joueur </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a95b3e1eed6e5622661a73a5bd88afee4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95b3e1eed6e5622661a73a5bd88afee4">&#9670;&nbsp;</a></span>get_mini_id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="structliste__ennemi___t.html">liste_ennemi_T</a>* get_mini_id </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>renvoie l'ennemi avec l'id le plus petit de la liste des ennemis (le plus en avant sur le chemin) </p>
+<dl class="section return"><dt>Renvoie</dt><dd>liste_enemi_T* pointeur vers l'ennemi avec l'id le plus petit </dd></dl>
+
+</div>
+</div>
+<a id="a60f1d00f72a9190e86f7628710fe4f82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60f1d00f72a9190e86f7628710fe4f82">&#9670;&nbsp;</a></span>mouvement_bille()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int mouvement_bille </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structennemi___s.html">ennemi_T</a> *&#160;</td>
+          <td class="paramname"><em>bille</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structjoueur___s.html">joueur_T</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>fait avancer toutes les billes et vérifie si elles sont arrivées au bout du chemin </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bille</td><td>pointeur vers la bille </td></tr>
+    <tr><td class="paramname">joueur</td><td>pointeur vers le joueur </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int -1 si erreur / 0 si la bille n'a pas bougé / 1 si la bille a bougé </dd></dl>
+
+</div>
+</div>
+<a id="a6563b22c3f83f1df0f6607f2e3bed05b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6563b22c3f83f1df0f6607f2e3bed05b">&#9670;&nbsp;</a></span>vague_terminee()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int vague_terminee </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>vérifie si toutes les billes sont détruites </p>
+<dl class="section return"><dt>Renvoie</dt><dd>int 1 si toutes les billes sont détruites / 0 sinon </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

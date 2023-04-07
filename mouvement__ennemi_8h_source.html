@@ -73,16 +73,39 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="mouvement__ennemi_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;stdlib.h&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="const_8h.html">const.h</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="struct_8h.html">struct.h</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">extern</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">int</span> <a class="code" href="mouvement__ennemi_8h.html#a54f4b2663ffc0126a5397cf7ba45d9a4">mouvement_bille</a>(<a class="code" href="structchemin___s.html">chemin_T</a> *chemin);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef MOUVEMENT_ENNEMI_H</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define MOUVEMENT_ENNEMI_H</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="const_8h.html">const.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="struct_8h.html">struct.h</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="map_8h.html">map.h</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">extern</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">void</span> <a class="code" href="mouvement__ennemi_8h.html#a3e3b0636744ce20c26aaa7a15fb05443">detruire_ennemi</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">extern</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordtype">void</span> <a class="code" href="mouvement__ennemi_8h.html#a9a624e5cc6480c62ba7b708e9b50bedd">detruire_ennemis</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">extern</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keywordtype">void</span> <a class="code" href="mouvement__ennemi_8h.html#ae34d3aa497248a8dbdcdb7e5a4083ce7">creer_vague</a>(<span class="keywordtype">int</span> num_vague);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">extern</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">int</span> <a class="code" href="mouvement__ennemi_8h.html#a6563b22c3f83f1df0f6607f2e3bed05b">vague_terminee</a>();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">extern</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keywordtype">void</span> <a class="code" href="mouvement__ennemi_8h.html#a4618b843b872bee419c22c52584e95f7">ennemi_avancer</a>(<a class="code" href="structjoueur___s.html">joueur_T</a> *joueur, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> diviseur);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aconst_8h_html"><div class="ttname"><a href="const_8h.html">const.h</a></div></div>
-<div class="ttc" id="amouvement__ennemi_8h_html_a54f4b2663ffc0126a5397cf7ba45d9a4"><div class="ttname"><a href="mouvement__ennemi_8h.html#a54f4b2663ffc0126a5397cf7ba45d9a4">mouvement_bille</a></div><div class="ttdeci">int mouvement_bille(chemin_T *chemin)</div><div class="ttdoc">vérifie si la bille peux aller sur la case suivante et l'y met si tel est le cas.</div><div class="ttdef"><b>Definition:</b> mouvement_ennemi.c:4</div></div>
+<div class="ttc" id="amap_8h_html"><div class="ttname"><a href="map_8h.html">map.h</a></div><div class="ttdoc">Fichier contenant les fonctions de gestion de la map.</div></div>
+<div class="ttc" id="amouvement__ennemi_8h_html_a3e3b0636744ce20c26aaa7a15fb05443"><div class="ttname"><a href="mouvement__ennemi_8h.html#a3e3b0636744ce20c26aaa7a15fb05443">detruire_ennemi</a></div><div class="ttdeci">void detruire_ennemi(int id)</div><div class="ttdoc">détruit une bille dont l'id est donné en paramètre</div><div class="ttdef"><b>Definition:</b> mouvement_ennemi.c:90</div></div>
+<div class="ttc" id="amouvement__ennemi_8h_html_a4618b843b872bee419c22c52584e95f7"><div class="ttname"><a href="mouvement__ennemi_8h.html#a4618b843b872bee419c22c52584e95f7">ennemi_avancer</a></div><div class="ttdeci">void ennemi_avancer(joueur_T *joueur, unsigned int diviseur)</div><div class="ttdoc">déplace toutes les billes et vérifie si elles sont arrivées au bout du chemin</div><div class="ttdef"><b>Definition:</b> mouvement_ennemi.c:210</div></div>
+<div class="ttc" id="amouvement__ennemi_8h_html_a6563b22c3f83f1df0f6607f2e3bed05b"><div class="ttname"><a href="mouvement__ennemi_8h.html#a6563b22c3f83f1df0f6607f2e3bed05b">vague_terminee</a></div><div class="ttdeci">int vague_terminee()</div><div class="ttdoc">vérifie si toutes les billes sont détruites</div><div class="ttdef"><b>Definition:</b> mouvement_ennemi.c:179</div></div>
+<div class="ttc" id="amouvement__ennemi_8h_html_a9a624e5cc6480c62ba7b708e9b50bedd"><div class="ttname"><a href="mouvement__ennemi_8h.html#a9a624e5cc6480c62ba7b708e9b50bedd">detruire_ennemis</a></div><div class="ttdeci">void detruire_ennemis()</div><div class="ttdoc">détruit toutes les billes</div><div class="ttdef"><b>Definition:</b> mouvement_ennemi.c:118</div></div>
+<div class="ttc" id="amouvement__ennemi_8h_html_ae34d3aa497248a8dbdcdb7e5a4083ce7"><div class="ttname"><a href="mouvement__ennemi_8h.html#ae34d3aa497248a8dbdcdb7e5a4083ce7">creer_vague</a></div><div class="ttdeci">void creer_vague(int num_vague)</div><div class="ttdoc">crée une vague d'ennemis en augmentant la difficulté avec le numéro de la vague</div><div class="ttdef"><b>Definition:</b> mouvement_ennemi.c:163</div></div>
 <div class="ttc" id="astruct_8h_html"><div class="ttname"><a href="struct_8h.html">struct.h</a></div><div class="ttdoc">definition des differente structure utilisé dans le programme</div></div>
-<div class="ttc" id="astructchemin___s_html"><div class="ttname"><a href="structchemin___s.html">chemin_S</a></div><div class="ttdoc">structure contenant les informations d'un chemin</div><div class="ttdef"><b>Definition:</b> struct.h:72</div></div>
+<div class="ttc" id="astructjoueur___s_html"><div class="ttname"><a href="structjoueur___s.html">joueur_S</a></div><div class="ttdoc">structure contenant les informations d'un joueur</div><div class="ttdef"><b>Definition:</b> struct.h:55</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

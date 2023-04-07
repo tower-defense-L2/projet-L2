@@ -84,17 +84,23 @@ Graphe des dépendances par inclusion de jeux.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="jeux_8c__incl.png" border="0" usemap="#asrc_2jeux_8c" alt=""/></div>
 <map name="asrc_2jeux_8c" id="asrc_2jeux_8c">
-<area shape="rect" title="boucle de jeu" alt="" coords="234,5,318,32"/>
-<area shape="rect" href="jeux_8h.html" title="fonction principale du jeu" alt="" coords="213,80,339,107"/>
-<area shape="rect" title=" " alt="" coords="31,304,127,331"/>
-<area shape="rect" href="struct__sdl_8h.html" title="definition des differente structure utilisé par les fonctions de sdl" alt="" coords="71,229,177,256"/>
-<area shape="rect" href="struct_8h.html" title="definition des differente structure utilisé dans le programme" alt="" coords="529,155,607,181"/>
-<area shape="rect" href="const_8h.html" title=" " alt="" coords="556,229,625,256"/>
-<area shape="rect" href="interaction__souris_8h.html" title="differentes fonctions pour gerer la souris avec SDL" alt="" coords="30,155,189,181"/>
-<area shape="rect" href="init__supr__sdl_8h.html" title="différente fonction servant pour la création et la destruction de la sdl" alt="" coords="265,155,389,181"/>
-<area shape="rect" title=" " alt="" coords="179,304,296,331"/>
-<area shape="rect" title=" " alt="" coords="303,229,369,256"/>
-<area shape="rect" title=" " alt="" coords="394,229,531,256"/>
+<area shape="rect" title="boucle de jeu" alt="" coords="387,5,471,32"/>
+<area shape="rect" href="jeux_8h.html" title="fonction principale du jeu" alt="" coords="367,80,492,107"/>
+<area shape="rect" title=" " alt="" coords="161,304,257,331"/>
+<area shape="rect" title=" " alt="" coords="44,155,108,181"/>
+<area shape="rect" href="struct__sdl_8h.html" title="definition des differente structure utilisé par les fonctions de sdl" alt="" coords="234,229,339,256"/>
+<area shape="rect" href="struct_8h.html" title="definition des differente structure utilisé dans le programme" alt="" coords="781,379,859,405"/>
+<area shape="rect" href="const_8h.html" title=" " alt="" coords="657,453,727,480"/>
+<area shape="rect" href="interaction__souris_8h.html" title="differentes fonctions pour gerer la souris avec SDL" alt="" coords="183,155,342,181"/>
+<area shape="rect" href="init__supr__sdl_8h.html" title="différente fonction servant pour la création et la destruction de la sdl" alt="" coords="418,155,542,181"/>
+<area shape="rect" href="map_8h.html" title="Fichier contenant les fonctions de gestion de la map." alt="" coords="983,304,1054,331"/>
+<area shape="rect" href="placement__tours_8h.html" title="Afin de mettre une tour sur la carte ou d&#39;en supprimer une." alt="" coords="818,155,969,181"/>
+<area shape="rect" href="mouvement__ennemi_8h.html" title="vérifie la possiblité de déplacement d&#39;une bille" alt="" coords="909,229,1078,256"/>
+<area shape="rect" title=" " alt="" coords="296,304,413,331"/>
+<area shape="rect" title=" " alt="" coords="915,453,981,480"/>
+<area shape="rect" title=" " alt="" coords="517,229,654,256"/>
+<area shape="rect" title=" " alt="" coords="1077,453,1147,480"/>
+<area shape="rect" href="file_8h.html" title="Fichier contenant les fonctions de gestion de la file." alt="" coords="986,379,1049,405"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -106,6 +112,12 @@ Fonctions</h2></td></tr>
 <tr class="memitem:aae1c7d80d239765224719b82c65b0df4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jeux_8c.html#aae1c7d80d239765224719b82c65b0df4">fenetree</a> (<a class="el" href="structpack__t.html">pack_t</a> *fenetre, SDL_Rect *win)</td></tr>
 <tr class="memdesc:aae1c7d80d239765224719b82c65b0df4"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction qui passe la fenetre en fenétrée  <a href="jeux_8c.html#aae1c7d80d239765224719b82c65b0df4">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aae1c7d80d239765224719b82c65b0df4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb688b15c1e2181bd7a9cd36dd24f55a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jeux_8c.html#afb688b15c1e2181bd7a9cd36dd24f55a">initialisation</a> (int demarage, <a class="el" href="structposition___s.html">position_T</a> depart, <a class="el" href="structposition___s.html">position_T</a> arrivee)</td></tr>
+<tr class="memdesc:afb688b15c1e2181bd7a9cd36dd24f55a"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction qui initialise les variables globales en fonction de la sauvegarde  <a href="jeux_8c.html#afb688b15c1e2181bd7a9cd36dd24f55a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:afb688b15c1e2181bd7a9cd36dd24f55a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbdff46ee20fe343befb13b26270edf5"><td class="memItemLeft" align="right" valign="top"><a id="acbdff46ee20fe343befb13b26270edf5"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>logic</b> (unsigned int diviseur, SDL_bool *program_launched)</td></tr>
+<tr class="separator:acbdff46ee20fe343befb13b26270edf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0077883024dfa9bd746832c43984fc8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jeux_8c.html#ac0077883024dfa9bd746832c43984fc8">jeux</a> (<a class="el" href="structpack__t.html">pack_t</a> *fenetre)</td></tr>
 <tr class="memdesc:ac0077883024dfa9bd746832c43984fc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction principale du jeu  <a href="jeux_8c.html#ac0077883024dfa9bd746832c43984fc8">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ac0077883024dfa9bd746832c43984fc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,6 +130,9 @@ Variables</h2></td></tr>
 <tr class="memitem:a00852ca7881228e8202cbea04dc9093b"><td class="memItemLeft" align="right" valign="top"><a id="a00852ca7881228e8202cbea04dc9093b"></a>
 <a class="el" href="structjoueur___s.html">joueur_T</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>joueur</b></td></tr>
 <tr class="separator:a00852ca7881228e8202cbea04dc9093b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8696725a4e790895ed105974be31f158"><td class="memItemLeft" align="right" valign="top"><a id="a8696725a4e790895ed105974be31f158"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>vague</b> = 1</td></tr>
+<tr class="separator:a8696725a4e790895ed105974be31f158"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>boucle de jeu </p>
@@ -164,6 +179,58 @@ Variables</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">fenetre</td><td>pointeur sur le <a class="el" href="structpack__t.html" title="structure contenant les pointeurs sur la fenetre, le renderer et la police">pack_t</a> de la fenetre </td></tr>
     <tr><td class="paramname">win</td><td>pointeur sur la SDL_Rect de la fenetre </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afb688b15c1e2181bd7a9cd36dd24f55a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb688b15c1e2181bd7a9cd36dd24f55a">&#9670;&nbsp;</a></span>initialisation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void initialisation </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>demarage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structposition___s.html">position_T</a>&#160;</td>
+          <td class="paramname"><em>depart</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structposition___s.html">position_T</a>&#160;</td>
+          <td class="paramname"><em>arrivee</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>fonction qui initialise les variables globales en fonction de la sauvegarde </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">demarage</td><td>indique si c'est le début du jeu ou si c'est un chargement de sauvegarde </td></tr>
+    <tr><td class="paramname">depart</td><td>position de départ en cas de début de jeu </td></tr>
+    <tr><td class="paramname">arrivee</td><td>position d'arrivé en cas de début de jeu </td></tr>
   </table>
   </dd>
 </dl>

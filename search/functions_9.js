@@ -1,11 +1,7 @@
 var searchData=
 [
-  ['souris_5fdessu_163',['souris_dessu',['../interaction__souris_8h.html#aaaf18754e17d9d0d3a16ad2fd5b5ff42',1,'interaction_souris.c']]],
-  ['suppression_5fpossible_164',['suppression_possible',['../possibilite__tours_8h.html#a5ca8820c6710c5a482713fb7dbdcc5fb',1,'possibilite_tours.c']]],
-  ['suppression_5ftour_165',['suppression_tour',['../placement__tours_8h.html#adb21231177823481b0fbc1086bcfcb9d',1,'placement_tours.c']]],
-  ['supression_5fbouton_166',['supression_bouton',['../init__supr__sdl_8h.html#a36af26e5dc7b20204eab0eeb8a058fee',1,'init_supr_sdl.c']]],
-  ['supression_5fpack_167',['supression_pack',['../init__supr__sdl_8h.html#af481f956f543e81037250781e8bf7f56',1,'init_supr_sdl.c']]],
-  ['supression_5fsdl_168',['supression_sdl',['../init__supr__sdl_8h.html#a97ec819672ff9f21645a4320e03a8587',1,'init_supr_sdl.c']]],
-  ['supression_5ftexture_169',['supression_texture',['../init__supr__sdl_8h.html#a5e1dc847685ee1f1de2fbc8e114ad108',1,'init_supr_sdl.c']]],
-  ['supression_5ftexture_5fliste_170',['supression_texture_liste',['../init__supr__sdl_8h.html#a796bbf8c3fc3cf1353b6241e018a23ef',1,'init_supr_sdl.c']]]
+  ['placement_5fpossible_196',['placement_possible',['../placement__tours_8h.html#a35d3b00124de4a8a819d7cb835b41035',1,'placement_possible(emplacement_T *emplacement, joueur_T *joueur, tour_T *tour):&#160;placement_tours.c'],['../placement__tours_8c.html#a35d3b00124de4a8a819d7cb835b41035',1,'placement_possible(emplacement_T *emplacement, joueur_T *joueur, tour_T *tour):&#160;placement_tours.c']]],
+  ['placement_5ftour_197',['placement_tour',['../placement__tours_8h.html#a079e134723e2156336a66ae06d972d02',1,'placement_tour(emplacement_T *emplacement, joueur_T *joueur, tour_T *tour):&#160;placement_tours.c'],['../placement__tours_8c.html#a079e134723e2156336a66ae06d972d02',1,'placement_tour(emplacement_T *emplacement, joueur_T *joueur, tour_T *tour):&#160;placement_tours.c']]],
+  ['plein_5fecran_198',['plein_ecran',['../jeux_8c.html#a115c234d7ce31818640ca363a34aed4d',1,'jeux.c']]],
+  ['position_5fbitexture_199',['position_bitexture',['../init__supr__sdl_8h.html#a24c2a5628d1c9fb9ff25038f9fa675f9',1,'init_supr_sdl.c']]]
 ];

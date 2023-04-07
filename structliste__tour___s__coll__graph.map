@@ -1,0 +1,5 @@
+<map id="liste_tour_S" name="liste_tour_S">
+<area shape="rect" id="node1" title="primitive de la structure liste_tour_T" alt="" coords="5,184,104,211"/>
+<area shape="rect" id="node2" href="$structtour___s.html" title="structure contenant les informations d&#39;une tour" alt="" coords="23,95,86,121"/>
+<area shape="rect" id="node3" href="$structposition___s.html" title="structure contenant les coordonnées d&#39;un élément" alt="" coords="10,5,99,32"/>
+</map>

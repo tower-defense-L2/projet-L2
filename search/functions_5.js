@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['jeux_153',['jeux',['../jeux_8h.html#ac0077883024dfa9bd746832c43984fc8',1,'jeux(pack_t *fenetre):&#160;jeux.c'],['../jeux_8c.html#ac0077883024dfa9bd746832c43984fc8',1,'jeux(pack_t *fenetre):&#160;jeux.c']]]
+  ['initialisation_188',['initialisation',['../jeux_8c.html#afb688b15c1e2181bd7a9cd36dd24f55a',1,'jeux.c']]],
+  ['initilalisation_5fsdl_189',['initilalisation_sdl',['../init__supr__sdl_8h.html#a8261c3df42fe4d4d8aac42e68c4908e7',1,'init_supr_sdl.c']]]
 ];
