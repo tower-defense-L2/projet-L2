@@ -34,6 +34,7 @@ extern
 void placement_tour(emplacement_T *emplacement, joueur_T *joueur, tour_T *tour)
 {
     if (placement_possible(emplacement, joueur, tour)){
+        tour->position = emplacement->position;
         emplacement->tour = tour;
         joueur->argent -= tour->cout;
     }

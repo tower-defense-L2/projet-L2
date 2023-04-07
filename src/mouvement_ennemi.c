@@ -70,3 +70,44 @@ void detruire_enemis()
         tmp = tmp2;
     }
 }
+
+extern
+void creer_enemi(int vie, int reconpense, int vitesse, int degat)
+{
+    ennemi_T *enemi = malloc(sizeof(ennemi_T));
+    enemi->id = 1;
+    enemi->vie = vie;
+    enemi->reconpense = reconpense;
+    enemi->vitesse = vitesse;
+    enemi->degat = degat;
+    enemi->position = (position_T){-1, -1};
+
+    liste_enemi_T *tmp = malloc(sizeof(liste_enemi_T));
+    tmp->enemi = enemi;
+    tmp->suivant = liste_enemi;
+    tmp->precedent = NULL;
+    if (liste_enemi != NULL)
+    {
+        liste_enemi->precedent = tmp;
+        tmp->enemi->id = liste_enemi->enemi->id + 1;
+    }
+    liste_enemi = tmp;
+}
+
+extern
+void creer_vague(int num_vague)
+{
+    for(int i = 0; i < 3*num_vague; i++)
+    {
+        creer_enemi(VIE_ENNEMI_BASE, RECOMPENSE_ENNEMI_BASE, VITESSE_ENNEMI_BASE, DEGAT_ENNEMI_BASE);
+    }
+}
+
+extern
+int vague_termine(){
+    if (liste_enemi == NULL)
+    {
+        return 1;
+    }
+    return 0;
+}
