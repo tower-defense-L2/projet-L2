@@ -15,6 +15,11 @@
 #define TITRE "Tower Defense"
 #define RESSOURCES "./ressources/"
 
+#define X_START HAUTEUR-2
+#define Y_START 0
+#define X_END HAUTEUR-7
+#define Y_END LARGEUR-1
+
 #define DEGAT_TOUR_BASE 2
 #define COUT_TOUR_BASE 100
 #define PORTEE_TOUR_BASE 1

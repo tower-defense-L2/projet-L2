@@ -89,8 +89,8 @@ int jeux(pack_t * fenetre){
         // variable de texte
         char * info= malloc(sizeof(char)*30);
         // positon du depart et de l'arrivé
-        position_T depart = {5,0};
-        position_T arrivee = {HAUTEUR-4,LARGEUR-1};
+        position_T depart = {X_START,Y_START};
+        position_T arrivee = {X_END,Y_END};
         // diviseur de temps
         unsigned int diviseur = 0;
         // initialisation des textures
