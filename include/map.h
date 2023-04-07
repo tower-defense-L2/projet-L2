@@ -54,4 +54,13 @@ case_T *get_case(int x, int y);
  */
 int get_seed();
 
+/**
+ * \brief indique si la position est dans la map
+ * 
+ * \param position position a vérifier
+ * \return int 1 si la position est dans la map, 0 sinon
+ */
+extern
+int dans_map(position_T position);
+
 #endif //TOWER_DEFENSE_MAP_H
