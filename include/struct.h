@@ -76,6 +76,10 @@ typedef struct chemin_S {
     struct chemin_S* suivant; /*!< pointeur sur le chemin suivant, NULL si la fin du parcours */
 } chemin_T;
 
+/**
+ * \enum type_case_E
+ * \brief enumeration des type de case
+ */
 typedef enum type_case_E {
     EMPLACEMENT, /*!< emplacement de tours possible */
     OBSTACLE, /*!< emplacement d'obstacle */
@@ -92,7 +96,10 @@ typedef union case_U {
     chemin_T chemin; /*!< chemin de la case */
 } case_TU;
 
-
+/**
+ * \struct case_S
+ * \brief structure contenant les informations d'une case
+ */
 typedef struct case_S {
     type_case_T type; /*!< type de la case */
     case_TU case_pl; /*!< case */
