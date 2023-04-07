@@ -296,6 +296,8 @@ int jeux(pack_t * fenetre){
     // destruction des tours
     detruire_tours();
     detruire_ennemis();
+    destroy_map();
+
 
     // destruction de la texture
     SDL_DestroyTexture(texture);

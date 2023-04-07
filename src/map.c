@@ -292,10 +292,12 @@ int get_seed() {
 }
 
 case_T *get_case(int x, int y) {
+  if(dans_map((position_T){x, y}) == 0)
+    return NULL;
   return _map->cases[x][y];
 }
 
 extern
 int dans_map(position_T position){
-  return position.x >= 0 && position.x < HAUTEUR && position.y >= 0 && position.y < LARGEUR;
+  return (position.x >= 0 && position.x < HAUTEUR && position.y >= 0 && position.y < LARGEUR);
 }

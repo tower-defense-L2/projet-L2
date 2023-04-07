@@ -1,9 +1,27 @@
+/**
+ * \file placement_tours.c
+ * \author meo (meo.prn@outlook.fr)
+ * \brief fonction permettant de gére le comportement des tours
+ * \version 0.1.0
+ * \date 2023-04-07
+ * 
+ * 
+ */
 #include "../include/placement_tours.h"
 
+/**
+ * \brief primitive de la structure liste_tour_T
+ */
 typedef struct liste_tour_S {
     tour_T *tour;
     struct liste_tour_S *suivant;
 } liste_tour_T;
+/**
+ * \struct liste_tour_T
+ * \brief structure contenant les pointeurs sur la tour et les pointeurs sur les tours suivantes
+ * \param tour pointeur sur la tour
+ * \param suivant pointeur sur la liste_tour_T suivante
+ */
 
 liste_tour_T *liste_tour = NULL;
 

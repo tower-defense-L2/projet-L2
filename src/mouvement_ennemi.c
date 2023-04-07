@@ -1,10 +1,28 @@
+/**
+ * \file mouvement_ennemi.c
+ * \author meo (meo.prn@outlook.fr)
+ * \brief fonction permettant de gére le comportement des ennemis
+ * \version 0.1.0
+ * \date 2023-04-07
+ * 
+ */
 #include "../include/mouvement_ennemi.h"
 
+/**
+ * \brief primitive de la structure liste_ennemi_T
+ */
 typedef struct liste_ennemi_S {
     ennemi_T *enemi;
     struct liste_ennemi_S *suivant;
     struct liste_ennemi_S *precedent;
 } liste_ennemi_T;
+/**
+ * \struct liste_ennemi_T
+ * \brief structure contenant les pointeurs sur l'ennemi et les pointeurs sur les ennemis suivantes et précédentes
+ * \param enemi pointeur sur l'ennemi
+ * \param suivant pointeur sur la liste_ennemi_T suivante
+ * \param precedent pointeur sur la liste_ennemi_T précédente
+ */
 
 liste_ennemi_T *liste_enemi = NULL;
 
@@ -107,6 +125,7 @@ void detruire_ennemis()
         free(tmp);
         tmp = tmp2;
     }
+    liste_enemi = NULL;
 }
 
 /**
