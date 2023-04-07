@@ -9,17 +9,23 @@
 #define JEUX_H
 
 #include <SDL2/SDL.h>
+#include <time.h>
 #include "./struct_sdl.h"
 #include "./struct.h"
 #include "./const.h"
 #include "./interaction_souris.h"
 #include "./init_supr_sdl.h"
+#include "./map.h"
+#include "./placement_tours.h"
+#include "./mouvement_ennemi.h"
 
 /**
  * \brief fonction principale du jeu
  * 
+ * \param fenetre pack_t de la fenetre
+ * \return int 1 si tout c'est bien passé 0 sinon
  */
 extern
-void jeux(pack_t * fenetre);
+int jeux(pack_t * fenetre);
 
 #endif

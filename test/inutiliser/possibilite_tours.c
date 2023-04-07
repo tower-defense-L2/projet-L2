@@ -1,12 +1,4 @@
-/**
- * \file possibilite_tours.c
- * \author Nathan (Nathan.Duval.Etu@univ-lemans.fr)
- * \brief source fonction gestion placement et suppression tours
- * \version 0.1
- * \date 2023-03-22
- * 
- * 
- */
+/* inutiliser*/
 #include "../include/possibilite_tours.h"
 
 extern

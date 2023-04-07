@@ -29,11 +29,11 @@ int main(){
     SDL_GetDisplayBounds(0,&win);
     SDL_SetWindowSize(fenetre->fenetre, win.w, win.h);
 
-    load_bitmap("./ressources/test/font2.bmp",&texture_menu,fenetre);
-    load_bitmap("./ressources/chemin.bmp",&chemin,fenetre);
-    load_bitmap("./ressources/bordure.bmp",&bordure,fenetre);
-    load_bitmap("./ressources/bille.bmp",&bille,fenetre);
-    load_bitmap("./ressources/tour.bmp",&tour,fenetre);
+    load_bitmap("test/font2",&texture_menu,fenetre);
+    load_bitmap("chemin",&chemin,fenetre);
+    load_bitmap("bordure",&bordure,fenetre);
+    load_bitmap("bille",&bille,fenetre);
+    load_bitmap("tour",&tour,fenetre);
 
     map_type_t map[16][9];
     for(int i = 0; i < 16; i++){
